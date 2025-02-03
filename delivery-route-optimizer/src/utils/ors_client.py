@@ -113,3 +113,17 @@ class ORSClient:
         except Exception as e:
             logger.error(f"Route calculation failed: {str(e)}")
             raise
+
+    def get_route_distance(self, start: Tuple[float, float], end: Tuple[float, float]) -> float:
+        """Get actual road distance between two points"""
+        try:
+            route = self.client.directions(
+                coordinates=[start, end],
+                profile=self.profile,
+                format='geojson'
+            )
+            # Distance in kilometers
+            return route['features'][0]['properties']['segments'][0]['distance'] / 1000
+        except Exception as e:
+            logger.error(f"Route distance calculation failed: {str(e)}")
+            raise

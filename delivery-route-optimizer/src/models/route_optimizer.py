@@ -47,14 +47,20 @@ class RouteOptimizer:
                 next_idx = self.find_nearest_point()
                 self.visited.add(next_idx)
                 
-                # Calculate metrics
-                distance_from_hub = self.distance_matrix[0][next_idx]
-                current_distance = self.distance_matrix[self.current_location][next_idx]
+                # Calculate actual road distances
+                distance_from_hub = self.ors_client.get_route_distance(
+                    HUB_LOCATION,
+                    self.all_coordinates[next_idx]
+                )
+                current_distance = self.ors_client.get_route_distance(
+                    self.all_coordinates[self.current_location],
+                    self.all_coordinates[next_idx]
+                )
+                
+                # Rest of calculations
                 parcels = self.customer_data.iloc[next_idx - 1]['Number_of_parcels']
                 remaining_parcels -= parcels
-                
-                # Calculate ETA (distance in meters, speed in km/h)
-                eta = (current_distance / 1000.0) * (60 / 30) + 6  # 30 km/h speed, 6 min stop
+                eta = (current_distance) * (60 / 30) + 6  # Already in km
                 
                 stop_info = {
                     'stop_number': len(self.visited) - 1,
