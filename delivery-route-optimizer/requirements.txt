@@ -1,0 +1,4 @@
+pandas==2.0.0
+folium==0.14.0
+openrouteservice==2.3.3
+numpy==1.24.3
