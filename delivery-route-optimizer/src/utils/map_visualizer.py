@@ -12,7 +12,7 @@ class MapVisualizer:
         self.route_info = route_info
         self.ors_client = ors_client
         self.map = self.create_base_map()
-        self.route_layers = []
+        self.route_groups = []  # Store route groups separately
 
     def create_base_map(self):
         center_lat = sum(stop['coordinates'][1] for stop in self.route_info) / len(self.route_info)
@@ -49,70 +49,90 @@ class MapVisualizer:
             ).add_to(self.map)
 
     def draw_routes(self):
+        """Draw routes with minimal API calls"""
         route_group = folium.FeatureGroup(name='routes')
         
-        # Add hub to first stop
-        first_route = self.ors_client.get_route_details(HUB_LOCATION, self.route_info[0]['coordinates'])
-        self._add_route_segment(first_route, route_group, 0)
-        
-        # Add routes between stops
         for i in range(len(self.route_info) - 1):
-            route = self.ors_client.get_route_details(
-                self.route_info[i]['coordinates'],
-                self.route_info[i + 1]['coordinates']
-            )
-            self._add_route_segment(route, route_group, i + 1)
-        
-        # Add last stop to hub
-        last_route = self.ors_client.get_route_details(
-            self.route_info[-1]['coordinates'],
-            HUB_LOCATION
-        )
-        self._add_route_segment(last_route, route_group, len(self.route_info))
-        
+            current = self.route_info[i]['coordinates']
+            next_stop = self.route_info[i + 1]['coordinates']
+            
+            route = self.ors_client.get_route_details(current, next_stop)
+            self._add_route_segment(route, route_group, i)
+            
         route_group.add_to(self.map)
-        self.add_navigation_controls()
-
-    def _add_route_segment(self, route, group, index):
-        layer = folium.GeoJson(
+        
+    def _add_route_segment(self, route, route_group, index):
+        folium.GeoJson(
             route,
             style_function=lambda x: {
                 'color': '#3388ff',
                 'weight': 3,
-                'opacity': 0.8,
                 'dashArray': '10, 10'
             }
-        )
-        self.route_layers.append(layer)
-        layer.add_to(group)
-
+        ).add_to(route_group)
+        
     def add_navigation_controls(self):
-        """Add navigation buttons to control route display"""
-        navigation_html = """
-        <div style='position: fixed; bottom: 50px; left: 50px; z-index: 9999;'>
-            <button onclick='prevStep()'>←</button>
-            <button onclick='nextStep()'>→</button>
-        </div>
-        <script>
-            var currentStep = 0;
-            var routeLayers = {};
-            function showStep(step) {
-                Object.values(routeLayers).forEach(layer => layer.setStyle({opacity: 0}));
-                if (step >= 0 && step < Object.keys(routeLayers).length) {
-                    routeLayers[step].setStyle({opacity: 0.8});
+        navigation_js = """
+            <script>
+                var currentStep = -1;
+                var totalSteps = %d;
+                var routeGroups = {};
+                
+                function initRouteGroups() {
+                    for (let i = 0; i <= totalSteps; i++) {
+                        routeGroups[i] = document.querySelector(`[name="route_${i}"]`);
+                    }
                 }
-            }
-            function nextStep() {
-                currentStep = Math.min(currentStep + 1, Object.keys(routeLayers).length - 1);
-                showStep(currentStep);
-            }
-            function prevStep() {
-                currentStep = Math.max(currentStep - 1, 0);
-                showStep(currentStep);
-            }
-        </script>
+                
+                function showStep(step) {
+                    if (step === -1) {
+                        // Show all routes
+                        Object.values(routeGroups).forEach(group => {
+                            if (group) group.style.display = 'block';
+                        });
+                    } else {
+                        // Show only current segment
+                        Object.entries(routeGroups).forEach(([idx, group]) => {
+                            if (group) group.style.display = idx == step ? 'block' : 'none';
+                        });
+                    }
+                    
+                    document.getElementById('stepCounter').textContent = 
+                        step === -1 ? 'All Routes' : `Step ${step + 1} / ${totalSteps}`;
+                }
+                
+                function nextStep() {
+                    if (currentStep < totalSteps - 1) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }
+                }
+                
+                function prevStep() {
+                    if (currentStep > -1) {
+                        currentStep--;
+                        showStep(currentStep);
+                    }
+                }
+                
+                // Initialize after map loads
+                window.addEventListener('load', function() {
+                    initRouteGroups();
+                    showStep(-1);
+                });
+            </script>
+        """ % len(self.route_groups)
+        
+        navigation_html = """
+            <div style='position: fixed; bottom: 50px; left: 50px; z-index: 999; 
+                      background: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);'>
+                <button onclick='prevStep()' style='margin-right: 10px;'>←</button>
+                <span id='stepCounter'>All Routes</span>
+                <button onclick='nextStep()' style='margin-left: 10px;'>→</button>
+            </div>
         """
-        self.map.get_root().html.add_child(folium.Element(navigation_html))
+        
+        self.map.get_root().html.add_child(folium.Element(navigation_js + navigation_html))
         
     def generate_map(self):
         self.add_markers()

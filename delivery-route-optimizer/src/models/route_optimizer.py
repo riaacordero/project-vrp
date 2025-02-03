@@ -1,7 +1,16 @@
 import numpy as np
 from typing import List, Tuple, Dict
 import logging
-from config import HUB_LOCATION
+import os, sys
+
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(project_root)
+
+from config import (
+    HUB_LOCATION, 
+    AVG_SPEED_KMH, 
+    IDLE_TIME_PER_HOUSE
+)
 
 logger = logging.getLogger(__name__)
 
@@ -16,17 +25,36 @@ class RouteOptimizer:
         self.visited = {0}  # Hub is already visited
         self.current_location = 0  # Start at hub
         self.distance_matrix = None
-        
+
+    def meters_to_km(self, meters: float) -> float:
+        """Convert meters to kilometers"""
+        return meters / 1000.0
+
+    def calculate_eta(self, distance_km: float) -> float:
+        """
+        Calculate ETA in minutes based on distance and configuration
+        Args:
+            distance_km: Distance in kilometers
+        Returns:
+            float: Estimated time in minutes
+        """
+        travel_time = (distance_km / AVG_SPEED_KMH) * 60  # Convert hours to minutes
+        return travel_time + IDLE_TIME_PER_HOUSE
+
     def find_nearest_point(self) -> int:
-        if not self.distance_matrix:
-            raise ValueError("Distance matrix not initialized")
-            
         min_distance = float('inf')
         nearest_idx = -1
+
+        current_coords = self.all_coordinates[self.current_location]
         
-        for idx in range(1, len(self.all_coordinates)):
+        for idx in range(len(self.all_coordinates)):
             if idx not in self.visited:
-                distance = self.distance_matrix[self.current_location][idx]
+                # Get actual route distance
+                distance = self.get_route_distance(self.current_location, idx)
+                distance_km = self.meters_to_km(distance)
+                
+                logger.debug(f"Point {idx} - Distance: {distance_km:.2f}km")
+                
                 if distance < min_distance:
                     min_distance = distance
                     nearest_idx = idx
@@ -35,48 +63,63 @@ class RouteOptimizer:
             raise ValueError("No unvisited points found")
             
         return nearest_idx
-        
+
+    def get_route_distance(self, start_idx: int, end_idx: int) -> float:
+        """Get actual road distance between two points in meters"""
+        try:
+            route = self.ors_client.get_route_details(
+                self.all_coordinates[start_idx],
+                self.all_coordinates[end_idx]
+            )
+            return route['features'][0]['properties']['segments'][0]['distance']
+        except Exception as e:
+            logger.error(f"Failed to get route distance: {e}")
+            return self.distance_matrix[start_idx][end_idx]
+
     def optimize_route(self) -> List[Dict]:
         try:
             self.distance_matrix = self.ors_client.get_distance_matrix(self.all_coordinates)
             route_info = []
-            total_parcels = self.customer_data['Number_of_parcels'].sum()
-            remaining_parcels = total_parcels
+            total_distance = 0
+            
+            self.current_location = 0
+            self.visited = {0}
             
             while len(self.visited) < len(self.all_coordinates):
                 next_idx = self.find_nearest_point()
                 self.visited.add(next_idx)
                 
-                # Calculate actual road distances
-                distance_from_hub = self.ors_client.get_route_distance(
-                    HUB_LOCATION,
-                    self.all_coordinates[next_idx]
-                )
-                current_distance = self.ors_client.get_route_distance(
-                    self.all_coordinates[self.current_location],
-                    self.all_coordinates[next_idx]
-                )
+                # Get distances in meters
+                current_distance = self.get_route_distance(self.current_location, next_idx)
+                hub_distance = self.get_route_distance(0, next_idx)
                 
-                # Rest of calculations
-                parcels = self.customer_data.iloc[next_idx - 1]['Number_of_parcels']
-                remaining_parcels -= parcels
-                eta = (current_distance) * (60 / 30) + 6  # Already in km
+                # Convert to kilometers for display and calculations
+                current_distance_km = self.meters_to_km(current_distance)
+                hub_distance_km = self.meters_to_km(hub_distance)
+                
+                total_distance += current_distance
+                
+                logger.debug(f"Added stop {next_idx}")
+                logger.debug(f"Distance from previous: {current_distance_km:.2f}km")
+                logger.debug(f"Distance from hub: {hub_distance_km:.2f}km")
                 
                 stop_info = {
                     'stop_number': len(self.visited) - 1,
                     'customer_id': self.customer_data.iloc[next_idx - 1]['Customer_ID'],
                     'coordinates': self.all_coordinates[next_idx],
                     'last_location': self.all_coordinates[self.current_location],
-                    'distance': current_distance,
-                    'distance_from_hub': distance_from_hub,
-                    'eta': eta,
-                    'remaining_stops': self.total_stops - (len(self.visited) - 1),
-                    'remaining_parcels': remaining_parcels
+                    'distance': current_distance_km,  # Now in km
+                    'distance_from_hub': hub_distance_km,  # Now in km
+                    'eta': self.calculate_eta(current_distance_km),
+                    'remaining_stops': len(self.all_coordinates) - len(self.visited),
+                    'remaining_parcels': len(self.all_coordinates) - len(self.visited)
                 }
                 
                 route_info.append(stop_info)
                 self.current_location = next_idx
                 
+            total_distance_km = self.meters_to_km(total_distance)
+            logger.info(f"Total route distance: {total_distance_km:.2f}km")
             return route_info
             
         except Exception as e:
