@@ -8,8 +8,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from config import HUB_LOCATION, OUTPUT_MAP
 
 class MapVisualizer:
-    def __init__(self, route_info: List[Dict]):
+    def __init__(self, route_info: List[Dict], ors_client):
         self.route_info = route_info
+        self.ors_client = ors_client
         self.map = self.create_base_map()
         
     def create_base_map(self) -> folium.Map:
@@ -51,17 +52,43 @@ class MapVisualizer:
             ).add_to(self.map)
             
     def draw_routes(self):
-        """Draw delivery sequence routes"""
-        coordinates = [(HUB_LOCATION[1], HUB_LOCATION[0])]
-        for stop in self.route_info:
-            coordinates.append((stop['coordinates'][1], stop['coordinates'][0]))
-        coordinates.append((HUB_LOCATION[1], HUB_LOCATION[0]))
+        """Draw actual road routes between points"""
+        # Draw route from hub to first stop
+        first_stop = self.route_info[0]
+        route = self.ors_client.get_route_details(
+            HUB_LOCATION,
+            first_stop['coordinates']
+        )
+        self._add_route_to_map(route)
         
-        folium.PolyLine(
-            coordinates,
-            weight=2,
-            color='blue',
-            opacity=0.8
+        # Draw routes between stops
+        for i in range(len(self.route_info) - 1):
+            current = self.route_info[i]
+            next_stop = self.route_info[i + 1]
+            
+            route = self.ors_client.get_route_details(
+                current['coordinates'],
+                next_stop['coordinates']
+            )
+            self._add_route_to_map(route)
+            
+        # Draw route from last stop back to hub
+        last_stop = self.route_info[-1]
+        route = self.ors_client.get_route_details(
+            last_stop['coordinates'],
+            HUB_LOCATION
+        )
+        self._add_route_to_map(route)
+        
+    def _add_route_to_map(self, route):
+        """Add route GeoJSON to map"""
+        folium.GeoJson(
+            route,
+            style_function=lambda x: {
+                'color': '#3388ff',
+                'weight': 3,
+                'opacity': 0.8
+            }
         ).add_to(self.map)
         
     def generate_map(self):

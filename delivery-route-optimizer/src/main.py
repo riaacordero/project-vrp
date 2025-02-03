@@ -38,7 +38,7 @@ def main():
         
         # Generate map
         logger.info("Generating route visualization...")
-        visualizer = MapVisualizer(route_sequence)
+        visualizer = MapVisualizer(route_sequence, ors_client)
         visualizer.generate_map()
         
         logger.info("Route optimization completed successfully!")

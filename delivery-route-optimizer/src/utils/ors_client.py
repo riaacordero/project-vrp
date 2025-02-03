@@ -99,3 +99,17 @@ class ORSClient:
             return (distance / 1000.0) * 60 + parcels * 6  # Convert to minutes
         except Exception as e:
             raise Exception(f"Error calculating ETA: {str(e)}")
+            
+    def get_route_details(self, start: Tuple[float, float], end: Tuple[float, float]) -> Dict:
+        try:
+            route = self.client.directions(
+                coordinates=[start, end],
+                profile=self.profile,
+                format='geojson',
+                options={"avoid_features": ["highways"],
+                        "profile_params": {"weightings": {"green": 0.5}}}
+            )
+            return route
+        except Exception as e:
+            logger.error(f"Route calculation failed: {str(e)}")
+            raise
