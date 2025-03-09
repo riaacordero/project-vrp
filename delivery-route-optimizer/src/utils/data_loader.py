@@ -14,11 +14,22 @@ class DeliveryDataLoader:
     def __init__(self, filepath: str):
         try:
             self.data = pd.read_csv(filepath)
+            self.preprocess_data()
             self.validate_data()
             logger.debug(f"Loaded {len(self.data)} delivery points")
         except Exception as e:
             logger.error(f"Failed to load data: {e}")
             raise
+
+    def preprocess_data(self) -> None:
+        """Clean and preprocess delivery data"""
+        # Drop only unnecessary columns
+        columns_to_drop = ['date_of_delivery', 'barangay', 'reason']
+        self.data = self.data.drop(columns=[col for col in columns_to_drop if col in self.data.columns])
+        
+        # Rename columns if needed
+        if 'customer_id' in self.data.columns:
+            self.data = self.data.rename(columns={'customer_id': 'tracking_num'})
 
     def validate_data(self) -> None:
         """Validate the loaded delivery data"""
@@ -56,5 +67,5 @@ class DeliveryDataLoader:
         return list(zip(self.data['longitude'], self.data['latitude']))
     
     def get_customer_info(self) -> pd.DataFrame:
-        """Returns customer information with coordinates"""
-        return self.data
+        """Get customer information including zone and address"""
+        return self.data[['tracking_num', 'zone', 'customer_address']]

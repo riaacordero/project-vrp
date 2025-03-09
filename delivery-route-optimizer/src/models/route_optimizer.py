@@ -103,11 +103,13 @@ class RouteOptimizer:
                 stop_info = {
                     'stop_number': len(self.visited) - 1,
                     'tracking_num': self.customer_data.iloc[next_idx - 1]['tracking_num'],
+                    'zone': self.customer_data.iloc[next_idx - 1]['zone'],
+                    'address': self.customer_data.iloc[next_idx - 1]['customer_address'],
                     'coordinates': self.all_coordinates[next_idx],
                     'last_location': self.all_coordinates[self.current_location],
                     'distance': current_distance,
                     'distance_from_hub': hub_distance,
-                    'eta': (current_distance / 1000.0) * (60 / 30) + 6,
+                    'eta': self.calculate_eta(current_distance),
                     'remaining_stops': len(self.all_coordinates) - len(self.visited),
                     'remaining_parcels': len(self.all_coordinates) - len(self.visited)
                 }

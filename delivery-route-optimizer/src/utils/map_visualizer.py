@@ -23,13 +23,13 @@ class MapVisualizer:
         """Generate tooltip content for map markers"""
         return f"""
             <b>Stop {stop['stop_number']}</b><br>
-            Tracking #: {stop['tracking_num']}<br>
-            Zone: {stop.get('zone', 'N/A')}<br>
-            Address: {stop.get('address', 'N/A')}<br>
+            {stop['tracking_num']}<br>
+            Zone: {stop['zone']}<br>
+            Address: {stop['address']}<br>
             Coordinates: {stop['coordinates']}<br>
             <br>
             Last Location: {stop['last_location']}<br>
-            Distance from Hub: {stop['distance_from_hub']:.2f} km<br>
+            Distance from Hub: {stop['distance_from_hub']/1000:.2f} km<br>
             ETA: {stop['eta']:.0f} min<br>
             <br>
             Remaining Stops: {stop['remaining_stops']}<br>
