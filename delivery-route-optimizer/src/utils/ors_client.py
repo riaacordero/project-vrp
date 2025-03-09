@@ -18,6 +18,7 @@ class ORSClient:
         self.client = ors.Client(base_url="http://localhost:8080/ors")
         self.profile = "driving-car"
         self.max_batch = 45  # Square root of 2500 minus safety margin
+        self.cache = {}
         
     def _format_coordinates(self, coordinates: List[Tuple[float, float]]) -> List[List[float]]:
         """Format coordinates as [longitude, latitude] for ORS API"""
@@ -101,18 +102,18 @@ class ORSClient:
             raise Exception(f"Error calculating ETA: {str(e)}")
             
     def get_route_details(self, start: Tuple[float, float], end: Tuple[float, float]) -> Dict:
-        try:
-            route = self.client.directions(
-                coordinates=[start, end],
-                profile=self.profile,
-                format='geojson',
-                options={"avoid_features": ["highways"],
-                        "profile_params": {"weightings": {"green": 0.5}}}
-            )
-            return route
-        except Exception as e:
-            logger.error(f"Route calculation failed: {str(e)}")
-            raise
+        """Get route details with caching"""
+        cache_key = f"{start}_{end}"
+        if cache_key in self.cache:
+            return self.cache[cache_key]
+            
+        route = self.client.directions(
+            coordinates=[start, end],
+            profile="driving-car",
+            format='geojson'
+        )
+        self.cache[cache_key] = route
+        return route
 
     def get_route_distance(self, start: Tuple[float, float], end: Tuple[float, float]) -> float:
         """Get actual road distance between two points"""

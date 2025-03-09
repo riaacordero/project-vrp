@@ -11,51 +11,50 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 class DeliveryDataLoader:
-    def __init__(self, filename: str):
-        self.filepath = os.path.join(DATA_DIR, filename)
-        
-    def load_data(self) -> pd.DataFrame:
+    def __init__(self, filepath: str):
         try:
-            df = pd.read_csv(self.filepath)
-            required_columns = ['Customer_ID', 'Longitude', 'Latitude', 'Number_of_parcels']
-            
-            if not all(col in df.columns for col in required_columns):
-                raise ValueError("Missing required columns in CSV file")
-            
-            # Clean and convert numeric columns
-            df['Longitude'] = df['Longitude'].astype(str).str.strip().astype(float)
-            df['Latitude'] = df['Latitude'].astype(str).str.strip().astype(float)
-            df['Number_of_parcels'] = df['Number_of_parcels'].astype(int)
-            
-            # Swap coordinates if they're in wrong order
-            if df['Longitude'].mean() < df['Latitude'].mean():
-                df['Longitude'], df['Latitude'] = df['Latitude'], df['Longitude']
-            
-            # Debug coordinates
-            logger.debug(f"Longitude range: {df['Longitude'].min()} to {df['Longitude'].max()}")
-            logger.debug(f"Latitude range: {df['Latitude'].min()} to {df['Latitude'].max()}")
-            
-            # Validate coordinates (Davao City area)
-            if not (df['Longitude'].between(125.0, 126.0).all() and 
-                   df['Latitude'].between(6.5, 8.0).all()):
-                raise ValueError("Coordinates outside Davao City range")
-                
-            # Validate parcel numbers
-            if not (df['Number_of_parcels'] > 0).all():
-                raise ValueError("Invalid parcel numbers")
-                
-            return df
-            
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Data file not found at {self.filepath}")
+            self.data = pd.read_csv(filepath)
+            self.validate_data()
+            logger.debug(f"Loaded {len(self.data)} delivery points")
         except Exception as e:
-            raise Exception(f"Error loading data: {str(e)}")
+            logger.error(f"Failed to load data: {e}")
+            raise
+
+    def validate_data(self) -> None:
+        """Validate the loaded delivery data"""
+        required_columns = ['longitude', 'latitude']
+        
+        # Check for required columns
+        missing_cols = [col for col in required_columns if col not in self.data.columns]
+        if missing_cols:
+            raise ValueError(f"Missing required columns: {missing_cols}")
             
+        # Validate coordinate ranges
+        lon_range = self.data['longitude'].agg(['min', 'max'])
+        lat_range = self.data['latitude'].agg(['min', 'max'])
+        
+        # Check if coordinates need to be swapped
+        if lon_range['min'] < 100:  # Longitude in Philippines should be > 100
+            logger.info("Swapping latitude and longitude columns")
+            self.data['longitude'], self.data['latitude'] = self.data['latitude'], self.data['longitude']
+            
+            # Recalculate ranges after swap
+            lon_range = self.data['longitude'].agg(['min', 'max'])
+            lat_range = self.data['latitude'].agg(['min', 'max'])
+            
+        logger.debug(f"Longitude range: {lon_range['min']:.4f} to {lon_range['max']:.4f}")
+        logger.debug(f"Latitude range: {lat_range['min']:.4f} to {lat_range['max']:.4f}")
+        
+        # Validate coordinate ranges for Davao City
+        if not (125.0 <= lon_range['min'] <= lon_range['max'] <= 126.0):
+            raise ValueError(f"Longitude values outside Davao City bounds: {lon_range['min']:.4f} to {lon_range['max']:.4f}")
+        if not (6.5 <= lat_range['min'] <= lat_range['max'] <= 7.5):
+            raise ValueError(f"Latitude values outside Davao City bounds: {lat_range['min']:.4f} to {lat_range['max']:.4f}")
+
     def get_coordinates(self) -> List[Tuple[float, float]]:
-        """Returns list of (longitude, latitude) tuples"""
-        df = self.load_data()
-        return list(zip(df['Longitude'], df['Latitude']))
+        """Extract delivery point coordinates as (longitude, latitude) tuples"""
+        return list(zip(self.data['longitude'], self.data['latitude']))
     
     def get_customer_info(self) -> pd.DataFrame:
         """Returns customer information with coordinates"""
-        return self.load_data()
+        return self.data

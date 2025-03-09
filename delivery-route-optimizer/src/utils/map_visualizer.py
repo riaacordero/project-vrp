@@ -20,15 +20,19 @@ class MapVisualizer:
         return folium.Map(location=[center_lat, center_lon], zoom_start=14)
 
     def generate_tooltip(self, stop: Dict) -> str:
-        """Create HTML tooltip for stop"""
+        """Generate tooltip content for map markers"""
         return f"""
             <b>Stop {stop['stop_number']}</b><br>
-            Customer ID: {stop['customer_id']}<br>
+            Tracking #: {stop['tracking_num']}<br>
+            Zone: {stop.get('zone', 'N/A')}<br>
+            Address: {stop.get('address', 'N/A')}<br>
             Coordinates: {stop['coordinates']}<br>
+            <br>
             Last Location: {stop['last_location']}<br>
             Distance from Hub: {stop['distance_from_hub']:.2f} km<br>
-            ETA: {stop['eta']:.1f} min<br>
-            Remaining Stops: {stop['remaining_stops']}/{len(self.route_info)}<br>
+            ETA: {stop['eta']:.0f} min<br>
+            <br>
+            Remaining Stops: {stop['remaining_stops']}<br>
             Remaining Parcels: {stop['remaining_parcels']}
         """
         

@@ -7,12 +7,18 @@ from utils.ors_client import ORSClient
 from models.route_optimizer import RouteOptimizer
 from utils.map_visualizer import MapVisualizer
 
+# Add project root to path
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_root)
+
+# Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Vehicle Route Optimizer')
-    parser.add_argument('--data', default='sample_delivery_data.csv',
+    default_data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'delivery_data.csv')
+    parser.add_argument('--data', default=default_data_path,
                       help='Path to delivery data CSV file')
     parser.add_argument('--debug', action='store_true',
                       help='Enable debug logging')

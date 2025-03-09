@@ -78,6 +78,7 @@ class RouteOptimizer:
 
     def optimize_route(self) -> List[Dict]:
         try:
+            logger.info("Getting distance matrix...")
             self.distance_matrix = self.ors_client.get_distance_matrix(self.all_coordinates)
             route_info = []
             total_distance = 0
@@ -89,28 +90,24 @@ class RouteOptimizer:
                 next_idx = self.find_nearest_point()
                 self.visited.add(next_idx)
                 
-                # Get distances in meters
+                # Calculate distances
                 current_distance = self.get_route_distance(self.current_location, next_idx)
                 hub_distance = self.get_route_distance(0, next_idx)
-                
-                # Convert to kilometers for display and calculations
-                current_distance_km = self.meters_to_km(current_distance)
-                hub_distance_km = self.meters_to_km(hub_distance)
-                
                 total_distance += current_distance
                 
-                logger.debug(f"Added stop {next_idx}")
-                logger.debug(f"Distance from previous: {current_distance_km:.2f}km")
-                logger.debug(f"Distance from hub: {hub_distance_km:.2f}km")
+                # Log only every 10th point or first/last point
+                if len(self.visited) % 10 == 0 or len(self.visited) == len(self.all_coordinates):
+                    logger.debug(f"Progress: {len(self.visited)}/{len(self.all_coordinates)} stops")
+                    logger.debug(f"Total distance so far: {total_distance/1000:.2f}km")
                 
                 stop_info = {
                     'stop_number': len(self.visited) - 1,
-                    'customer_id': self.customer_data.iloc[next_idx - 1]['Customer_ID'],
+                    'tracking_num': self.customer_data.iloc[next_idx - 1]['tracking_num'],
                     'coordinates': self.all_coordinates[next_idx],
                     'last_location': self.all_coordinates[self.current_location],
-                    'distance': current_distance_km,  # Now in km
-                    'distance_from_hub': hub_distance_km,  # Now in km
-                    'eta': self.calculate_eta(current_distance_km),
+                    'distance': current_distance,
+                    'distance_from_hub': hub_distance,
+                    'eta': (current_distance / 1000.0) * (60 / 30) + 6,
                     'remaining_stops': len(self.all_coordinates) - len(self.visited),
                     'remaining_parcels': len(self.all_coordinates) - len(self.visited)
                 }
@@ -118,8 +115,7 @@ class RouteOptimizer:
                 route_info.append(stop_info)
                 self.current_location = next_idx
                 
-            total_distance_km = self.meters_to_km(total_distance)
-            logger.info(f"Total route distance: {total_distance_km:.2f}km")
+            logger.info(f"Route optimization complete. Total distance: {total_distance/1000:.2f}km")
             return route_info
             
         except Exception as e:
