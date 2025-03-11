@@ -37,26 +37,26 @@ def main():
         logger.info("Initializing ORS client...")
         ors_client = ORSClient()
         
-        # Optimize route
-        logger.info("Calculating optimal route...")
+        # Initialize components and optimize route
         optimizer = RouteOptimizer(data_loader, ors_client)
         route_sequence = optimizer.optimize_route()
         
-        # Generate map
-        logger.info("Generating route visualization...")
-        visualizer = MapVisualizer(route_sequence, ors_client)
-        visualizer.generate_map()
+        # Group routes by zone
+        zones = {}
+        for stop in route_sequence:
+            zone = stop['zone']
+            if zone not in zones:
+                zones[zone] = []
+            zones[zone].append(stop)
+        
+        # Generate maps for each zone
+        logger.info(f"Generating {len(zones)} zone-based maps...")
+        visualizer = MapVisualizer(zones, ors_client)
+        visualizer.generate_maps()
         
         logger.info("Route optimization completed successfully!")
-        logger.info(f"Total stops: {len(route_sequence)}")
-        logger.info("Map saved to route_map.html")
+        logger.info(f"Total zones processed: {len(zones)}")
         
-    except FileNotFoundError as e:
-        logger.error(f"Data file not found: {e}")
-        sys.exit(1)
-    except ValueError as e:
-        logger.error(f"Invalid data format: {e}")
-        sys.exit(1)
     except Exception as e:
         logger.error(f"Unexpected error: {e}")
         sys.exit(1)
