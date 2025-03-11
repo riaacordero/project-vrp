@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0ac25b63ec57bf884021cb78196ed47f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0ac25b63ec57bf884021cb78196ed47f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0ac25b63ec57bf884021cb78196ed47f = L.map(
+                "map_0ac25b63ec57bf884021cb78196ed47f",
+                {
+                    center: [7.069808626166666, 125.60006623333334],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_72948a213d12d30c59941e36f1538bb2 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var marker_181d38957ae09b17fb66b6e0bf68d18c = L.marker(
+                [7.0854, 125.6117],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_0ff45b31df65f30897773731c292851b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_181d38957ae09b17fb66b6e0bf68d18c.setIcon(icon_0ff45b31df65f30897773731c292851b);
+        
+    
+            marker_181d38957ae09b17fb66b6e0bf68d18c.bindTooltip(
+                `<div>
+                     <b>Delivery Hub</b><br>Coordinates: (125.6117, 7.0854)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        function geo_json_563065261a0fdb373a0d3934f652658e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "opacity": 0.8, "weight": 3};
+            }
+        }
+
+        function geo_json_563065261a0fdb373a0d3934f652658e_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_563065261a0fdb373a0d3934f652658e = L.geoJson(null, {
+                onEachFeature: geo_json_563065261a0fdb373a0d3934f652658e_onEachFeature,
+            
+                style: geo_json_563065261a0fdb373a0d3934f652658e_styler,
+        });
+
+        function geo_json_563065261a0fdb373a0d3934f652658e_add (data) {
+            geo_json_563065261a0fdb373a0d3934f652658e
+                .addData(data)
+                .addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        }
+            geo_json_563065261a0fdb373a0d3934f652658e_add({"bbox": [125.600521, 7.069496, 125.612317, 7.0879], "features": [{"bbox": [125.600521, 7.069496, 125.612317, 7.0879], "geometry": {"coordinates": [[125.611667, 7.08538], [125.611495, 7.085658], [125.611373, 7.085863], [125.61097, 7.086549], [125.610963, 7.086647], [125.611028, 7.086748], [125.611217, 7.086902], [125.612317, 7.087823], [125.612253, 7.0879], [125.611154, 7.086977], [125.61107, 7.086912], [125.610688, 7.086615], [125.610415, 7.087061], [125.608633, 7.085917], [125.608582, 7.085885], [125.608199, 7.085651], [125.607216, 7.085051], [125.607188, 7.085033], [125.606771, 7.08478], [125.606683, 7.084727], [125.606192, 7.084429], [125.606066, 7.08435], [125.605671, 7.084105], [125.605538, 7.083572], [125.605499, 7.08342], [125.605444, 7.083196], [125.605374, 7.082919], [125.605337, 7.082761], [125.605252, 7.082531], [125.605003, 7.082075], [125.604273, 7.080961], [125.604029, 7.080619], [125.603836, 7.080399], [125.603501, 7.080055], [125.602578, 7.079092], [125.601775, 7.078293], [125.601665, 7.078188], [125.602067, 7.077778], [125.602124, 7.077692], [125.602157, 7.077612], [125.602224, 7.077313], [125.602311, 7.076971], [125.602361, 7.076834], [125.602458, 7.076655], [125.602507, 7.076579], [125.602611, 7.076426], [125.603284, 7.075604], [125.602727, 7.075192], [125.601921, 7.074622], [125.601457, 7.074282], [125.600953, 7.073876], [125.600521, 7.073533], [125.600573, 7.073418], [125.60067, 7.07311], [125.600685, 7.073032], [125.600711, 7.072768], [125.600702, 7.072622], [125.600646, 7.072329], [125.60146, 7.071233], [125.601513, 7.071163], [125.601669, 7.070938], [125.602237, 7.070113], [125.602509, 7.069728], [125.602209, 7.069496]], "type": "LineString"}, "id": "0", "properties": {"extras": {"roadaccessrestrictions": {"summary": [{"amount": 88.86, "distance": 2971.1, "value": 0.0}, {"amount": 11.14, "distance": 372.3, "value": 32.0}], "values": [[0, 8, 32], [8, 63, 0]]}}, "segments": [{"distance": 3343.4, "duration": 519.8, "steps": [{"distance": 361.2, "duration": 78.7, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 7]}, {"distance": 11.1, "duration": 2.0, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [7, 8]}, {"distance": 224.1, "duration": 43.6, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [8, 11]}, {"distance": 58.1, "duration": 8.4, "instruction": "Turn right onto J. P. Laurel Avenue, 1", "name": "J. P. Laurel Avenue, 1", "type": 1, "way_points": [11, 12]}, {"distance": 618.2, "duration": 89.0, "instruction": "Turn left onto Doctor A. Gahol Avenue", "name": "Doctor A. Gahol Avenue", "type": 0, "way_points": [12, 22]}, {"distance": 808.9, "duration": 116.5, "instruction": "Turn slight left onto J. A. Sarenas Avenue", "name": "J. A. Sarenas Avenue", "type": 4, "way_points": [22, 36]}, {"distance": 345.0, "duration": 49.7, "instruction": "Turn left onto Lopez Jaena Street", "name": "Lopez Jaena Street", "type": 0, "way_points": [36, 46]}, {"distance": 382.2, "duration": 55.0, "instruction": "Turn right onto F. Torres Street", "name": "F. Torres Street", "type": 1, "way_points": [46, 51]}, {"distance": 137.7, "duration": 19.8, "instruction": "Turn left onto Father Selga Street", "name": "Father Selga Street", "type": 0, "way_points": [51, 57]}, {"distance": 354.9, "duration": 51.1, "instruction": "Turn left onto San Pedro Extension", "name": "San Pedro Extension", "type": 0, "way_points": [57, 62]}, {"distance": 42.1, "duration": 6.1, "instruction": "Turn right onto Don Isidro Marfori Road", "name": "Don Isidro Marfori Road", "type": 1, "way_points": [62, 63]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at Don Isidro Marfori Road, on the right", "name": "-", "type": 10, "way_points": [63, 63]}]}], "summary": {"distance": 3343.4, "duration": 519.8}, "warnings": [{"code": 1, "message": "There may be restrictions on some roads"}], "way_points": [0, 63]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.6117, 7.0854], [125.6021595, 7.069559404]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741677724325}, "type": "FeatureCollection"});
+
+        
+    
+            var marker_8c5adeae2c00864eac91baa9590cd930 = L.marker(
+                [7.069559404, 125.6021595],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_2517121d9dd63544f71009ec3696cb1a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8c5adeae2c00864eac91baa9590cd930.setIcon(icon_2517121d9dd63544f71009ec3696cb1a);
+        
+    
+            marker_8c5adeae2c00864eac91baa9590cd930.bindTooltip(
+                `<div>
+                     
+            <b>Stop 102</b><br>
+            SPEPH058176253661<br>
+            Zone: A-01-BANKE.2<br>
+            Address: Larayan 2000 Bankerohan<br>
+            Coordinates: (125.6021595, 7.069559404)<br>
+            <br>
+            Last Location: (125.61412, 7.06255)<br>
+            Distance from Hub: 3.34 km<br>
+            ETA: 3615 min<br>
+            <br>
+            Remaining Stops: 137<br>
+            Remaining Parcels: 137
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7f46ef99d36a594f154fbd394f28c015 = L.marker(
+                [7.067782575, 125.6010518],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_0467b0d21da26280f66897cf5d4ced10 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7f46ef99d36a594f154fbd394f28c015.setIcon(icon_0467b0d21da26280f66897cf5d4ced10);
+        
+    
+            marker_7f46ef99d36a594f154fbd394f28c015.bindTooltip(
+                `<div>
+                     
+            <b>Stop 111</b><br>
+            SPEPH052340931471<br>
+            Zone: A-01-BANKE.2<br>
+            Address: 769 datu bago st. Purok 11 brgy 5–a bankerohan davao city<br>
+            Coordinates: (125.6010518, 7.067782575)<br>
+            <br>
+            Last Location: (125.60086, 7.067917596)<br>
+            Distance from Hub: 3.58 km<br>
+            ETA: 58 min<br>
+            <br>
+            Remaining Stops: 128<br>
+            Remaining Parcels: 128
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71468033678c9bdb717a397b182e90b3 = L.marker(
+                [7.067669304, 125.6013472],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_277c7612e75537b15c1e9723ddd80360 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_71468033678c9bdb717a397b182e90b3.setIcon(icon_277c7612e75537b15c1e9723ddd80360);
+        
+    
+            marker_71468033678c9bdb717a397b182e90b3.bindTooltip(
+                `<div>
+                     
+            <b>Stop 113</b><br>
+            SPEPH055340645241<br>
+            Zone: A-01-BANKE.2<br>
+            Address: 799 Datu Bago St 5-A Bankerohan Davao City<br>
+            Coordinates: (125.6013472, 7.067669304)<br>
+            <br>
+            Last Location: (125.601258, 7.067706647)<br>
+            Distance from Hub: 3.61 km<br>
+            ETA: 27 min<br>
+            <br>
+            Remaining Stops: 126<br>
+            Remaining Parcels: 126
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6139d5ee5fd7d07e755930f68fc3a252 = L.marker(
+                [7.068446162, 125.5995017],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_fd792611d9c6786035c035e5bd2fc482 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6139d5ee5fd7d07e755930f68fc3a252.setIcon(icon_fd792611d9c6786035c035e5bd2fc482);
+        
+    
+            marker_6139d5ee5fd7d07e755930f68fc3a252.bindTooltip(
+                `<div>
+                     
+            <b>Stop 129</b><br>
+            SPEPH056725956421<br>
+            Zone: A-01-BANKE.2<br>
+            Address: Fish Market, Bankerohan Street, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5995017, 7.068446162)<br>
+            <br>
+            Last Location: (125.5995353, 7.068382058)<br>
+            Distance from Hub: 3.49 km<br>
+            ETA: 9 min<br>
+            <br>
+            Remaining Stops: 110<br>
+            Remaining Parcels: 110
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d8ecd71a72348d0882da982e6acc351b = L.marker(
+                [7.06885698, 125.5996286],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_41376e0f015ae3fd4253e40ef26123da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d8ecd71a72348d0882da982e6acc351b.setIcon(icon_41376e0f015ae3fd4253e40ef26123da);
+        
+    
+            marker_d8ecd71a72348d0882da982e6acc351b.bindTooltip(
+                `<div>
+                     
+            <b>Stop 135</b><br>
+            SPEPH052241106391<br>
+            Zone: A-01-BANKE.2<br>
+            Address: 749 Datu Bago Extension, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5996286, 7.06885698)<br>
+            <br>
+            Last Location: (125.5997057, 7.068805515)<br>
+            Distance from Hub: 3.48 km<br>
+            ETA: 26 min<br>
+            <br>
+            Remaining Stops: 104<br>
+            Remaining Parcels: 104
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_662c564f72a9ddf4fe180ef3ecb51ed7 = L.marker(
+                [7.06885698, 125.5996286],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_d0a153c0c7b9fa0964c166f16aea5f9d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_662c564f72a9ddf4fe180ef3ecb51ed7.setIcon(icon_d0a153c0c7b9fa0964c166f16aea5f9d);
+        
+    
+            marker_662c564f72a9ddf4fe180ef3ecb51ed7.bindTooltip(
+                `<div>
+                     
+            <b>Stop 136</b><br>
+            SPEPH054578528781<br>
+            Zone: A-01-BANKE.2<br>
+            Address: 749 Datu Bago Extension, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5996286, 7.06885698)<br>
+            <br>
+            Last Location: (125.5996286, 7.06885698)<br>
+            Distance from Hub: 3.48 km<br>
+            ETA: 6 min<br>
+            <br>
+            Remaining Stops: 103<br>
+            Remaining Parcels: 103
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_929144d5a78faee832cb79edadd67476 = L.marker(
+                [7.070468814, 125.5984913],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_237a705797faf8c3568aaeed119c8ee2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_929144d5a78faee832cb79edadd67476.setIcon(icon_237a705797faf8c3568aaeed119c8ee2);
+        
+    
+            marker_929144d5a78faee832cb79edadd67476.bindTooltip(
+                `<div>
+                     
+            <b>Stop 149</b><br>
+            SPEPH055162184041<br>
+            Zone: A-01-BANKE.2<br>
+            Address: Quarry taas, Barangay 5-A (Pob.) Ikatlong hagdan<br>
+            Coordinates: (125.5984913, 7.070468814)<br>
+            <br>
+            Last Location: (125.5988028, 7.069987004)<br>
+            Distance from Hub: 3.42 km<br>
+            ETA: 262 min<br>
+            <br>
+            Remaining Stops: 90<br>
+            Remaining Parcels: 90
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c91a45597b61f7c399e3aa4505aa6a73 = L.marker(
+                [7.070660465, 125.5986201],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_c24b58d3cac9304b328aa4584b80d7dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c91a45597b61f7c399e3aa4505aa6a73.setIcon(icon_c24b58d3cac9304b328aa4584b80d7dd);
+        
+    
+            marker_c91a45597b61f7c399e3aa4505aa6a73.bindTooltip(
+                `<div>
+                     
+            <b>Stop 154</b><br>
+            SPEPH058439818341<br>
+            Zone: A-01-BANKE.2<br>
+            Address: Quarry Upper, Bankerohan (ika-tulong hagdanan)<br>
+            Coordinates: (125.5986201, 7.070660465)<br>
+            <br>
+            Last Location: (125.5988329, 7.070169818)<br>
+            Distance from Hub: 3.36 km<br>
+            ETA: 123 min<br>
+            <br>
+            Remaining Stops: 85<br>
+            Remaining Parcels: 85
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71d3ad7022e8d05412252b88ddb745b4 = L.marker(
+                [7.072678558, 125.600619],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_4be9ef5e5f186b24476abf11c73fdb34 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_71d3ad7022e8d05412252b88ddb745b4.setIcon(icon_4be9ef5e5f186b24476abf11c73fdb34);
+        
+    
+            marker_71d3ad7022e8d05412252b88ddb745b4.bindTooltip(
+                `<div>
+                     
+            <b>Stop 219</b><br>
+            SPEPH059057537171<br>
+            Zone: A-01-BANKE.2<br>
+            Address: Fortune Bread Bakeshoppe, Barangay 6-A (Pob.)<br>
+            Coordinates: (125.600619, 7.072678558)<br>
+            <br>
+            Last Location: (125.5940835, 7.075849394)<br>
+            Distance from Hub: 2.91 km<br>
+            ETA: 2128 min<br>
+            <br>
+            Remaining Stops: 20<br>
+            Remaining Parcels: 20
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_87d876af175d690f7c0436dde7339255 = L.marker(
+                [7.071749845, 125.5996104],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_91b1d5fd9a0464a56a5508a2a5bfcfb3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_87d876af175d690f7c0436dde7339255.setIcon(icon_91b1d5fd9a0464a56a5508a2a5bfcfb3);
+        
+    
+            marker_87d876af175d690f7c0436dde7339255.bindTooltip(
+                `<div>
+                     
+            <b>Stop 220</b><br>
+            SPEPH052963817861<br>
+            Zone: A-01-BANKE.2<br>
+            Address: Santan Street, Purok 10 Don Isidro Village, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5996104, 7.071749845)<br>
+            <br>
+            Last Location: (125.600619, 7.072678558)<br>
+            Distance from Hub: 3.12 km<br>
+            ETA: 440 min<br>
+            <br>
+            Remaining Stops: 19<br>
+            Remaining Parcels: 19
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b630fee8c8f499f4e96399a7b2ad315b = L.marker(
+                [7.071452282, 125.5995186],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_9a159f044fd8f90d0065858b70ceb26a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b630fee8c8f499f4e96399a7b2ad315b.setIcon(icon_9a159f044fd8f90d0065858b70ceb26a);
+        
+    
+            marker_b630fee8c8f499f4e96399a7b2ad315b.bindTooltip(
+                `<div>
+                     
+            <b>Stop 224</b><br>
+            SPEPH058503430171<br>
+            Zone: A-01-BANKE.2<br>
+            Address: Sunflower st. sto niño samay gina store dapit<br>
+            Coordinates: (125.5995186, 7.071452282)<br>
+            <br>
+            Last Location: (125.5997763, 7.071499363)<br>
+            Distance from Hub: 3.16 km<br>
+            ETA: 37 min<br>
+            <br>
+            Remaining Stops: 15<br>
+            Remaining Parcels: 15
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b273b83000fc08fa1fa1c1050b6d6c62 = L.marker(
+                [7.069522145, 125.600618],
+                {}
+            ).addTo(map_0ac25b63ec57bf884021cb78196ed47f);
+        
+    
+            var icon_58877886d5c864d6db1501060d0747da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b273b83000fc08fa1fa1c1050b6d6c62.setIcon(icon_58877886d5c864d6db1501060d0747da);
+        
+    
+            marker_b273b83000fc08fa1fa1c1050b6d6c62.bindTooltip(
+                `<div>
+                     
+            <b>Stop 230</b><br>
+            SPEPH053190465691<br>
+            Zone: A-01-BANKE.2<br>
+            Address: Pichon Street, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.600618, 7.069522145)<br>
+            <br>
+            Last Location: (125.5973661, 7.073108001)<br>
+            Distance from Hub: 3.31 km<br>
+            ETA: 1314 min<br>
+            <br>
+            Remaining Stops: 9<br>
+            Remaining Parcels: 9
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
