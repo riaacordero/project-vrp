@@ -12,6 +12,12 @@ from config import (
     IDLE_TIME_PER_HOUSE
 )
 
+# Hub location coordinates (longitude, latitude)
+HUB_LOCATION = (125.61986151071888, 7.070884126747574)  # SMC Complex Hub
+
+# Output map filename
+OUTPUT_MAP = 'route_map.html'
+
 logger = logging.getLogger(__name__)
 
 class RouteOptimizer:
