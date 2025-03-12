@@ -56,6 +56,43 @@ class MapVisualizer:
         except Exception as e:
             logger.error(f"Failed to draw hub route: {e}")
 
+    def draw_routes(self, map_obj: folium.Map, stops: List[Dict]):
+        """Draw routes between consecutive stops and from hub to first stop"""
+        try:
+            # Draw route from hub to first stop
+            if stops:
+                first_route = self.ors_client.get_route_details(HUB_LOCATION, stops[0]['coordinates'])
+                folium.GeoJson(
+                    first_route,
+                    style_function=lambda x: {
+                        'color': 'red',
+                        'weight': 3,
+                        'opacity': 0.8
+                    }
+                ).add_to(map_obj)
+
+            # Draw routes between consecutive stops
+            for i in range(len(stops) - 1):
+                current_stop = stops[i]
+                next_stop = stops[i + 1]
+                
+                route = self.ors_client.get_route_details(
+                    current_stop['coordinates'],
+                    next_stop['coordinates']
+                )
+                
+                folium.GeoJson(
+                    route,
+                    style_function=lambda x: {
+                        'color': 'blue',
+                        'weight': 2,
+                        'opacity': 0.6
+                    }
+                ).add_to(map_obj)
+                
+        except Exception as e:
+            logger.error(f"Failed to draw routes: {e}")
+
     def generate_maps(self):
         """Generate separate maps for each zone"""
         for zone, stops in self.zone_routes.items():
@@ -70,19 +107,18 @@ class MapVisualizer:
                     tooltip=f"<b>Delivery Hub</b><br>Coordinates: {HUB_LOCATION}"
                 ).add_to(zone_map)
                 
-                # Draw route from hub to first stop in zone
-                if stops:
-                    self.draw_hub_route(zone_map, stops[0])
+                # Draw all routes
+                self.draw_routes(zone_map, stops)
                 
-                # Add zone-specific stop markers
+                # Add delivery point markers
                 for stop in stops:
                     folium.Marker(
                         location=[stop['coordinates'][1], stop['coordinates'][0]],
-                        icon=folium.Icon(color='green', icon='info-sign'),
+                        icon=folium.Icon(color='green'),
                         tooltip=self.generate_tooltip(stop)
                     ).add_to(zone_map)
                 
-                # Save zone-specific map
+                # Save map
                 output_file = f"Zone_{zone}.html"
                 zone_map.save(output_file)
                 logger.info(f"Generated map for Zone {zone} with {len(stops)} stops")
