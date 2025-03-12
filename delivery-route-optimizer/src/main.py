@@ -41,13 +41,34 @@ def main():
         optimizer = RouteOptimizer(data_loader, ors_client)
         route_sequence = optimizer.optimize_route()
         
-        # Group routes by zone
+        # Group and process routes by zone
         zones = {}
         for stop in route_sequence:
             zone = stop['zone']
             if zone not in zones:
                 zones[zone] = []
             zones[zone].append(stop)
+        
+        # Renumber stops and recalculate per zone
+        logger.info(f"Processing {len(zones)} zones...")
+        for zone, stops in zones.items():
+            total_zone_distance = 0
+            for i, stop in enumerate(stops, 1):
+                # Reset stop number for this zone
+                stop['stop_number'] = i
+                
+                # Calculate cumulative distance from hub for this stop
+                prev_stops_distance = sum(s['distance'] for s in stops[:i-1])
+                stop['total_distance'] = stop['distance_from_hub'] + prev_stops_distance
+                
+                total_zone_distance += stop['distance']
+            
+            # Update remaining stops count for this zone
+            total_stops = len(stops)
+            for i, stop in enumerate(stops):
+                stop['remaining_stops'] = total_stops - i
+            
+            logger.debug(f"Zone {zone}: {total_stops} stops, {total_zone_distance/1000:.2f}km total distance")
         
         # Generate maps for each zone
         logger.info(f"Generating {len(zones)} zone-based maps...")

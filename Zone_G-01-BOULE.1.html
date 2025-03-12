@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_1d4586a89cd8d714710ca79718e7fc1a {
+                #map_aa44f795c39c2eb625fa30512115da00 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -39,14 +39,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_1d4586a89cd8d714710ca79718e7fc1a" ></div>
+            <div class="folium-map" id="map_aa44f795c39c2eb625fa30512115da00" ></div>
         
 </body>
 <script>
     
     
-            var map_1d4586a89cd8d714710ca79718e7fc1a = L.map(
-                "map_1d4586a89cd8d714710ca79718e7fc1a",
+            var map_aa44f795c39c2eb625fa30512115da00 = L.map(
+                "map_aa44f795c39c2eb625fa30512115da00",
                 {
                     center: [7.069144169333332, 125.62059128750002],
                     crs: L.CRS.EPSG3857,
@@ -60,25 +60,25 @@
 
         
     
-            var tile_layer_b4d98b04be806d8aa6735b22c665b416 = L.tileLayer(
+            var tile_layer_0d096b00fc4eb8cdb8b96d8da9c7ba1d = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var marker_2113c6f317ed6ad59a82b5000a9b6942 = L.marker(
+            var marker_70d96e1429658de34f5f62d609670950 = L.marker(
                 [7.0854, 125.6117],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_d80dda8e6e5a6ebb92d597bb51c65061 = L.AwesomeMarkers.icon(
+            var icon_ce756cceae77fd4e68133b22071c4c3a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_2113c6f317ed6ad59a82b5000a9b6942.setIcon(icon_d80dda8e6e5a6ebb92d597bb51c65061);
+            marker_70d96e1429658de34f5f62d609670950.setIcon(icon_ce756cceae77fd4e68133b22071c4c3a);
         
     
-            marker_2113c6f317ed6ad59a82b5000a9b6942.bindTooltip(
+            marker_70d96e1429658de34f5f62d609670950.bindTooltip(
                 `<div>
                      <b>Delivery Hub</b><br>Coordinates: (125.6117, 7.0854)
                  </div>`,
@@ -86,818 +86,794 @@
             );
         
     
-        function geo_json_59eb3817cbf5b9591105d832200ad6f4_styler(feature) {
+        function geo_json_0b79c749929ceb8979afad3345205d70_styler(feature) {
             switch(feature.id) {
                 default:
                     return {"color": "red", "opacity": 0.8, "weight": 3};
             }
         }
 
-        function geo_json_59eb3817cbf5b9591105d832200ad6f4_onEachFeature(feature, layer) {
+        function geo_json_0b79c749929ceb8979afad3345205d70_onEachFeature(feature, layer) {
             layer.on({
             });
         };
-        var geo_json_59eb3817cbf5b9591105d832200ad6f4 = L.geoJson(null, {
-                onEachFeature: geo_json_59eb3817cbf5b9591105d832200ad6f4_onEachFeature,
+        var geo_json_0b79c749929ceb8979afad3345205d70 = L.geoJson(null, {
+                onEachFeature: geo_json_0b79c749929ceb8979afad3345205d70_onEachFeature,
             
-                style: geo_json_59eb3817cbf5b9591105d832200ad6f4_styler,
+                style: geo_json_0b79c749929ceb8979afad3345205d70_styler,
         });
 
-        function geo_json_59eb3817cbf5b9591105d832200ad6f4_add (data) {
-            geo_json_59eb3817cbf5b9591105d832200ad6f4
+        function geo_json_0b79c749929ceb8979afad3345205d70_add (data) {
+            geo_json_0b79c749929ceb8979afad3345205d70
                 .addData(data)
-                .addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+                .addTo(map_aa44f795c39c2eb625fa30512115da00);
         }
-            geo_json_59eb3817cbf5b9591105d832200ad6f4_add({"bbox": [125.610963, 7.069821, 125.621848, 7.087823], "features": [{"bbox": [125.610963, 7.069821, 125.621848, 7.087823], "geometry": {"coordinates": [[125.611667, 7.08538], [125.611495, 7.085658], [125.611373, 7.085863], [125.61097, 7.086549], [125.610963, 7.086647], [125.611028, 7.086748], [125.611217, 7.086902], [125.612317, 7.087823], [125.612823, 7.087215], [125.612861, 7.08717], [125.612875, 7.08711], [125.612945, 7.087027], [125.613006, 7.086991], [125.613031, 7.086958], [125.613344, 7.086592], [125.61363, 7.086225], [125.613934, 7.085853], [125.614234, 7.085497], [125.614414, 7.085283], [125.614539, 7.085127], [125.614829, 7.084781], [125.615166, 7.084372], [125.615456, 7.084017], [125.615749, 7.083658], [125.615847, 7.083542], [125.616058, 7.083291], [125.616361, 7.082928], [125.61666, 7.082562], [125.616869, 7.08231], [125.617358, 7.081718], [125.617709, 7.081306], [125.618064, 7.08088], [125.618301, 7.080597], [125.618355, 7.080528], [125.619279, 7.079426], [125.619485, 7.07917], [125.619436, 7.079128], [125.618369, 7.078236], [125.619169, 7.077307], [125.619414, 7.077038], [125.619489, 7.076936], [125.619547, 7.076813], [125.619613, 7.075854], [125.619639, 7.075442], [125.619664, 7.074661], [125.619703, 7.074041], [125.619781, 7.072532], [125.620299, 7.072556], [125.62039, 7.071084], [125.620944, 7.071099], [125.620983, 7.071056], [125.620914, 7.070993], [125.620975, 7.070934], [125.621411, 7.070513], [125.621848, 7.07006], [125.621837, 7.070011], [125.62174, 7.069821], [125.621631, 7.069879]], "type": "LineString"}, "id": "0", "properties": {"extras": {"roadaccessrestrictions": {"summary": [{"amount": 84.51, "distance": 2484.4, "value": 0.0}, {"amount": 15.49, "distance": 455.4, "value": 32.0}], "values": [[0, 9, 32], [9, 57, 0]]}}, "segments": [{"distance": 2939.8, "duration": 490.4, "steps": [{"distance": 361.2, "duration": 78.7, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 7]}, {"distance": 125.5, "duration": 32.4, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [7, 13]}, {"distance": 1121.3, "duration": 161.4, "instruction": "Continue straight onto Porras Street", "name": "Porras Street", "type": 6, "way_points": [13, 35]}, {"distance": 161.1, "duration": 23.2, "instruction": "Turn right onto Lapu-Lapu Street", "name": "Lapu-Lapu Street", "type": 1, "way_points": [35, 37]}, {"distance": 682.1, "duration": 100.2, "instruction": "Turn left onto P. Sobrecarey Street", "name": "P. Sobrecarey Street", "type": 0, "way_points": [37, 46]}, {"distance": 57.1, "duration": 8.2, "instruction": "Turn left onto Juan Luna Extension", "name": "Juan Luna Extension", "type": 0, "way_points": [46, 47]}, {"distance": 164.1, "duration": 23.6, "instruction": "Turn right onto Pioneer Street", "name": "Pioneer Street", "type": 1, "way_points": [47, 48]}, {"distance": 61.2, "duration": 8.8, "instruction": "Turn left onto D. Ponce Street", "name": "D. Ponce Street", "type": 0, "way_points": [48, 49]}, {"distance": 6.4, "duration": 4.6, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [49, 50]}, {"distance": 10.5, "duration": 3.8, "instruction": "Turn right onto M. L. Quezon Boulevard, 916", "name": "M. L. Quezon Boulevard, 916", "type": 1, "way_points": [50, 51]}, {"distance": 175.6, "duration": 42.1, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [51, 56]}, {"distance": 13.7, "duration": 3.3, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [56, 57]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [57, 57]}]}], "summary": {"distance": 2939.8, "duration": 490.4}, "warnings": [{"code": 1, "message": "There may be restrictions on some roads"}], "way_points": [0, 57]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.6117, 7.0854], [125.6215936, 7.069810162]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741677724382}, "type": "FeatureCollection"});
+            geo_json_0b79c749929ceb8979afad3345205d70_add({"bbox": [125.610963, 7.069821, 125.621848, 7.087823], "features": [{"bbox": [125.610963, 7.069821, 125.621848, 7.087823], "geometry": {"coordinates": [[125.611667, 7.08538], [125.611495, 7.085658], [125.611373, 7.085863], [125.61097, 7.086549], [125.610963, 7.086647], [125.611028, 7.086748], [125.611217, 7.086902], [125.612317, 7.087823], [125.612823, 7.087215], [125.612861, 7.08717], [125.612875, 7.08711], [125.612945, 7.087027], [125.613006, 7.086991], [125.613031, 7.086958], [125.613344, 7.086592], [125.61363, 7.086225], [125.613934, 7.085853], [125.614234, 7.085497], [125.614414, 7.085283], [125.614539, 7.085127], [125.614829, 7.084781], [125.615166, 7.084372], [125.615456, 7.084017], [125.615749, 7.083658], [125.615847, 7.083542], [125.616058, 7.083291], [125.616361, 7.082928], [125.61666, 7.082562], [125.616869, 7.08231], [125.617358, 7.081718], [125.617709, 7.081306], [125.618064, 7.08088], [125.618301, 7.080597], [125.618355, 7.080528], [125.619279, 7.079426], [125.619485, 7.07917], [125.619436, 7.079128], [125.618369, 7.078236], [125.619169, 7.077307], [125.619414, 7.077038], [125.619489, 7.076936], [125.619547, 7.076813], [125.619613, 7.075854], [125.619639, 7.075442], [125.619664, 7.074661], [125.619703, 7.074041], [125.619781, 7.072532], [125.620299, 7.072556], [125.62039, 7.071084], [125.620944, 7.071099], [125.620983, 7.071056], [125.620914, 7.070993], [125.620975, 7.070934], [125.621411, 7.070513], [125.621848, 7.07006], [125.621837, 7.070011], [125.62174, 7.069821], [125.621631, 7.069879]], "type": "LineString"}, "id": "0", "properties": {"extras": {"roadaccessrestrictions": {"summary": [{"amount": 84.51, "distance": 2484.4, "value": 0.0}, {"amount": 15.49, "distance": 455.4, "value": 32.0}], "values": [[0, 9, 32], [9, 57, 0]]}}, "segments": [{"distance": 2939.8, "duration": 490.4, "steps": [{"distance": 361.2, "duration": 78.7, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 7]}, {"distance": 125.5, "duration": 32.4, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [7, 13]}, {"distance": 1121.3, "duration": 161.4, "instruction": "Continue straight onto Porras Street", "name": "Porras Street", "type": 6, "way_points": [13, 35]}, {"distance": 161.1, "duration": 23.2, "instruction": "Turn right onto Lapu-Lapu Street", "name": "Lapu-Lapu Street", "type": 1, "way_points": [35, 37]}, {"distance": 682.1, "duration": 100.2, "instruction": "Turn left onto P. Sobrecarey Street", "name": "P. Sobrecarey Street", "type": 0, "way_points": [37, 46]}, {"distance": 57.1, "duration": 8.2, "instruction": "Turn left onto Juan Luna Extension", "name": "Juan Luna Extension", "type": 0, "way_points": [46, 47]}, {"distance": 164.1, "duration": 23.6, "instruction": "Turn right onto Pioneer Street", "name": "Pioneer Street", "type": 1, "way_points": [47, 48]}, {"distance": 61.2, "duration": 8.8, "instruction": "Turn left onto D. Ponce Street", "name": "D. Ponce Street", "type": 0, "way_points": [48, 49]}, {"distance": 6.4, "duration": 4.6, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [49, 50]}, {"distance": 10.5, "duration": 3.8, "instruction": "Turn right onto M. L. Quezon Boulevard, 916", "name": "M. L. Quezon Boulevard, 916", "type": 1, "way_points": [50, 51]}, {"distance": 175.6, "duration": 42.1, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [51, 56]}, {"distance": 13.7, "duration": 3.3, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [56, 57]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [57, 57]}]}], "summary": {"distance": 2939.8, "duration": 490.4}, "warnings": [{"code": 1, "message": "There may be restrictions on some roads"}], "way_points": [0, 57]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.6117, 7.0854], [125.6215936, 7.069810162]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741765537532}, "type": "FeatureCollection"});
 
         
     
-            var marker_2f30abdd40d53ada6e73eac11979eda3 = L.marker(
+            var marker_a2f5abb2f582b7a0c2c4bf3905c6f74e = L.marker(
                 [7.069810162, 125.6215936],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_48ba43202b0ca8c6cf0f45843705e17e = L.AwesomeMarkers.icon(
+            var icon_618377a9ba2a2f774a77c23f15c09d1c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_2f30abdd40d53ada6e73eac11979eda3.setIcon(icon_48ba43202b0ca8c6cf0f45843705e17e);
+            marker_a2f5abb2f582b7a0c2c4bf3905c6f74e.setIcon(icon_618377a9ba2a2f774a77c23f15c09d1c);
         
     
-            marker_2f30abdd40d53ada6e73eac11979eda3.bindTooltip(
+            marker_a2f5abb2f582b7a0c2c4bf3905c6f74e.bindTooltip(
                 `<div>
                      
-            <b>Stop 11</b><br>
+            <b>Stop 1</b><br>
             SPEPH057860575961<br>
             Zone: G-01-BOULE.1<br>
             Address: Gymnasium Piapi Blvd, Brgy 22-C, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6215936, 7.069810162)<br>
             <br>
-            Last Location: (125.6213613, 7.06977332)<br>
             Distance from Hub: 2.94 km<br>
+            Total Distance: 2.94 km<br>
             ETA: 53 min<br>
             <br>
-            Remaining Stops: 228<br>
-            Remaining Parcels: 228
+            Remaining Stops: 24
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_9cf818c9f6afe420d47d517432a31ee4 = L.marker(
+            var marker_cd69e892cdfb2e416197d8e2b47ff976 = L.marker(
                 [7.069788863, 125.6217706],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_db84934dc95528d5e48f4aebceb0ecc5 = L.AwesomeMarkers.icon(
+            var icon_84ed141778367baeb24d37a2700fd8dc = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_9cf818c9f6afe420d47d517432a31ee4.setIcon(icon_db84934dc95528d5e48f4aebceb0ecc5);
+            marker_cd69e892cdfb2e416197d8e2b47ff976.setIcon(icon_84ed141778367baeb24d37a2700fd8dc);
         
     
-            marker_9cf818c9f6afe420d47d517432a31ee4.bindTooltip(
+            marker_cd69e892cdfb2e416197d8e2b47ff976.bindTooltip(
                 `<div>
                      
-            <b>Stop 12</b><br>
+            <b>Stop 2</b><br>
             PH253976645314B<br>
             Zone: G-01-BOULE.1<br>
             Address: Super Block 2, 5th House(3 story, left) Landmark: Ramones store near open canal<br>
             Coordinates: (125.6217706, 7.069788863)<br>
             <br>
-            Last Location: (125.6215936, 7.069810162)<br>
             Distance from Hub: 2.93 km<br>
+            Total Distance: 2.95 km<br>
             ETA: 38 min<br>
             <br>
-            Remaining Stops: 227<br>
-            Remaining Parcels: 227
+            Remaining Stops: 23
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_97e29730d7ab9976b86e8aecd13ba942 = L.marker(
+            var marker_c95c37da61726be07c952831d3c1f9f3 = L.marker(
                 [7.069396207, 125.6213822],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_04513d76b42c26aa59dfb0c0dce97f0d = L.AwesomeMarkers.icon(
+            var icon_058f18f2590db38067988547dafe91ae = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_97e29730d7ab9976b86e8aecd13ba942.setIcon(icon_04513d76b42c26aa59dfb0c0dce97f0d);
+            marker_c95c37da61726be07c952831d3c1f9f3.setIcon(icon_058f18f2590db38067988547dafe91ae);
         
     
-            marker_97e29730d7ab9976b86e8aecd13ba942.bindTooltip(
+            marker_c95c37da61726be07c952831d3c1f9f3.bindTooltip(
                 `<div>
                      
-            <b>Stop 16</b><br>
+            <b>Stop 3</b><br>
             SPEPH059006783651<br>
             Zone: G-01-BOULE.1<br>
             Address: Boulevard San Roque Chapel, Barangay 22-C Leon Garcia, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6213822, 7.069396207)<br>
             <br>
-            Last Location: (125.6218296, 7.069810162)<br>
             Distance from Hub: 3.03 km<br>
+            Total Distance: 3.07 km<br>
             ETA: 181 min<br>
             <br>
-            Remaining Stops: 223<br>
-            Remaining Parcels: 223
+            Remaining Stops: 22
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_9e719d36ed769152822b43295679d40e = L.marker(
+            var marker_7e9e2d3c0b326708484f81dc863fb9ab = L.marker(
                 [7.069396207, 125.6213822],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_0d7d40b66daa7a17541a0bbd6a3a6dbb = L.AwesomeMarkers.icon(
+            var icon_3ff0e86b5972a4dd98d73a007c204cd8 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_9e719d36ed769152822b43295679d40e.setIcon(icon_0d7d40b66daa7a17541a0bbd6a3a6dbb);
+            marker_7e9e2d3c0b326708484f81dc863fb9ab.setIcon(icon_3ff0e86b5972a4dd98d73a007c204cd8);
         
     
-            marker_9e719d36ed769152822b43295679d40e.bindTooltip(
+            marker_7e9e2d3c0b326708484f81dc863fb9ab.bindTooltip(
                 `<div>
                      
-            <b>Stop 17</b><br>
+            <b>Stop 4</b><br>
             SPEPH056952608151<br>
             Zone: G-01-BOULE.1<br>
             Address: San Roque Street, Brgy 22-C, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6213822, 7.069396207)<br>
             <br>
-            Last Location: (125.6213822, 7.069396207)<br>
             Distance from Hub: 3.03 km<br>
+            Total Distance: 3.16 km<br>
             ETA: 6 min<br>
             <br>
-            Remaining Stops: 222<br>
-            Remaining Parcels: 222
+            Remaining Stops: 21
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_ff9d0ccda937373d54edfd86c626eb2f = L.marker(
+            var marker_1838e26e1ed8cf4fe8249cc2a6b9cdbb = L.marker(
                 [7.069396207, 125.6213822],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_5810bf01fa9137e41074e22a08ce4625 = L.AwesomeMarkers.icon(
+            var icon_2e7c3859f28cfff4b45fabd23758bbc3 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_ff9d0ccda937373d54edfd86c626eb2f.setIcon(icon_5810bf01fa9137e41074e22a08ce4625);
+            marker_1838e26e1ed8cf4fe8249cc2a6b9cdbb.setIcon(icon_2e7c3859f28cfff4b45fabd23758bbc3);
         
     
-            marker_ff9d0ccda937373d54edfd86c626eb2f.bindTooltip(
+            marker_1838e26e1ed8cf4fe8249cc2a6b9cdbb.bindTooltip(
                 `<div>
                      
-            <b>Stop 18</b><br>
+            <b>Stop 5</b><br>
             SPEPH057738815281<br>
             Zone: G-01-BOULE.1<br>
             Address: San Roque Chapel Riverbed S Piapi Blvd, B3, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6213822, 7.069396207)<br>
             <br>
-            Last Location: (125.6213822, 7.069396207)<br>
             Distance from Hub: 3.03 km<br>
+            Total Distance: 3.16 km<br>
             ETA: 6 min<br>
             <br>
-            Remaining Stops: 221<br>
-            Remaining Parcels: 221
+            Remaining Stops: 20
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_621a044334549bb185cd80f88df3dd79 = L.marker(
+            var marker_c70a933bffa98131c19e7a4db67f4a4f = L.marker(
                 [7.069396207, 125.6213822],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_c6ec1862d2a6d6f1e4690a6cc62ec8d7 = L.AwesomeMarkers.icon(
+            var icon_4b95e7222bff27bca923b60ebdebba73 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_621a044334549bb185cd80f88df3dd79.setIcon(icon_c6ec1862d2a6d6f1e4690a6cc62ec8d7);
+            marker_c70a933bffa98131c19e7a4db67f4a4f.setIcon(icon_4b95e7222bff27bca923b60ebdebba73);
         
     
-            marker_621a044334549bb185cd80f88df3dd79.bindTooltip(
+            marker_c70a933bffa98131c19e7a4db67f4a4f.bindTooltip(
                 `<div>
                      
-            <b>Stop 19</b><br>
+            <b>Stop 6</b><br>
             SPEPH050806026171<br>
             Zone: G-01-BOULE.1<br>
             Address: San Roque Street, Brgy 22-C, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6213822, 7.069396207)<br>
             <br>
-            Last Location: (125.6213822, 7.069396207)<br>
             Distance from Hub: 3.03 km<br>
+            Total Distance: 3.16 km<br>
             ETA: 6 min<br>
             <br>
-            Remaining Stops: 220<br>
-            Remaining Parcels: 220
+            Remaining Stops: 19
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_31929671f70011734b723f9963689da9 = L.marker(
+            var marker_b4b80dfc60ebcb11230b380d6124dcf7 = L.marker(
                 [7.06958, 125.62135],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_a8d912850e360c29f25f7a5e11d06976 = L.AwesomeMarkers.icon(
+            var icon_d52cc812662351d1a4d2eeef8869593c = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_31929671f70011734b723f9963689da9.setIcon(icon_a8d912850e360c29f25f7a5e11d06976);
+            marker_b4b80dfc60ebcb11230b380d6124dcf7.setIcon(icon_d52cc812662351d1a4d2eeef8869593c);
         
     
-            marker_31929671f70011734b723f9963689da9.bindTooltip(
+            marker_b4b80dfc60ebcb11230b380d6124dcf7.bindTooltip(
                 `<div>
                      
-            <b>Stop 20</b><br>
+            <b>Stop 7</b><br>
             SPEPH059647594851<br>
             Zone: G-01-BOULE.1<br>
             Address: San Roque Chapel Jr Store., Block 3 Piapi Boulevard, Barangay 22-C (Pob.)<br>
             Coordinates: (125.62135, 7.06958)<br>
             <br>
-            Last Location: (125.6213822, 7.069396207)<br>
             Distance from Hub: 3.02 km<br>
+            Total Distance: 3.14 km<br>
             ETA: 30 min<br>
             <br>
-            Remaining Stops: 219<br>
-            Remaining Parcels: 219
+            Remaining Stops: 18
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_296d614d695c6c975f1208761030da69 = L.marker(
+            var marker_40f34b55d8170a9ed27fbac8fd72bb48 = L.marker(
                 [7.069682395, 125.6208667],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_dc40d3650c33880ca567610ce75ef7de = L.AwesomeMarkers.icon(
+            var icon_4d35836e520017bfcc7dab12142826d2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_296d614d695c6c975f1208761030da69.setIcon(icon_dc40d3650c33880ca567610ce75ef7de);
+            marker_40f34b55d8170a9ed27fbac8fd72bb48.setIcon(icon_4d35836e520017bfcc7dab12142826d2);
         
     
-            marker_296d614d695c6c975f1208761030da69.bindTooltip(
+            marker_40f34b55d8170a9ed27fbac8fd72bb48.bindTooltip(
                 `<div>
                      
-            <b>Stop 22</b><br>
+            <b>Stop 8</b><br>
             SPEPH057572069721<br>
             Zone: G-01-BOULE.1<br>
             Address: BRGY.22-C Blk 9 prk.2 (color GRAY nga BALAY/BLACK nga GATE) Likod sa BrgyHall<br>
             Coordinates: (125.6208667, 7.069682395)<br>
             <br>
-            Last Location: (125.6211031, 7.069275246)<br>
             Distance from Hub: 2.96 km<br>
+            Total Distance: 3.10 km<br>
             ETA: 95 min<br>
             <br>
-            Remaining Stops: 217<br>
-            Remaining Parcels: 217
+            Remaining Stops: 17
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_30a06fada0ec353d97a8ef6f9180d292 = L.marker(
+            var marker_b1894968d6398a1894e13ea004e908e6 = L.marker(
                 [7.069682395, 125.6208667],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_c9bfe839b3cb9fe521d4176e191e8092 = L.AwesomeMarkers.icon(
+            var icon_67423710f9befaa7ce846c4b98a5e5f2 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_30a06fada0ec353d97a8ef6f9180d292.setIcon(icon_c9bfe839b3cb9fe521d4176e191e8092);
+            marker_b1894968d6398a1894e13ea004e908e6.setIcon(icon_67423710f9befaa7ce846c4b98a5e5f2);
         
     
-            marker_30a06fada0ec353d97a8ef6f9180d292.bindTooltip(
+            marker_b1894968d6398a1894e13ea004e908e6.bindTooltip(
                 `<div>
                      
-            <b>Stop 23</b><br>
+            <b>Stop 9</b><br>
             SPEPH050252685451<br>
             Zone: G-01-BOULE.1<br>
             Address: Barangay Hall, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6208667, 7.069682395)<br>
             <br>
-            Last Location: (125.6208667, 7.069682395)<br>
             Distance from Hub: 2.96 km<br>
+            Total Distance: 3.15 km<br>
             ETA: 6 min<br>
             <br>
-            Remaining Stops: 216<br>
-            Remaining Parcels: 216
+            Remaining Stops: 16
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_7b9bcfd99eadd3b0486e1123f441d734 = L.marker(
+            var marker_19ef89b0acd70ac24ad09f624cf76bc1 = L.marker(
                 [7.069661717, 125.6208263],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_c47ea8540408c8778a67c834eb5b423a = L.AwesomeMarkers.icon(
+            var icon_c084129ee6f18220556b765b526263fd = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_7b9bcfd99eadd3b0486e1123f441d734.setIcon(icon_c47ea8540408c8778a67c834eb5b423a);
+            marker_19ef89b0acd70ac24ad09f624cf76bc1.setIcon(icon_c084129ee6f18220556b765b526263fd);
         
     
-            marker_7b9bcfd99eadd3b0486e1123f441d734.bindTooltip(
+            marker_19ef89b0acd70ac24ad09f624cf76bc1.bindTooltip(
                 `<div>
                      
-            <b>Stop 24</b><br>
+            <b>Stop 10</b><br>
             SPEPH051558641401<br>
             Zone: G-01-BOULE.1<br>
             Address: Block 6 239, Barangay 22-C (Pob.)piapi blvd<br>
             Coordinates: (125.6208263, 7.069661717)<br>
             <br>
-            Last Location: (125.6208667, 7.069682395)<br>
             Distance from Hub: 2.96 km<br>
+            Total Distance: 3.14 km<br>
             ETA: 11 min<br>
             <br>
-            Remaining Stops: 215<br>
-            Remaining Parcels: 215
+            Remaining Stops: 15
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_3ad56a21d6b538b2cbfc0849f31da7b7 = L.marker(
+            var marker_dc432ca614d70d53ac4084b6266e3803 = L.marker(
                 [7.069755649, 125.6209031],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_27a52a42dabe19f159add7bdf2e4b029 = L.AwesomeMarkers.icon(
+            var icon_519685a0ed8b1a60d5a494f2558f3e6b = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_3ad56a21d6b538b2cbfc0849f31da7b7.setIcon(icon_27a52a42dabe19f159add7bdf2e4b029);
+            marker_dc432ca614d70d53ac4084b6266e3803.setIcon(icon_519685a0ed8b1a60d5a494f2558f3e6b);
         
     
-            marker_3ad56a21d6b538b2cbfc0849f31da7b7.bindTooltip(
+            marker_dc432ca614d70d53ac4084b6266e3803.bindTooltip(
                 `<div>
                      
-            <b>Stop 26</b><br>
+            <b>Stop 11</b><br>
             PH2557481362158<br>
             Zone: G-01-BOULE.1<br>
             Address: 483 Piapi Boulevard, Barangay 22-C (Pob.), Davao City<br>
             Coordinates: (125.6209031, 7.069755649)<br>
             <br>
-            Last Location: (125.6208533, 7.069714336)<br>
             Distance from Hub: 3.00 km<br>
+            Total Distance: 3.18 km<br>
             ETA: 83 min<br>
             <br>
-            Remaining Stops: 213<br>
-            Remaining Parcels: 213
+            Remaining Stops: 14
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_9825a333f122a12040a682b432f88db1 = L.marker(
+            var marker_56f9a149624ac3f4b42e329ff91f4934 = L.marker(
                 [7.069755649, 125.6209031],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_a2f8273f4139927a7113a375259aa062 = L.AwesomeMarkers.icon(
+            var icon_c288da70b918a78c63cb23bc10640664 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_9825a333f122a12040a682b432f88db1.setIcon(icon_a2f8273f4139927a7113a375259aa062);
+            marker_56f9a149624ac3f4b42e329ff91f4934.setIcon(icon_c288da70b918a78c63cb23bc10640664);
         
     
-            marker_9825a333f122a12040a682b432f88db1.bindTooltip(
+            marker_56f9a149624ac3f4b42e329ff91f4934.bindTooltip(
                 `<div>
                      
-            <b>Stop 27</b><br>
+            <b>Stop 12</b><br>
             PH254560939497W<br>
             Zone: G-01-BOULE.1<br>
             Address: SIR #239 Block 6, Piapi Blvd. Davao City<br>
             Coordinates: (125.6209031, 7.069755649)<br>
             <br>
-            Last Location: (125.6209031, 7.069755649)<br>
             Distance from Hub: 3.00 km<br>
+            Total Distance: 3.22 km<br>
             ETA: 6 min<br>
             <br>
-            Remaining Stops: 212<br>
-            Remaining Parcels: 212
+            Remaining Stops: 13
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_eda7f549f81318e3847221d6fd6a52b7 = L.marker(
+            var marker_9d32c2331b2fb1d73fde86a1db976be1 = L.marker(
                 [7.06987, 125.62084],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_43475f64a2984ef39f6a97d305b2e96e = L.AwesomeMarkers.icon(
+            var icon_025a37bad1bc938f82e61a587fbc8869 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_eda7f549f81318e3847221d6fd6a52b7.setIcon(icon_43475f64a2984ef39f6a97d305b2e96e);
+            marker_9d32c2331b2fb1d73fde86a1db976be1.setIcon(icon_025a37bad1bc938f82e61a587fbc8869);
         
     
-            marker_eda7f549f81318e3847221d6fd6a52b7.bindTooltip(
+            marker_9d32c2331b2fb1d73fde86a1db976be1.bindTooltip(
                 `<div>
                      
-            <b>Stop 29</b><br>
+            <b>Stop 13</b><br>
             PH256513270974A<br>
             Zone: G-01-BOULE.1<br>
             Address: Sb2 Revered Brgy 22-C<br>
             Coordinates: (125.62084, 7.06987)<br>
             <br>
-            Last Location: (125.6209031, 7.069755649)<br>
             Distance from Hub: 2.92 km<br>
+            Total Distance: 3.14 km<br>
             ETA: 24 min<br>
             <br>
-            Remaining Stops: 210<br>
-            Remaining Parcels: 210
+            Remaining Stops: 12
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_e4fd2c6322c4d3dcd7b5db3ca16f7488 = L.marker(
+            var marker_dbbf1ac93669bf97bf1e2ee170cfaaa1 = L.marker(
                 [7.069553467, 125.6201008],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_fe639c859f37a81f180659e6de05994e = L.AwesomeMarkers.icon(
+            var icon_eea2f6467b84fa4f221869c7fcf1c1e7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_e4fd2c6322c4d3dcd7b5db3ca16f7488.setIcon(icon_fe639c859f37a81f180659e6de05994e);
+            marker_dbbf1ac93669bf97bf1e2ee170cfaaa1.setIcon(icon_eea2f6467b84fa4f221869c7fcf1c1e7);
         
     
-            marker_e4fd2c6322c4d3dcd7b5db3ca16f7488.bindTooltip(
+            marker_dbbf1ac93669bf97bf1e2ee170cfaaa1.bindTooltip(
                 `<div>
                      
-            <b>Stop 36</b><br>
+            <b>Stop 14</b><br>
             PH258819357518Q<br>
             Zone: G-01-BOULE.1<br>
             Address: Seb Pharmacy, Piapi Boulevard, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6201008, 7.069553467)<br>
             <br>
-            Last Location: (125.62083, 7.0702)<br>
             Distance from Hub: 2.84 km<br>
+            Total Distance: 3.08 km<br>
             ETA: 478 min<br>
             <br>
-            Remaining Stops: 203<br>
-            Remaining Parcels: 203
+            Remaining Stops: 11
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_f8e4ceadf488d6c9eee06dce101a8bf1 = L.marker(
+            var marker_011fd08d0b5fa60efac6be09260bc2da = L.marker(
                 [7.06924, 125.61973],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_54d1b7308d3e9b1df20c7fbba76828af = L.AwesomeMarkers.icon(
+            var icon_3df327d952f2a20d8fee8658dd2a5804 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_f8e4ceadf488d6c9eee06dce101a8bf1.setIcon(icon_54d1b7308d3e9b1df20c7fbba76828af);
+            marker_011fd08d0b5fa60efac6be09260bc2da.setIcon(icon_3df327d952f2a20d8fee8658dd2a5804);
         
     
-            marker_f8e4ceadf488d6c9eee06dce101a8bf1.bindTooltip(
+            marker_011fd08d0b5fa60efac6be09260bc2da.bindTooltip(
                 `<div>
                      
-            <b>Stop 42</b><br>
+            <b>Stop 15</b><br>
             PH255235262480N<br>
             Zone: G-01-BOULE.1<br>
             Address: block 2 piapi boulevard fronting phoenix boulevard OPEN canal may mataas na building na color pink<br>
             Coordinates: (125.61973, 7.06924)<br>
             <br>
-            Last Location: (125.6197688, 7.069267935)<br>
             Distance from Hub: 2.87 km<br>
+            Total Distance: 3.34 km<br>
             ETA: 15 min<br>
             <br>
-            Remaining Stops: 197<br>
-            Remaining Parcels: 197
+            Remaining Stops: 10
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_2396072baf17abb4b990808b4f0facd5 = L.marker(
+            var marker_9e9c23f5ef731b5a71e4b60934103b40 = L.marker(
                 [7.06924, 125.61973],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_fc40d2fab66d8c0d221c5b5a6ea3585a = L.AwesomeMarkers.icon(
+            var icon_39585cc16757a89e3d1381ecb405b4f1 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_2396072baf17abb4b990808b4f0facd5.setIcon(icon_fc40d2fab66d8c0d221c5b5a6ea3585a);
+            marker_9e9c23f5ef731b5a71e4b60934103b40.setIcon(icon_39585cc16757a89e3d1381ecb405b4f1);
         
     
-            marker_2396072baf17abb4b990808b4f0facd5.bindTooltip(
+            marker_9e9c23f5ef731b5a71e4b60934103b40.bindTooltip(
                 `<div>
                      
-            <b>Stop 43</b><br>
+            <b>Stop 16</b><br>
             SPEPH055033557051<br>
             Zone: G-01-BOULE.1<br>
             Address: block 2 piapi boulevard fronting phoenix boulevard OPEN canal may mataas na building na color pink<br>
             Coordinates: (125.61973, 7.06924)<br>
             <br>
-            Last Location: (125.61973, 7.06924)<br>
             Distance from Hub: 2.87 km<br>
+            Total Distance: 3.34 km<br>
             ETA: 6 min<br>
             <br>
-            Remaining Stops: 196<br>
-            Remaining Parcels: 196
+            Remaining Stops: 9
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_e8cdf7c7c393fdd8ccab3035b4e36a80 = L.marker(
+            var marker_c88c7bdd0dfce3658ce22dd164ed8358 = L.marker(
                 [7.06918808, 125.6197823],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_f2442c1f99daa147b7ad9012bb96649e = L.AwesomeMarkers.icon(
+            var icon_c6b4abb7f8b5fa28f46c6ee27d0a43f7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_e8cdf7c7c393fdd8ccab3035b4e36a80.setIcon(icon_f2442c1f99daa147b7ad9012bb96649e);
+            marker_c88c7bdd0dfce3658ce22dd164ed8358.setIcon(icon_c6b4abb7f8b5fa28f46c6ee27d0a43f7);
         
     
-            marker_e8cdf7c7c393fdd8ccab3035b4e36a80.bindTooltip(
+            marker_c88c7bdd0dfce3658ce22dd164ed8358.bindTooltip(
                 `<div>
                      
-            <b>Stop 47</b><br>
+            <b>Stop 17</b><br>
             SPEPH057691377271<br>
             Zone: G-01-BOULE.1<br>
             Address: 290 Block 14 Piapi Blvd<br>
             Coordinates: (125.6197823, 7.06918808)<br>
             <br>
-            Last Location: (125.6198049, 7.069158126)<br>
             Distance from Hub: 3.09 km<br>
+            Total Distance: 3.57 km<br>
             ETA: 8 min<br>
             <br>
-            Remaining Stops: 192<br>
-            Remaining Parcels: 192
+            Remaining Stops: 8
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_22ba19bc26fbbea0e3f45e1aba0eaf83 = L.marker(
+            var marker_6a88fc1a342f2e2a4bda19f42515735b = L.marker(
                 [7.069285893, 125.6198157],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_6ab329578f776834654a5d42fed51f36 = L.AwesomeMarkers.icon(
+            var icon_cbb0ba2b2207d635b5c4a771365727ae = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_22ba19bc26fbbea0e3f45e1aba0eaf83.setIcon(icon_6ab329578f776834654a5d42fed51f36);
+            marker_6a88fc1a342f2e2a4bda19f42515735b.setIcon(icon_cbb0ba2b2207d635b5c4a771365727ae);
         
     
-            marker_22ba19bc26fbbea0e3f45e1aba0eaf83.bindTooltip(
+            marker_6a88fc1a342f2e2a4bda19f42515735b.bindTooltip(
                 `<div>
                      
-            <b>Stop 49</b><br>
+            <b>Stop 18</b><br>
             PH252246636388I<br>
             Zone: G-01-BOULE.1<br>
             Address: 96 blk 11 Piapi Blvd<br>
             Coordinates: (125.6198157, 7.069285893)<br>
             <br>
-            Last Location: (125.6197823, 7.06918808)<br>
             Distance from Hub: 3.11 km<br>
+            Total Distance: 3.58 km<br>
             ETA: 30 min<br>
             <br>
-            Remaining Stops: 190<br>
-            Remaining Parcels: 190
+            Remaining Stops: 7
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_46a0d2781dd4173e4864924d3e905401 = L.marker(
+            var marker_8c7f6700096a511533897f0a62e90201 = L.marker(
                 [7.068684159, 125.6211741],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_9ec75430a163a2f39c45995066f2822e = L.AwesomeMarkers.icon(
+            var icon_7f523f049e1dd94a9241dd6bc726f0db = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_46a0d2781dd4173e4864924d3e905401.setIcon(icon_9ec75430a163a2f39c45995066f2822e);
+            marker_8c7f6700096a511533897f0a62e90201.setIcon(icon_7f523f049e1dd94a9241dd6bc726f0db);
         
     
-            marker_46a0d2781dd4173e4864924d3e905401.bindTooltip(
+            marker_8c7f6700096a511533897f0a62e90201.bindTooltip(
                 `<div>
                      
-            <b>Stop 50</b><br>
+            <b>Stop 19</b><br>
             SPEPH055890950481<br>
             Zone: G-01-BOULE.1<br>
             Address: Barangay 22-C, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6211741, 7.068684159)<br>
             <br>
-            Last Location: (125.6198157, 7.069285893)<br>
             Distance from Hub: 3.02 km<br>
+            Total Distance: 3.51 km<br>
             ETA: 452 min<br>
             <br>
-            Remaining Stops: 189<br>
-            Remaining Parcels: 189
+            Remaining Stops: 6
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_c9858e895117cac6c491fb2e0c8f1a9b = L.marker(
+            var marker_e38b6b7790ffd7fa647540032c14d443 = L.marker(
                 [7.068684159, 125.6211741],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_81477f41d16d9fde84520bb32b3e3342 = L.AwesomeMarkers.icon(
+            var icon_c494dc56804371b40a568ca41783b667 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_c9858e895117cac6c491fb2e0c8f1a9b.setIcon(icon_81477f41d16d9fde84520bb32b3e3342);
+            marker_e38b6b7790ffd7fa647540032c14d443.setIcon(icon_c494dc56804371b40a568ca41783b667);
         
     
-            marker_c9858e895117cac6c491fb2e0c8f1a9b.bindTooltip(
+            marker_e38b6b7790ffd7fa647540032c14d443.bindTooltip(
                 `<div>
                      
-            <b>Stop 51</b><br>
+            <b>Stop 20</b><br>
             SPEPH057237232851<br>
             Zone: G-01-BOULE.1<br>
             Address: Barangay 22-C, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6211741, 7.068684159)<br>
             <br>
-            Last Location: (125.6211741, 7.068684159)<br>
             Distance from Hub: 3.02 km<br>
+            Total Distance: 3.73 km<br>
             ETA: 6 min<br>
             <br>
-            Remaining Stops: 188<br>
-            Remaining Parcels: 188
+            Remaining Stops: 5
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_3ac6f3b256db1eefe5ff0bc6cc66eed9 = L.marker(
+            var marker_939ffed3c47fa20cd489cfcbb3383d40 = L.marker(
                 [7.068684159, 125.6211741],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_faa4cb14965f33f92b8336cd95e2851f = L.AwesomeMarkers.icon(
+            var icon_07fe085e55e6cf3240cab7c049b4eb9e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_3ac6f3b256db1eefe5ff0bc6cc66eed9.setIcon(icon_faa4cb14965f33f92b8336cd95e2851f);
+            marker_939ffed3c47fa20cd489cfcbb3383d40.setIcon(icon_07fe085e55e6cf3240cab7c049b4eb9e);
         
     
-            marker_3ac6f3b256db1eefe5ff0bc6cc66eed9.bindTooltip(
+            marker_939ffed3c47fa20cd489cfcbb3383d40.bindTooltip(
                 `<div>
                      
-            <b>Stop 52</b><br>
+            <b>Stop 21</b><br>
             SPEPH058253580231<br>
             Zone: G-01-BOULE.1<br>
             Address: 22 Piapi Boulevard, Barangay 22-C (Pob.)<br>
             Coordinates: (125.6211741, 7.068684159)<br>
             <br>
-            Last Location: (125.6211741, 7.068684159)<br>
             Distance from Hub: 3.02 km<br>
+            Total Distance: 3.73 km<br>
             ETA: 6 min<br>
             <br>
-            Remaining Stops: 187<br>
-            Remaining Parcels: 187
+            Remaining Stops: 4
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_c58342f9dfc406ff457e99a353b02ac1 = L.marker(
+            var marker_0bf9c58359e846e5e54857eebd744e95 = L.marker(
                 [7.066808489, 125.6197409],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_7ce136753e73238e8df3608bda64e379 = L.AwesomeMarkers.icon(
+            var icon_53e10efbdc46799010a82b55a35bbbc4 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_c58342f9dfc406ff457e99a353b02ac1.setIcon(icon_7ce136753e73238e8df3608bda64e379);
+            marker_0bf9c58359e846e5e54857eebd744e95.setIcon(icon_53e10efbdc46799010a82b55a35bbbc4);
         
     
-            marker_c58342f9dfc406ff457e99a353b02ac1.bindTooltip(
+            marker_0bf9c58359e846e5e54857eebd744e95.bindTooltip(
                 `<div>
                      
-            <b>Stop 66</b><br>
+            <b>Stop 22</b><br>
             SPEPH057420864831<br>
             Zone: G-01-BOULE.1<br>
             Address: C/o xerox orangehause, beside health center 22-c piapi boulevard davao city<br>
             Coordinates: (125.6197409, 7.066808489)<br>
             <br>
-            Last Location: (125.61975, 7.06682)<br>
             Distance from Hub: 3.24 km<br>
+            Total Distance: 3.95 km<br>
             ETA: 60 min<br>
             <br>
-            Remaining Stops: 173<br>
-            Remaining Parcels: 173
+            Remaining Stops: 3
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_9c4a28b3eca93d34163f79511d68a5d7 = L.marker(
+            var marker_a8e5d66a4274b49595ad9e8202b0abbe = L.marker(
                 [7.07237, 125.6222],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_1a8338dae684f12fcad8f3842c972870 = L.AwesomeMarkers.icon(
+            var icon_e3205c8226f0cdf9dec51f99a411c0e5 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_9c4a28b3eca93d34163f79511d68a5d7.setIcon(icon_1a8338dae684f12fcad8f3842c972870);
+            marker_a8e5d66a4274b49595ad9e8202b0abbe.setIcon(icon_e3205c8226f0cdf9dec51f99a411c0e5);
         
     
-            marker_9c4a28b3eca93d34163f79511d68a5d7.bindTooltip(
+            marker_a8e5d66a4274b49595ad9e8202b0abbe.bindTooltip(
                 `<div>
                      
-            <b>Stop 99</b><br>
+            <b>Stop 23</b><br>
             SPEPH054036299961<br>
             Zone: G-01-BOULE.1<br>
             Address: 131 blk. 23 near basketball court<br>
             Coordinates: (125.6222, 7.07237)<br>
             <br>
-            Last Location: (125.62398, 7.06906)<br>
             Distance from Hub: 2.72 km<br>
+            Total Distance: 3.46 km<br>
             ETA: 1181 min<br>
             <br>
-            Remaining Stops: 140<br>
-            Remaining Parcels: 140
+            Remaining Stops: 2
         
                  </div>`,
                 {"sticky": true}
             );
         
     
-            var marker_00f5b3492fa5db87746c8a7e3b59f524 = L.marker(
+            var marker_d4bfe6fb4cbae3c139b467748bf871ac = L.marker(
                 [7.06255, 125.61412],
                 {}
-            ).addTo(map_1d4586a89cd8d714710ca79718e7fc1a);
+            ).addTo(map_aa44f795c39c2eb625fa30512115da00);
         
     
-            var icon_df2220dc321c680136f26aa157da9347 = L.AwesomeMarkers.icon(
+            var icon_8fa73c83254b12cda999542878930870 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_00f5b3492fa5db87746c8a7e3b59f524.setIcon(icon_df2220dc321c680136f26aa157da9347);
+            marker_d4bfe6fb4cbae3c139b467748bf871ac.setIcon(icon_8fa73c83254b12cda999542878930870);
         
     
-            marker_00f5b3492fa5db87746c8a7e3b59f524.bindTooltip(
+            marker_d4bfe6fb4cbae3c139b467748bf871ac.bindTooltip(
                 `<div>
                      
-            <b>Stop 101</b><br>
+            <b>Stop 24</b><br>
             SPEPH057443335661<br>
             Zone: G-01-BOULE.1<br>
             Address: Trading Boulevard & Bucana Street, Purok 6, Barangay 37-D (Pob.)<br>
             Coordinates: (125.61412, 7.06255)<br>
             <br>
-            Last Location: (125.6165681, 7.064026891)<br>
             Distance from Hub: 3.91 km<br>
+            Total Distance: 5.23 km<br>
             ETA: 765 min<br>
             <br>
-            Remaining Stops: 138<br>
-            Remaining Parcels: 138
+            Remaining Stops: 1
         
                  </div>`,
                 {"sticky": true}

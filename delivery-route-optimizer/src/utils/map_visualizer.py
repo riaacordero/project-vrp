@@ -34,12 +34,11 @@ class MapVisualizer:
             Address: {stop['address']}<br>
             Coordinates: {stop['coordinates']}<br>
             <br>
-            Last Location: {stop['last_location']}<br>
             Distance from Hub: {stop['distance_from_hub']/1000:.2f} km<br>
+            Total Distance: {stop['total_distance']/1000:.2f} km<br>
             ETA: {stop['eta']:.0f} min<br>
             <br>
-            Remaining Stops: {stop['remaining_stops']}<br>
-            Remaining Parcels: {stop['remaining_parcels']}
+            Remaining Stops: {stop['remaining_stops']}
         """
 
     def draw_hub_route(self, map_obj: folium.Map, first_stop: Dict):
