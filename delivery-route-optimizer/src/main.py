@@ -2,6 +2,7 @@ import sys
 import os
 import argparse
 import logging
+from datetime import datetime, timedelta
 from utils.data_loader import DeliveryDataLoader
 from utils.ors_client import ORSClient
 from models.route_optimizer import RouteOptimizer
@@ -49,17 +50,29 @@ def main():
                 zones[zone] = []
             zones[zone].append(stop)
         
+        # Set delivery start time to 8:00 AM
+        start_time = datetime.now().replace(hour=8, minute=0, second=0, microsecond=0)
+        
         # Renumber stops and recalculate per zone
         logger.info(f"Processing {len(zones)} zones...")
         for zone, stops in zones.items():
             total_zone_distance = 0
+            current_time = start_time  # Reset time for each zone
+            
             for i, stop in enumerate(stops, 1):
                 # Reset stop number for this zone
                 stop['stop_number'] = i
                 
-                # Calculate cumulative distance from hub for this stop
+                # Calculate cumulative distance and time
                 prev_stops_distance = sum(s['distance'] for s in stops[:i-1])
                 stop['total_distance'] = stop['distance_from_hub'] + prev_stops_distance
+                
+                # Calculate arrival time (assuming 30km/h average speed + 6 min per stop)
+                travel_time = (stop['distance'] / 1000) * (60 / 30)  # minutes
+                service_time = 6  # minutes per stop
+                
+                current_time += timedelta(minutes=travel_time + service_time)
+                stop['arrival_time'] = current_time.strftime('%H:%M')
                 
                 total_zone_distance += stop['distance']
             

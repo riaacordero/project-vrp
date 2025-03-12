@@ -36,7 +36,7 @@ class MapVisualizer:
             <br>
             Distance from Hub: {stop['distance_from_hub']/1000:.2f} km<br>
             Total Distance: {stop['total_distance']/1000:.2f} km<br>
-            ETA: {stop['eta']:.0f} min<br>
+            Arrival Time: {stop['arrival_time']}<br>
             <br>
             Remaining Stops: {stop['remaining_stops']}
         """
