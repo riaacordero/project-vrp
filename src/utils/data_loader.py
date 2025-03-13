@@ -23,6 +23,16 @@ class DeliveryDataLoader:
 
     def preprocess_data(self) -> None:
         """Clean and preprocess delivery data"""
+        # Log initial count
+        initial_count = len(self.data)
+        
+        # Drop rows with NaN coordinates
+        self.data = self.data.dropna(subset=['longitude', 'latitude'])
+        cleaned_count = len(self.data)
+        
+        if initial_count != cleaned_count:
+            logger.warning(f"Removed {initial_count - cleaned_count} rows with invalid coordinates")
+        
         # Drop only unnecessary columns
         columns_to_drop = ['date_of_delivery', 'barangay', 'reason']
         self.data = self.data.drop(columns=[col for col in columns_to_drop if col in self.data.columns])
@@ -30,6 +40,9 @@ class DeliveryDataLoader:
         # Rename columns if needed
         if 'customer_id' in self.data.columns:
             self.data = self.data.rename(columns={'customer_id': 'tracking_num'})
+        
+        # Reset index after cleaning
+        self.data = self.data.reset_index(drop=True)
 
     def validate_data(self) -> None:
         """Validate the loaded delivery data"""
