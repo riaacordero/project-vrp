@@ -1,5 +1,3 @@
-# Contents of /delivery-route-optimizer/delivery-route-optimizer/README.md
-
 # Vehicle Routing Prediction Model
 
 This project implements a vehicle routing prediction model to visualize the most efficient delivery route using customer delivery data and the Open Route Service (ORS) API.
