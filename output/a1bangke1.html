@@ -1,0 +1,3221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a2fb84c3b8965723f014978490765f9f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a2fb84c3b8965723f014978490765f9f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a2fb84c3b8965723f014978490765f9f = L.map(
+                "map_a2fb84c3b8965723f014978490765f9f",
+                {
+                    center: [7.073040981351852, 125.59274891296293],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_89bcc3d703a528a450dd4fd7444b4b96 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var marker_fee68ac0fed2cf3d784461846732b886 = L.marker(
+                [7.070884126747574, 125.61986151071888],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_11f71dd9e6533dfa8f6662cfcd27cb46 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fee68ac0fed2cf3d784461846732b886.setIcon(icon_11f71dd9e6533dfa8f6662cfcd27cb46);
+        
+    
+            marker_fee68ac0fed2cf3d784461846732b886.bindTooltip(
+                `<div>
+                     <b>Delivery Hub</b><br>Coordinates: (125.61986151071888, 7.070884126747574)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+        function geo_json_a5ce5b24b860ae52fa06f7b03d4f1288_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "opacity": 0.8, "weight": 3};
+            }
+        }
+
+        function geo_json_a5ce5b24b860ae52fa06f7b03d4f1288_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a5ce5b24b860ae52fa06f7b03d4f1288 = L.geoJson(null, {
+                onEachFeature: geo_json_a5ce5b24b860ae52fa06f7b03d4f1288_onEachFeature,
+            
+                style: geo_json_a5ce5b24b860ae52fa06f7b03d4f1288_styler,
+        });
+
+        function geo_json_a5ce5b24b860ae52fa06f7b03d4f1288_add (data) {
+            geo_json_a5ce5b24b860ae52fa06f7b03d4f1288
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_a5ce5b24b860ae52fa06f7b03d4f1288_add({"bbox": [125.599007, 7.066321, 125.619888, 7.072329], "features": [{"bbox": [125.599007, 7.066321, 125.619888, 7.072329], "geometry": {"coordinates": [[125.619881, 7.070885], [125.619888, 7.070655], [125.619869, 7.070578], [125.619657, 7.070378], [125.619416, 7.070179], [125.61891, 7.069762], [125.618392, 7.069333], [125.617299, 7.068443], [125.617145, 7.06832], [125.616126, 7.067462], [125.615959, 7.067322], [125.614905, 7.066461], [125.614737, 7.066321], [125.613461, 7.066755], [125.613107, 7.066875], [125.612819, 7.066972], [125.612249, 7.06716], [125.611988, 7.067254], [125.611878, 7.067292], [125.610825, 7.06765], [125.610187, 7.067866], [125.609463, 7.068112], [125.609056, 7.06825], [125.608668, 7.068382], [125.608354, 7.068489], [125.607649, 7.068723], [125.607416, 7.06881], [125.60723, 7.068901], [125.606525, 7.068097], [125.60622, 7.067752], [125.605722, 7.067188], [125.605339, 7.067487], [125.604923, 7.067811], [125.60469, 7.067992], [125.604387, 7.068228], [125.604166, 7.068396], [125.603577, 7.068844], [125.60353, 7.068881], [125.603483, 7.068917], [125.603071, 7.069233], [125.602973, 7.069318], [125.602825, 7.069445], [125.602509, 7.069728], [125.602237, 7.070113], [125.601669, 7.070938], [125.601513, 7.071163], [125.60146, 7.071233], [125.600646, 7.072329], [125.600417, 7.07169], [125.60036, 7.071541], [125.599743, 7.071796], [125.599419, 7.07194], [125.599069, 7.072106], [125.59902, 7.072038], [125.599007, 7.07201]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 2973.7, "duration": 444.8, "steps": [{"distance": 772.5, "duration": 116.5, "instruction": "Head south on Aurora Quezon Street", "name": "Aurora Quezon Street", "type": 11, "way_points": [0, 12]}, {"distance": 876.8, "duration": 126.3, "instruction": "Turn right onto A. Bonifacio Street", "name": "A. Bonifacio Street", "type": 1, "way_points": [12, 27]}, {"distance": 253.0, "duration": 38.3, "instruction": "Turn left onto P. Pelayo Street", "name": "P. Pelayo Street", "type": 0, "way_points": [27, 30]}, {"distance": 808.3, "duration": 124.0, "instruction": "Turn right onto San Pedro Street", "name": "San Pedro Street", "type": 1, "way_points": [30, 47]}, {"distance": 93.1, "duration": 13.4, "instruction": "Turn sharp left onto Father Selga Street", "name": "Father Selga Street", "type": 2, "way_points": [47, 49]}, {"distance": 155.8, "duration": 22.4, "instruction": "Turn right onto Orchid Street", "name": "Orchid Street", "type": 1, "way_points": [49, 52]}, {"distance": 9.3, "duration": 3.3, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [52, 53]}, {"distance": 4.9, "duration": 0.7, "instruction": "Keep left onto Datu Bago Extension", "name": "Datu Bago Extension", "type": 12, "way_points": [53, 54]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at Datu Bago Extension, on the left", "name": "-", "type": 10, "way_points": [54, 54]}]}], "summary": {"distance": 2973.7, "duration": 444.8}, "way_points": [0, 54]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.61986151071888, 7.070884126747574], [125.5990412, 7.071994993]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871841825}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_baf445f383c8237e112b370e6e6ecc20_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_baf445f383c8237e112b370e6e6ecc20_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_baf445f383c8237e112b370e6e6ecc20 = L.geoJson(null, {
+                onEachFeature: geo_json_baf445f383c8237e112b370e6e6ecc20_onEachFeature,
+            
+                style: geo_json_baf445f383c8237e112b370e6e6ecc20_styler,
+        });
+
+        function geo_json_baf445f383c8237e112b370e6e6ecc20_add (data) {
+            geo_json_baf445f383c8237e112b370e6e6ecc20
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_baf445f383c8237e112b370e6e6ecc20_add({"bbox": [125.596093, 7.071062, 125.59902, 7.072038], "features": [{"bbox": [125.596093, 7.071062, 125.59902, 7.072038], "geometry": {"coordinates": [[125.599007, 7.07201], [125.59902, 7.072038], [125.598715, 7.071874], [125.598016, 7.071305], [125.597705, 7.071062], [125.597074, 7.071969], [125.596971, 7.071905], [125.596093, 7.07176]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 420.9, "duration": 100.5, "steps": [{"distance": 4.9, "duration": 0.7, "instruction": "Head northeast on Datu Bago Extension", "name": "Datu Bago Extension", "type": 11, "way_points": [0, 1]}, {"distance": 181.7, "duration": 43.6, "instruction": "Turn sharp left onto Cattleya Street", "name": "Cattleya Street", "type": 2, "way_points": [1, 4]}, {"distance": 122.6, "duration": 29.4, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [4, 5]}, {"distance": 13.5, "duration": 3.2, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [5, 6]}, {"distance": 98.2, "duration": 23.6, "instruction": "Keep right", "name": "-", "type": 13, "way_points": [6, 7]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [7, 7]}]}], "summary": {"distance": 420.9, "duration": 100.5}, "way_points": [0, 7]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5990412, 7.071994993], [125.5960865, 7.071797443]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871841901}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_e74d614f16c82520b8d329195fdd50c6_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_e74d614f16c82520b8d329195fdd50c6_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_e74d614f16c82520b8d329195fdd50c6 = L.geoJson(null, {
+                onEachFeature: geo_json_e74d614f16c82520b8d329195fdd50c6_onEachFeature,
+            
+                style: geo_json_e74d614f16c82520b8d329195fdd50c6_styler,
+        });
+
+        function geo_json_e74d614f16c82520b8d329195fdd50c6_add (data) {
+            geo_json_e74d614f16c82520b8d329195fdd50c6
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_e74d614f16c82520b8d329195fdd50c6_add({"bbox": [125.595608, 7.07168, 125.596093, 7.07176], "features": [{"bbox": [125.595608, 7.07168, 125.596093, 7.07176], "geometry": {"coordinates": [[125.596093, 7.07176], [125.595608, 7.07168]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 54.2, "duration": 13.0, "steps": [{"distance": 54.2, "duration": 13.0, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 54.2, "duration": 13.0}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5960865, 7.071797443], [125.5956102, 7.071667131]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842040}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_99832bdbc80f9aa532e0ddc7fe70f91e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_99832bdbc80f9aa532e0ddc7fe70f91e_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_99832bdbc80f9aa532e0ddc7fe70f91e = L.geoJson(null, {
+                onEachFeature: geo_json_99832bdbc80f9aa532e0ddc7fe70f91e_onEachFeature,
+            
+                style: geo_json_99832bdbc80f9aa532e0ddc7fe70f91e_styler,
+        });
+
+        function geo_json_99832bdbc80f9aa532e0ddc7fe70f91e_add (data) {
+            geo_json_99832bdbc80f9aa532e0ddc7fe70f91e
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_99832bdbc80f9aa532e0ddc7fe70f91e_add({"bbox": [125.594957, 7.071659, 125.595608, 7.07199], "features": [{"bbox": [125.594957, 7.071659, 125.595608, 7.07199], "geometry": {"coordinates": [[125.595608, 7.07168], [125.595481, 7.071659], [125.595188, 7.071806], [125.595027, 7.071911], [125.594957, 7.071974], [125.595057, 7.07199]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 93.4, "duration": 22.4, "steps": [{"distance": 14.3, "duration": 3.4, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 67.9, "duration": 16.3, "instruction": "Turn slight right", "name": "-", "type": 5, "way_points": [1, 4]}, {"distance": 11.1, "duration": 2.7, "instruction": "Turn sharp right", "name": "-", "type": 3, "way_points": [4, 5]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [5, 5]}]}], "summary": {"distance": 93.4, "duration": 22.4}, "way_points": [0, 5]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5956102, 7.071667131], [125.5950355, 7.072121808]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842119}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_dbada65692064bdae19fd4b55e35d2cb_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_dbada65692064bdae19fd4b55e35d2cb_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_dbada65692064bdae19fd4b55e35d2cb = L.geoJson(null, {
+                onEachFeature: geo_json_dbada65692064bdae19fd4b55e35d2cb_onEachFeature,
+            
+                style: geo_json_dbada65692064bdae19fd4b55e35d2cb_styler,
+        });
+
+        function geo_json_dbada65692064bdae19fd4b55e35d2cb_add (data) {
+            geo_json_dbada65692064bdae19fd4b55e35d2cb
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_dbada65692064bdae19fd4b55e35d2cb_add({"bbox": [125.594596, 7.071974, 125.595057, 7.072105], "features": [{"bbox": [125.594596, 7.071974, 125.595057, 7.072105], "geometry": {"coordinates": [[125.595057, 7.07199], [125.594957, 7.071974], [125.594872, 7.072105], [125.594596, 7.072092]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 59.0, "duration": 14.2, "steps": [{"distance": 11.1, "duration": 2.7, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 17.3, "duration": 4.2, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [1, 2]}, {"distance": 30.5, "duration": 7.3, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [2, 3]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [3, 3]}]}], "summary": {"distance": 59.0, "duration": 14.2}, "way_points": [0, 3]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5950355, 7.072121808], [125.5945937, 7.072134851]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842195}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_7d60c64a267d4baeca70a3f7c9fecbe0_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_7d60c64a267d4baeca70a3f7c9fecbe0_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_7d60c64a267d4baeca70a3f7c9fecbe0 = L.geoJson(null, {
+                onEachFeature: geo_json_7d60c64a267d4baeca70a3f7c9fecbe0_onEachFeature,
+            
+                style: geo_json_7d60c64a267d4baeca70a3f7c9fecbe0_styler,
+        });
+
+        function geo_json_7d60c64a267d4baeca70a3f7c9fecbe0_add (data) {
+            geo_json_7d60c64a267d4baeca70a3f7c9fecbe0
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_7d60c64a267d4baeca70a3f7c9fecbe0_add({"bbox": [125.594596, 7.071974, 125.595618, 7.072105], "features": [{"bbox": [125.594596, 7.071974, 125.595618, 7.072105], "geometry": {"coordinates": [[125.594596, 7.072092], [125.594872, 7.072105], [125.594957, 7.071974], [125.595618, 7.072079]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 121.7, "duration": 29.2, "steps": [{"distance": 30.5, "duration": 7.3, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 17.3, "duration": 4.2, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [1, 2]}, {"distance": 73.8, "duration": 17.7, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [2, 3]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, straight ahead", "name": "-", "type": 10, "way_points": [3, 3]}]}], "summary": {"distance": 121.7, "duration": 29.2}, "way_points": [0, 3]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5945937, 7.072134851], [125.595619, 7.072070642]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842287}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_1c1a7877edf8eb9d663dddc700ee0988_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_1c1a7877edf8eb9d663dddc700ee0988_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_1c1a7877edf8eb9d663dddc700ee0988 = L.geoJson(null, {
+                onEachFeature: geo_json_1c1a7877edf8eb9d663dddc700ee0988_onEachFeature,
+            
+                style: geo_json_1c1a7877edf8eb9d663dddc700ee0988_styler,
+        });
+
+        function geo_json_1c1a7877edf8eb9d663dddc700ee0988_add (data) {
+            geo_json_1c1a7877edf8eb9d663dddc700ee0988
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_1c1a7877edf8eb9d663dddc700ee0988_add({"bbox": [125.594596, 7.071974, 125.595618, 7.072782], "features": [{"bbox": [125.594596, 7.071974, 125.595618, 7.072782], "geometry": {"coordinates": [[125.595618, 7.072079], [125.594957, 7.071974], [125.594872, 7.072105], [125.594766, 7.072343], [125.594596, 7.072686], [125.595114, 7.072782]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 220.7, "duration": 53.0, "steps": [{"distance": 73.8, "duration": 17.7, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 88.8, "duration": 21.3, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [1, 4]}, {"distance": 58.2, "duration": 14.0, "instruction": "Turn sharp right", "name": "-", "type": 3, "way_points": [4, 5]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [5, 5]}]}], "summary": {"distance": 220.7, "duration": 53.0}, "way_points": [0, 5]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.595619, 7.072070642], [125.5951003, 7.072856787]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842402}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_ce1f4f7bb0f7cc472fbfd0d2c67fc9cc_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_ce1f4f7bb0f7cc472fbfd0d2c67fc9cc_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ce1f4f7bb0f7cc472fbfd0d2c67fc9cc = L.geoJson(null, {
+                onEachFeature: geo_json_ce1f4f7bb0f7cc472fbfd0d2c67fc9cc_onEachFeature,
+            
+                style: geo_json_ce1f4f7bb0f7cc472fbfd0d2c67fc9cc_styler,
+        });
+
+        function geo_json_ce1f4f7bb0f7cc472fbfd0d2c67fc9cc_add (data) {
+            geo_json_ce1f4f7bb0f7cc472fbfd0d2c67fc9cc
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_ce1f4f7bb0f7cc472fbfd0d2c67fc9cc_add({"bbox": [125.595114, 7.072782, 125.595114, 7.072782], "features": [{"bbox": [125.595114, 7.072782, 125.595114, 7.072782], "geometry": {"coordinates": [[125.595114, 7.072782]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5951003, 7.072856787], [125.5951003, 7.072856787]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842491}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_2aedc4765336f02077bd08a01c760629_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_2aedc4765336f02077bd08a01c760629_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_2aedc4765336f02077bd08a01c760629 = L.geoJson(null, {
+                onEachFeature: geo_json_2aedc4765336f02077bd08a01c760629_onEachFeature,
+            
+                style: geo_json_2aedc4765336f02077bd08a01c760629_styler,
+        });
+
+        function geo_json_2aedc4765336f02077bd08a01c760629_add (data) {
+            geo_json_2aedc4765336f02077bd08a01c760629
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_2aedc4765336f02077bd08a01c760629_add({"bbox": [125.595114, 7.072782, 125.595122, 7.072783], "features": [{"bbox": [125.595114, 7.072782, 125.595122, 7.072783], "geometry": {"coordinates": [[125.595114, 7.072782], [125.595122, 7.072783]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.9, "duration": 0.2, "steps": [{"distance": 0.9, "duration": 0.2, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 0.9, "duration": 0.2}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5951003, 7.072856787], [125.5951103, 7.072846787]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842516}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_4e81ac247daf18c84ffd14592ef7d7c3_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_4e81ac247daf18c84ffd14592ef7d7c3_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_4e81ac247daf18c84ffd14592ef7d7c3 = L.geoJson(null, {
+                onEachFeature: geo_json_4e81ac247daf18c84ffd14592ef7d7c3_onEachFeature,
+            
+                style: geo_json_4e81ac247daf18c84ffd14592ef7d7c3_styler,
+        });
+
+        function geo_json_4e81ac247daf18c84ffd14592ef7d7c3_add (data) {
+            geo_json_4e81ac247daf18c84ffd14592ef7d7c3
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_4e81ac247daf18c84ffd14592ef7d7c3_add({"bbox": [125.594422, 7.072686, 125.595122, 7.073434], "features": [{"bbox": [125.594422, 7.072686, 125.595122, 7.073434], "geometry": {"coordinates": [[125.595122, 7.072783], [125.594596, 7.072686], [125.594519, 7.07285], [125.594467, 7.073104], [125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 145.1, "duration": 34.8, "steps": [{"distance": 59.1, "duration": 14.2, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 86.0, "duration": 20.6, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [1, 4]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [4, 4]}]}], "summary": {"distance": 145.1, "duration": 34.8}, "way_points": [0, 4]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5951103, 7.072846787], [125.5945561, 7.073616387]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842587}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_8ee1a0508f1012b7651518c67480da50_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_8ee1a0508f1012b7651518c67480da50_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_8ee1a0508f1012b7651518c67480da50 = L.geoJson(null, {
+                onEachFeature: geo_json_8ee1a0508f1012b7651518c67480da50_onEachFeature,
+            
+                style: geo_json_8ee1a0508f1012b7651518c67480da50_styler,
+        });
+
+        function geo_json_8ee1a0508f1012b7651518c67480da50_add (data) {
+            geo_json_8ee1a0508f1012b7651518c67480da50
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_8ee1a0508f1012b7651518c67480da50_add({"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "features": [{"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5945561, 7.073616387], [125.5945561, 7.073616387]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842671}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_e667735ad47ede77b63cdc54d9738183_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_e667735ad47ede77b63cdc54d9738183_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_e667735ad47ede77b63cdc54d9738183 = L.geoJson(null, {
+                onEachFeature: geo_json_e667735ad47ede77b63cdc54d9738183_onEachFeature,
+            
+                style: geo_json_e667735ad47ede77b63cdc54d9738183_styler,
+        });
+
+        function geo_json_e667735ad47ede77b63cdc54d9738183_add (data) {
+            geo_json_e667735ad47ede77b63cdc54d9738183
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_e667735ad47ede77b63cdc54d9738183_add({"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "features": [{"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5945561, 7.073616387], [125.5948117, 7.073493439]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842677}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_b3d5fe372cc06d667f852bd28fd6945e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_b3d5fe372cc06d667f852bd28fd6945e_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_b3d5fe372cc06d667f852bd28fd6945e = L.geoJson(null, {
+                onEachFeature: geo_json_b3d5fe372cc06d667f852bd28fd6945e_onEachFeature,
+            
+                style: geo_json_b3d5fe372cc06d667f852bd28fd6945e_styler,
+        });
+
+        function geo_json_b3d5fe372cc06d667f852bd28fd6945e_add (data) {
+            geo_json_b3d5fe372cc06d667f852bd28fd6945e
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_b3d5fe372cc06d667f852bd28fd6945e_add({"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "features": [{"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5948117, 7.073493439], [125.5943108, 7.074013631]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842764}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_c70245b0ced29d1760f1a98d8d061ad1_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_c70245b0ced29d1760f1a98d8d061ad1_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c70245b0ced29d1760f1a98d8d061ad1 = L.geoJson(null, {
+                onEachFeature: geo_json_c70245b0ced29d1760f1a98d8d061ad1_onEachFeature,
+            
+                style: geo_json_c70245b0ced29d1760f1a98d8d061ad1_styler,
+        });
+
+        function geo_json_c70245b0ced29d1760f1a98d8d061ad1_add (data) {
+            geo_json_c70245b0ced29d1760f1a98d8d061ad1
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_c70245b0ced29d1760f1a98d8d061ad1_add({"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "features": [{"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5943108, 7.074013631], [125.5945583, 7.073733506]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842861}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_58760a003b1c717eba0ae80ba9979913_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_58760a003b1c717eba0ae80ba9979913_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_58760a003b1c717eba0ae80ba9979913 = L.geoJson(null, {
+                onEachFeature: geo_json_58760a003b1c717eba0ae80ba9979913_onEachFeature,
+            
+                style: geo_json_58760a003b1c717eba0ae80ba9979913_styler,
+        });
+
+        function geo_json_58760a003b1c717eba0ae80ba9979913_add (data) {
+            geo_json_58760a003b1c717eba0ae80ba9979913
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_58760a003b1c717eba0ae80ba9979913_add({"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "features": [{"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5945583, 7.073733506], [125.5942979, 7.073818684]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871842961}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_5d0e9adb312d3834f72e974560bd8241_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_5d0e9adb312d3834f72e974560bd8241_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_5d0e9adb312d3834f72e974560bd8241 = L.geoJson(null, {
+                onEachFeature: geo_json_5d0e9adb312d3834f72e974560bd8241_onEachFeature,
+            
+                style: geo_json_5d0e9adb312d3834f72e974560bd8241_styler,
+        });
+
+        function geo_json_5d0e9adb312d3834f72e974560bd8241_add (data) {
+            geo_json_5d0e9adb312d3834f72e974560bd8241
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_5d0e9adb312d3834f72e974560bd8241_add({"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "features": [{"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5942979, 7.073818684], [125.5944542, 7.073994367]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843045}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_992380e16f4992304c03d98881300988_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_992380e16f4992304c03d98881300988_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_992380e16f4992304c03d98881300988 = L.geoJson(null, {
+                onEachFeature: geo_json_992380e16f4992304c03d98881300988_onEachFeature,
+            
+                style: geo_json_992380e16f4992304c03d98881300988_styler,
+        });
+
+        function geo_json_992380e16f4992304c03d98881300988_add (data) {
+            geo_json_992380e16f4992304c03d98881300988
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_992380e16f4992304c03d98881300988_add({"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "features": [{"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5944542, 7.073994367], [125.5944542, 7.073994367]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843136}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_32bcd55df16393c93b965aa3c1e06682_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_32bcd55df16393c93b965aa3c1e06682_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_32bcd55df16393c93b965aa3c1e06682 = L.geoJson(null, {
+                onEachFeature: geo_json_32bcd55df16393c93b965aa3c1e06682_onEachFeature,
+            
+                style: geo_json_32bcd55df16393c93b965aa3c1e06682_styler,
+        });
+
+        function geo_json_32bcd55df16393c93b965aa3c1e06682_add (data) {
+            geo_json_32bcd55df16393c93b965aa3c1e06682
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_32bcd55df16393c93b965aa3c1e06682_add({"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "features": [{"bbox": [125.594422, 7.073434, 125.594422, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5944542, 7.073994367], [125.5944301, 7.073782509]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843140}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_4f1956a8cae27023ea598f260a511c7c_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_4f1956a8cae27023ea598f260a511c7c_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_4f1956a8cae27023ea598f260a511c7c = L.geoJson(null, {
+                onEachFeature: geo_json_4f1956a8cae27023ea598f260a511c7c_onEachFeature,
+            
+                style: geo_json_4f1956a8cae27023ea598f260a511c7c_styler,
+        });
+
+        function geo_json_4f1956a8cae27023ea598f260a511c7c_add (data) {
+            geo_json_4f1956a8cae27023ea598f260a511c7c
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_4f1956a8cae27023ea598f260a511c7c_add({"bbox": [125.59237, 7.072063, 125.594872, 7.073434], "features": [{"bbox": [125.59237, 7.072063, 125.594872, 7.073434], "geometry": {"coordinates": [[125.594422, 7.073434], [125.594467, 7.073104], [125.594519, 7.07285], [125.594596, 7.072686], [125.594766, 7.072343], [125.594872, 7.072105], [125.594277, 7.072077], [125.593588, 7.072063], [125.593145, 7.072103], [125.592528, 7.072207], [125.59237, 7.072244]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 435.9, "duration": 104.6, "steps": [{"distance": 157.4, "duration": 37.8, "instruction": "Head south", "name": "-", "type": 11, "way_points": [0, 5]}, {"distance": 278.4, "duration": 66.8, "instruction": "Turn sharp right", "name": "-", "type": 3, "way_points": [5, 10]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [10, 10]}]}], "summary": {"distance": 435.9, "duration": 104.6}, "way_points": [0, 10]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5944301, 7.073782509], [125.5923951, 7.072350222]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843160}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_18288c2a4c2ca04bb3ac5f53fdb9338b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_18288c2a4c2ca04bb3ac5f53fdb9338b_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_18288c2a4c2ca04bb3ac5f53fdb9338b = L.geoJson(null, {
+                onEachFeature: geo_json_18288c2a4c2ca04bb3ac5f53fdb9338b_onEachFeature,
+            
+                style: geo_json_18288c2a4c2ca04bb3ac5f53fdb9338b_styler,
+        });
+
+        function geo_json_18288c2a4c2ca04bb3ac5f53fdb9338b_add (data) {
+            geo_json_18288c2a4c2ca04bb3ac5f53fdb9338b
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_18288c2a4c2ca04bb3ac5f53fdb9338b_add({"bbox": [125.592105, 7.072244, 125.59237, 7.072411], "features": [{"bbox": [125.592105, 7.072244, 125.59237, 7.072411], "geometry": {"coordinates": [[125.59237, 7.072244], [125.592353, 7.072248], [125.592318, 7.072263], [125.592298, 7.072291], [125.59224, 7.072411], [125.592105, 7.072387]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 41.5, "duration": 10.0, "steps": [{"distance": 41.5, "duration": 10.0, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 5]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [5, 5]}]}], "summary": {"distance": 41.5, "duration": 10.0}, "way_points": [0, 5]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5923951, 7.072350222], [125.5920994, 7.072417955]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843257}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_b2a3ad4e7bd921975f4d26aae8980c2a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_b2a3ad4e7bd921975f4d26aae8980c2a_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_b2a3ad4e7bd921975f4d26aae8980c2a = L.geoJson(null, {
+                onEachFeature: geo_json_b2a3ad4e7bd921975f4d26aae8980c2a_onEachFeature,
+            
+                style: geo_json_b2a3ad4e7bd921975f4d26aae8980c2a_styler,
+        });
+
+        function geo_json_b2a3ad4e7bd921975f4d26aae8980c2a_add (data) {
+            geo_json_b2a3ad4e7bd921975f4d26aae8980c2a
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_b2a3ad4e7bd921975f4d26aae8980c2a_add({"bbox": [125.59207, 7.072381, 125.592105, 7.072387], "features": [{"bbox": [125.59207, 7.072381, 125.592105, 7.072387], "geometry": {"coordinates": [[125.592105, 7.072387], [125.59207, 7.072381]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 3.9, "duration": 0.9, "steps": [{"distance": 3.9, "duration": 0.9, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 3.9, "duration": 0.9}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5920994, 7.072417955], [125.5920074, 7.072734466]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843377}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_5b0f9a8dfd681f86c778f06c5fd945be_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_5b0f9a8dfd681f86c778f06c5fd945be_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_5b0f9a8dfd681f86c778f06c5fd945be = L.geoJson(null, {
+                onEachFeature: geo_json_5b0f9a8dfd681f86c778f06c5fd945be_onEachFeature,
+            
+                style: geo_json_5b0f9a8dfd681f86c778f06c5fd945be_styler,
+        });
+
+        function geo_json_5b0f9a8dfd681f86c778f06c5fd945be_add (data) {
+            geo_json_5b0f9a8dfd681f86c778f06c5fd945be
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_5b0f9a8dfd681f86c778f06c5fd945be_add({"bbox": [125.592059, 7.072379, 125.59207, 7.072381], "features": [{"bbox": [125.592059, 7.072379, 125.59207, 7.072381], "geometry": {"coordinates": [[125.59207, 7.072381], [125.592059, 7.072379]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 1.2, "duration": 0.3, "steps": [{"distance": 1.2, "duration": 0.3, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 1.2, "duration": 0.3}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5920074, 7.072734466], [125.5920435, 7.072467723]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843551}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_17914b3015fb4f1022b4122210ed8a2e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_17914b3015fb4f1022b4122210ed8a2e_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_17914b3015fb4f1022b4122210ed8a2e = L.geoJson(null, {
+                onEachFeature: geo_json_17914b3015fb4f1022b4122210ed8a2e_onEachFeature,
+            
+                style: geo_json_17914b3015fb4f1022b4122210ed8a2e_styler,
+        });
+
+        function geo_json_17914b3015fb4f1022b4122210ed8a2e_add (data) {
+            geo_json_17914b3015fb4f1022b4122210ed8a2e
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_17914b3015fb4f1022b4122210ed8a2e_add({"bbox": [125.591893, 7.07235, 125.592059, 7.072379], "features": [{"bbox": [125.591893, 7.07235, 125.592059, 7.072379], "geometry": {"coordinates": [[125.592059, 7.072379], [125.591893, 7.07235]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 18.7, "duration": 4.5, "steps": [{"distance": 18.7, "duration": 4.5, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 18.7, "duration": 4.5}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5920435, 7.072467723], [125.5918982, 7.072318638]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843646}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_dbda0df8321264c85677919c1b3f405a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_dbda0df8321264c85677919c1b3f405a_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_dbda0df8321264c85677919c1b3f405a = L.geoJson(null, {
+                onEachFeature: geo_json_dbda0df8321264c85677919c1b3f405a_onEachFeature,
+            
+                style: geo_json_dbda0df8321264c85677919c1b3f405a_styler,
+        });
+
+        function geo_json_dbda0df8321264c85677919c1b3f405a_add (data) {
+            geo_json_dbda0df8321264c85677919c1b3f405a
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_dbda0df8321264c85677919c1b3f405a_add({"bbox": [125.591543, 7.072343, 125.591893, 7.072367], "features": [{"bbox": [125.591543, 7.072343, 125.591893, 7.072367], "geometry": {"coordinates": [[125.591893, 7.07235], [125.591872, 7.072346], [125.591739, 7.072343], [125.591611, 7.072367], [125.591543, 7.072357]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 39.0, "duration": 9.4, "steps": [{"distance": 39.0, "duration": 9.4, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 4]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [4, 4]}]}], "summary": {"distance": 39.0, "duration": 9.4}, "way_points": [0, 4]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5918982, 7.072318638], [125.5915546, 7.072276049]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843779}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_ac2e3a6f5fa49bacb8a5f862869bdbb9_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_ac2e3a6f5fa49bacb8a5f862869bdbb9_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ac2e3a6f5fa49bacb8a5f862869bdbb9 = L.geoJson(null, {
+                onEachFeature: geo_json_ac2e3a6f5fa49bacb8a5f862869bdbb9_onEachFeature,
+            
+                style: geo_json_ac2e3a6f5fa49bacb8a5f862869bdbb9_styler,
+        });
+
+        function geo_json_ac2e3a6f5fa49bacb8a5f862869bdbb9_add (data) {
+            geo_json_ac2e3a6f5fa49bacb8a5f862869bdbb9
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_ac2e3a6f5fa49bacb8a5f862869bdbb9_add({"bbox": [125.591476, 7.072345, 125.591543, 7.072357], "features": [{"bbox": [125.591476, 7.072345, 125.591543, 7.072357], "geometry": {"coordinates": [[125.591543, 7.072357], [125.59149, 7.07235], [125.591476, 7.072345]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 7.5, "duration": 1.8, "steps": [{"distance": 7.5, "duration": 1.8, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 2]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [2, 2]}]}], "summary": {"distance": 7.5, "duration": 1.8}, "way_points": [0, 2]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5915546, 7.072276049], [125.5914604, 7.072391784]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843876}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_4c5362c438415d0252f50aa500bf4d64_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_4c5362c438415d0252f50aa500bf4d64_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_4c5362c438415d0252f50aa500bf4d64 = L.geoJson(null, {
+                onEachFeature: geo_json_4c5362c438415d0252f50aa500bf4d64_onEachFeature,
+            
+                style: geo_json_4c5362c438415d0252f50aa500bf4d64_styler,
+        });
+
+        function geo_json_4c5362c438415d0252f50aa500bf4d64_add (data) {
+            geo_json_4c5362c438415d0252f50aa500bf4d64
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_4c5362c438415d0252f50aa500bf4d64_add({"bbox": [125.591132, 7.072229, 125.591476, 7.072345], "features": [{"bbox": [125.591132, 7.072229, 125.591476, 7.072345], "geometry": {"coordinates": [[125.591476, 7.072345], [125.591132, 7.072229]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 40.1, "duration": 9.6, "steps": [{"distance": 40.1, "duration": 9.6, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 40.1, "duration": 9.6}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5914604, 7.072391784], [125.5910949, 7.072337364]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871843966}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_e2d621c796ab882e22cf515007f8577b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_e2d621c796ab882e22cf515007f8577b_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_e2d621c796ab882e22cf515007f8577b = L.geoJson(null, {
+                onEachFeature: geo_json_e2d621c796ab882e22cf515007f8577b_onEachFeature,
+            
+                style: geo_json_e2d621c796ab882e22cf515007f8577b_styler,
+        });
+
+        function geo_json_e2d621c796ab882e22cf515007f8577b_add (data) {
+            geo_json_e2d621c796ab882e22cf515007f8577b
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_e2d621c796ab882e22cf515007f8577b_add({"bbox": [125.591034, 7.072219, 125.591132, 7.072235], "features": [{"bbox": [125.591034, 7.072219, 125.591132, 7.072235], "geometry": {"coordinates": [[125.591132, 7.072229], [125.5911, 7.072219], [125.591053, 7.072224], [125.591034, 7.072235]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 11.4, "duration": 2.7, "steps": [{"distance": 11.4, "duration": 2.7, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 3]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [3, 3]}]}], "summary": {"distance": 11.4, "duration": 2.7}, "way_points": [0, 3]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5910949, 7.072337364], [125.5910415, 7.072248623]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844002}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_bb367d13a1d70277047e5fc5c567638f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_bb367d13a1d70277047e5fc5c567638f_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_bb367d13a1d70277047e5fc5c567638f = L.geoJson(null, {
+                onEachFeature: geo_json_bb367d13a1d70277047e5fc5c567638f_onEachFeature,
+            
+                style: geo_json_bb367d13a1d70277047e5fc5c567638f_styler,
+        });
+
+        function geo_json_bb367d13a1d70277047e5fc5c567638f_add (data) {
+            geo_json_bb367d13a1d70277047e5fc5c567638f
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_bb367d13a1d70277047e5fc5c567638f_add({"bbox": [125.590952, 7.072235, 125.591034, 7.072281], "features": [{"bbox": [125.590952, 7.072235, 125.591034, 7.072281], "geometry": {"coordinates": [[125.591034, 7.072235], [125.590952, 7.072281]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 10.4, "duration": 2.5, "steps": [{"distance": 10.4, "duration": 2.5, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 10.4, "duration": 2.5}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5910415, 7.072248623], [125.5909582, 7.072291666]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844132}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_f24bc4f67e4f54e4b5a3f13946d06f79_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_f24bc4f67e4f54e4b5a3f13946d06f79_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_f24bc4f67e4f54e4b5a3f13946d06f79 = L.geoJson(null, {
+                onEachFeature: geo_json_f24bc4f67e4f54e4b5a3f13946d06f79_onEachFeature,
+            
+                style: geo_json_f24bc4f67e4f54e4b5a3f13946d06f79_styler,
+        });
+
+        function geo_json_f24bc4f67e4f54e4b5a3f13946d06f79_add (data) {
+            geo_json_f24bc4f67e4f54e4b5a3f13946d06f79
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_f24bc4f67e4f54e4b5a3f13946d06f79_add({"bbox": [125.59085, 7.072281, 125.590984, 7.07249], "features": [{"bbox": [125.59085, 7.072281, 125.590984, 7.07249], "geometry": {"coordinates": [[125.590952, 7.072281], [125.59085, 7.072338], [125.590984, 7.07249]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 35.4, "duration": 8.5, "steps": [{"distance": 12.9, "duration": 3.1, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 22.5, "duration": 5.4, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [1, 2]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [2, 2]}]}], "summary": {"distance": 35.4, "duration": 8.5}, "way_points": [0, 2]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5909582, 7.072291666], [125.5909126, 7.072552001]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844240}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_a5a106e7742fcb1a1494f4f75682ee5e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_a5a106e7742fcb1a1494f4f75682ee5e_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a5a106e7742fcb1a1494f4f75682ee5e = L.geoJson(null, {
+                onEachFeature: geo_json_a5a106e7742fcb1a1494f4f75682ee5e_onEachFeature,
+            
+                style: geo_json_a5a106e7742fcb1a1494f4f75682ee5e_styler,
+        });
+
+        function geo_json_a5a106e7742fcb1a1494f4f75682ee5e_add (data) {
+            geo_json_a5a106e7742fcb1a1494f4f75682ee5e
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_a5a106e7742fcb1a1494f4f75682ee5e_add({"bbox": [125.590984, 7.07249, 125.591069, 7.072587], "features": [{"bbox": [125.590984, 7.07249, 125.591069, 7.072587], "geometry": {"coordinates": [[125.590984, 7.07249], [125.591069, 7.072587]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 14.2, "duration": 3.4, "steps": [{"distance": 14.2, "duration": 3.4, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 14.2, "duration": 3.4}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5909126, 7.072552001], [125.5911533, 7.07251402]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844278}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_53217e977d637411d6033fbea9a95ce2_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_53217e977d637411d6033fbea9a95ce2_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_53217e977d637411d6033fbea9a95ce2 = L.geoJson(null, {
+                onEachFeature: geo_json_53217e977d637411d6033fbea9a95ce2_onEachFeature,
+            
+                style: geo_json_53217e977d637411d6033fbea9a95ce2_styler,
+        });
+
+        function geo_json_53217e977d637411d6033fbea9a95ce2_add (data) {
+            geo_json_53217e977d637411d6033fbea9a95ce2
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_53217e977d637411d6033fbea9a95ce2_add({"bbox": [125.591069, 7.072587, 125.591082, 7.072602], "features": [{"bbox": [125.591069, 7.072587, 125.591082, 7.072602], "geometry": {"coordinates": [[125.591069, 7.072587], [125.591082, 7.072602]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 2.3, "duration": 0.5, "steps": [{"distance": 2.3, "duration": 0.5, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 2.3, "duration": 0.5}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5911533, 7.07251402], [125.5910211, 7.072654993]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844305}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_e67a17f3c7edf345ca768f4740810722_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_e67a17f3c7edf345ca768f4740810722_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_e67a17f3c7edf345ca768f4740810722 = L.geoJson(null, {
+                onEachFeature: geo_json_e67a17f3c7edf345ca768f4740810722_onEachFeature,
+            
+                style: geo_json_e67a17f3c7edf345ca768f4740810722_styler,
+        });
+
+        function geo_json_e67a17f3c7edf345ca768f4740810722_add (data) {
+            geo_json_e67a17f3c7edf345ca768f4740810722
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_e67a17f3c7edf345ca768f4740810722_add({"bbox": [125.591082, 7.072602, 125.591088, 7.072609], "features": [{"bbox": [125.591082, 7.072602, 125.591088, 7.072609], "geometry": {"coordinates": [[125.591082, 7.072602], [125.591088, 7.072609]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 1.0, "duration": 0.2, "steps": [{"distance": 1.0, "duration": 0.2, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 1.0, "duration": 0.2}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5910211, 7.072654993], [125.5908651, 7.072801774]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844365}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_1373cb02d54421d78835c868e5f3d1fb_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_1373cb02d54421d78835c868e5f3d1fb_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_1373cb02d54421d78835c868e5f3d1fb = L.geoJson(null, {
+                onEachFeature: geo_json_1373cb02d54421d78835c868e5f3d1fb_onEachFeature,
+            
+                style: geo_json_1373cb02d54421d78835c868e5f3d1fb_styler,
+        });
+
+        function geo_json_1373cb02d54421d78835c868e5f3d1fb_add (data) {
+            geo_json_1373cb02d54421d78835c868e5f3d1fb
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_1373cb02d54421d78835c868e5f3d1fb_add({"bbox": [125.591088, 7.072609, 125.591178, 7.072712], "features": [{"bbox": [125.591088, 7.072609, 125.591178, 7.072712], "geometry": {"coordinates": [[125.591088, 7.072609], [125.591178, 7.072712]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 15.1, "duration": 3.6, "steps": [{"distance": 15.1, "duration": 3.6, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 15.1, "duration": 3.6}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5908651, 7.072801774], [125.5912588, 7.072642201]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844429}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_81569cbad09101e202e2a556ff70608f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_81569cbad09101e202e2a556ff70608f_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_81569cbad09101e202e2a556ff70608f = L.geoJson(null, {
+                onEachFeature: geo_json_81569cbad09101e202e2a556ff70608f_onEachFeature,
+            
+                style: geo_json_81569cbad09101e202e2a556ff70608f_styler,
+        });
+
+        function geo_json_81569cbad09101e202e2a556ff70608f_add (data) {
+            geo_json_81569cbad09101e202e2a556ff70608f
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_81569cbad09101e202e2a556ff70608f_add({"bbox": [125.591178, 7.072712, 125.591202, 7.072739], "features": [{"bbox": [125.591178, 7.072712, 125.591202, 7.072739], "geometry": {"coordinates": [[125.591178, 7.072712], [125.591202, 7.072739]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 4.0, "duration": 1.0, "steps": [{"distance": 4.0, "duration": 1.0, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 4.0, "duration": 1.0}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5912588, 7.072642201], [125.59114, 7.072792395]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844476}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_43e32ec1363882f3b14c48017b2b3a76_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_43e32ec1363882f3b14c48017b2b3a76_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_43e32ec1363882f3b14c48017b2b3a76 = L.geoJson(null, {
+                onEachFeature: geo_json_43e32ec1363882f3b14c48017b2b3a76_onEachFeature,
+            
+                style: geo_json_43e32ec1363882f3b14c48017b2b3a76_styler,
+        });
+
+        function geo_json_43e32ec1363882f3b14c48017b2b3a76_add (data) {
+            geo_json_43e32ec1363882f3b14c48017b2b3a76
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_43e32ec1363882f3b14c48017b2b3a76_add({"bbox": [125.591202, 7.072739, 125.591239, 7.072782], "features": [{"bbox": [125.591202, 7.072739, 125.591239, 7.072782], "geometry": {"coordinates": [[125.591202, 7.072739], [125.591239, 7.072782]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 6.4, "duration": 1.5, "steps": [{"distance": 6.4, "duration": 1.5, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 6.4, "duration": 1.5}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.59114, 7.072792395], [125.5915571, 7.072731143]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844511}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_2d028e5e4a117666976a1b13f989bfd7_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_2d028e5e4a117666976a1b13f989bfd7_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_2d028e5e4a117666976a1b13f989bfd7 = L.geoJson(null, {
+                onEachFeature: geo_json_2d028e5e4a117666976a1b13f989bfd7_onEachFeature,
+            
+                style: geo_json_2d028e5e4a117666976a1b13f989bfd7_styler,
+        });
+
+        function geo_json_2d028e5e4a117666976a1b13f989bfd7_add (data) {
+            geo_json_2d028e5e4a117666976a1b13f989bfd7
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_2d028e5e4a117666976a1b13f989bfd7_add({"bbox": [125.591239, 7.072782, 125.591239, 7.072782], "features": [{"bbox": [125.591239, 7.072782, 125.591239, 7.072782], "geometry": {"coordinates": [[125.591239, 7.072782]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5915571, 7.072731143], [125.591559, 7.072803085]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844551}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_6da23e9c43a4b0323e8716bff70b4e87_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_6da23e9c43a4b0323e8716bff70b4e87_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_6da23e9c43a4b0323e8716bff70b4e87 = L.geoJson(null, {
+                onEachFeature: geo_json_6da23e9c43a4b0323e8716bff70b4e87_onEachFeature,
+            
+                style: geo_json_6da23e9c43a4b0323e8716bff70b4e87_styler,
+        });
+
+        function geo_json_6da23e9c43a4b0323e8716bff70b4e87_add (data) {
+            geo_json_6da23e9c43a4b0323e8716bff70b4e87
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_6da23e9c43a4b0323e8716bff70b4e87_add({"bbox": [125.591239, 7.072782, 125.591239, 7.072782], "features": [{"bbox": [125.591239, 7.072782, 125.591239, 7.072782], "geometry": {"coordinates": [[125.591239, 7.072782]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.591559, 7.072803085], [125.591406, 7.072758091]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844595}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_76c1124434e50828138c5888bfb8b8da_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_76c1124434e50828138c5888bfb8b8da_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_76c1124434e50828138c5888bfb8b8da = L.geoJson(null, {
+                onEachFeature: geo_json_76c1124434e50828138c5888bfb8b8da_onEachFeature,
+            
+                style: geo_json_76c1124434e50828138c5888bfb8b8da_styler,
+        });
+
+        function geo_json_76c1124434e50828138c5888bfb8b8da_add (data) {
+            geo_json_76c1124434e50828138c5888bfb8b8da
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_76c1124434e50828138c5888bfb8b8da_add({"bbox": [125.591239, 7.072782, 125.591239, 7.072782], "features": [{"bbox": [125.591239, 7.072782, 125.591239, 7.072782], "geometry": {"coordinates": [[125.591239, 7.072782]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.591406, 7.072758091], [125.5914361, 7.072784817]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844630}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_c8e9376bfbbeb527bdac56483e7a679d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_c8e9376bfbbeb527bdac56483e7a679d_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c8e9376bfbbeb527bdac56483e7a679d = L.geoJson(null, {
+                onEachFeature: geo_json_c8e9376bfbbeb527bdac56483e7a679d_onEachFeature,
+            
+                style: geo_json_c8e9376bfbbeb527bdac56483e7a679d_styler,
+        });
+
+        function geo_json_c8e9376bfbbeb527bdac56483e7a679d_add (data) {
+            geo_json_c8e9376bfbbeb527bdac56483e7a679d
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_c8e9376bfbbeb527bdac56483e7a679d_add({"bbox": [125.591237, 7.072782, 125.591239, 7.072808], "features": [{"bbox": [125.591237, 7.072782, 125.591239, 7.072808], "geometry": {"coordinates": [[125.591239, 7.072782], [125.591237, 7.072808]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 3.0, "duration": 0.7, "steps": [{"distance": 3.0, "duration": 0.7, "instruction": "Head north", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 3.0, "duration": 0.7}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5914361, 7.072784817], [125.5915575, 7.072888263]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844662}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_a298551d37e17da459c19198c0c96b3c_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_a298551d37e17da459c19198c0c96b3c_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a298551d37e17da459c19198c0c96b3c = L.geoJson(null, {
+                onEachFeature: geo_json_a298551d37e17da459c19198c0c96b3c_onEachFeature,
+            
+                style: geo_json_a298551d37e17da459c19198c0c96b3c_styler,
+        });
+
+        function geo_json_a298551d37e17da459c19198c0c96b3c_add (data) {
+            geo_json_a298551d37e17da459c19198c0c96b3c
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_a298551d37e17da459c19198c0c96b3c_add({"bbox": [125.5912, 7.072808, 125.591237, 7.072879], "features": [{"bbox": [125.5912, 7.072808, 125.591237, 7.072879], "geometry": {"coordinates": [[125.591237, 7.072808], [125.5912, 7.072879]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 8.9, "duration": 2.1, "steps": [{"distance": 8.9, "duration": 2.1, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 8.9, "duration": 2.1}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5915575, 7.072888263], [125.5911154, 7.07283564]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844684}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_20099e0432f390eb5b0a00125e4fc8b6_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_20099e0432f390eb5b0a00125e4fc8b6_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_20099e0432f390eb5b0a00125e4fc8b6 = L.geoJson(null, {
+                onEachFeature: geo_json_20099e0432f390eb5b0a00125e4fc8b6_onEachFeature,
+            
+                style: geo_json_20099e0432f390eb5b0a00125e4fc8b6_styler,
+        });
+
+        function geo_json_20099e0432f390eb5b0a00125e4fc8b6_add (data) {
+            geo_json_20099e0432f390eb5b0a00125e4fc8b6
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_20099e0432f390eb5b0a00125e4fc8b6_add({"bbox": [125.591132, 7.072879, 125.5912, 7.07301], "features": [{"bbox": [125.591132, 7.072879, 125.5912, 7.07301], "geometry": {"coordinates": [[125.5912, 7.072879], [125.591132, 7.07301]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 16.4, "duration": 3.9, "steps": [{"distance": 16.4, "duration": 3.9, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 16.4, "duration": 3.9}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5911154, 7.07283564], [125.5910486, 7.072967754]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844740}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_5a00ce3edd66ffbf87f2cd18a741f7d5_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_5a00ce3edd66ffbf87f2cd18a741f7d5_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_5a00ce3edd66ffbf87f2cd18a741f7d5 = L.geoJson(null, {
+                onEachFeature: geo_json_5a00ce3edd66ffbf87f2cd18a741f7d5_onEachFeature,
+            
+                style: geo_json_5a00ce3edd66ffbf87f2cd18a741f7d5_styler,
+        });
+
+        function geo_json_5a00ce3edd66ffbf87f2cd18a741f7d5_add (data) {
+            geo_json_5a00ce3edd66ffbf87f2cd18a741f7d5
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_5a00ce3edd66ffbf87f2cd18a741f7d5_add({"bbox": [125.590897, 7.07301, 125.591132, 7.073425], "features": [{"bbox": [125.590897, 7.07301, 125.591132, 7.073425], "geometry": {"coordinates": [[125.591132, 7.07301], [125.591007, 7.07325], [125.590897, 7.073425]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 53.0, "duration": 12.7, "steps": [{"distance": 53.0, "duration": 12.7, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 2]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, straight ahead", "name": "-", "type": 10, "way_points": [2, 2]}]}], "summary": {"distance": 53.0, "duration": 12.7}, "way_points": [0, 2]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5910486, 7.072967754], [125.5908918, 7.073421955]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844773}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_8d8c5bac4259ae74e7c7e919461c32c4_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_8d8c5bac4259ae74e7c7e919461c32c4_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_8d8c5bac4259ae74e7c7e919461c32c4 = L.geoJson(null, {
+                onEachFeature: geo_json_8d8c5bac4259ae74e7c7e919461c32c4_onEachFeature,
+            
+                style: geo_json_8d8c5bac4259ae74e7c7e919461c32c4_styler,
+        });
+
+        function geo_json_8d8c5bac4259ae74e7c7e919461c32c4_add (data) {
+            geo_json_8d8c5bac4259ae74e7c7e919461c32c4
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_8d8c5bac4259ae74e7c7e919461c32c4_add({"bbox": [125.590651, 7.072338, 125.591239, 7.073425], "features": [{"bbox": [125.590651, 7.072338, 125.591239, 7.073425], "geometry": {"coordinates": [[125.590897, 7.073425], [125.591007, 7.07325], [125.591237, 7.072808], [125.591239, 7.072782], [125.59085, 7.072338], [125.590651, 7.072496]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 174.8, "duration": 41.9, "steps": [{"distance": 146.6, "duration": 35.2, "instruction": "Head southeast", "name": "-", "type": 11, "way_points": [0, 4]}, {"distance": 28.2, "duration": 6.8, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [4, 5]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [5, 5]}]}], "summary": {"distance": 174.8, "duration": 41.9}, "way_points": [0, 5]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5908918, 7.073421955], [125.5907519, 7.072620811]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844791}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_a05f7d6d37d85ecfbb1783bd654eb4dd_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_a05f7d6d37d85ecfbb1783bd654eb4dd_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a05f7d6d37d85ecfbb1783bd654eb4dd = L.geoJson(null, {
+                onEachFeature: geo_json_a05f7d6d37d85ecfbb1783bd654eb4dd_onEachFeature,
+            
+                style: geo_json_a05f7d6d37d85ecfbb1783bd654eb4dd_styler,
+        });
+
+        function geo_json_a05f7d6d37d85ecfbb1783bd654eb4dd_add (data) {
+            geo_json_a05f7d6d37d85ecfbb1783bd654eb4dd
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_a05f7d6d37d85ecfbb1783bd654eb4dd_add({"bbox": [125.590559, 7.072496, 125.590651, 7.07257], "features": [{"bbox": [125.590559, 7.072496, 125.590651, 7.07257], "geometry": {"coordinates": [[125.590651, 7.072496], [125.590559, 7.07257]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 13.1, "duration": 3.1, "steps": [{"distance": 13.1, "duration": 3.1, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 13.1, "duration": 3.1}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5907519, 7.072620811], [125.590705, 7.072750632]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844813}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_a2859ed2ba142069a4bd970ef6b6b675_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_a2859ed2ba142069a4bd970ef6b6b675_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a2859ed2ba142069a4bd970ef6b6b675 = L.geoJson(null, {
+                onEachFeature: geo_json_a2859ed2ba142069a4bd970ef6b6b675_onEachFeature,
+            
+                style: geo_json_a2859ed2ba142069a4bd970ef6b6b675_styler,
+        });
+
+        function geo_json_a2859ed2ba142069a4bd970ef6b6b675_add (data) {
+            geo_json_a2859ed2ba142069a4bd970ef6b6b675
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_a2859ed2ba142069a4bd970ef6b6b675_add({"bbox": [125.5905, 7.07257, 125.590559, 7.072616], "features": [{"bbox": [125.5905, 7.07257, 125.590559, 7.072616], "geometry": {"coordinates": [[125.590559, 7.07257], [125.5905, 7.072616]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 8.3, "duration": 2.0, "steps": [{"distance": 8.3, "duration": 2.0, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 8.3, "duration": 2.0}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.590705, 7.072750632], [125.5904499, 7.072553421]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844827}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_ad69b6bf8bacf382dd7ac8b3e1fc827b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_ad69b6bf8bacf382dd7ac8b3e1fc827b_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ad69b6bf8bacf382dd7ac8b3e1fc827b = L.geoJson(null, {
+                onEachFeature: geo_json_ad69b6bf8bacf382dd7ac8b3e1fc827b_onEachFeature,
+            
+                style: geo_json_ad69b6bf8bacf382dd7ac8b3e1fc827b_styler,
+        });
+
+        function geo_json_ad69b6bf8bacf382dd7ac8b3e1fc827b_add (data) {
+            geo_json_ad69b6bf8bacf382dd7ac8b3e1fc827b
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_ad69b6bf8bacf382dd7ac8b3e1fc827b_add({"bbox": [125.590439, 7.072616, 125.5905, 7.072665], "features": [{"bbox": [125.590439, 7.072616, 125.5905, 7.072665], "geometry": {"coordinates": [[125.5905, 7.072616], [125.590439, 7.072665]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 8.7, "duration": 2.1, "steps": [{"distance": 8.7, "duration": 2.1, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 8.7, "duration": 2.1}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5904499, 7.072553421], [125.5905376, 7.072787286]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844863}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_8be637e2142fa8a137ef088a6cd96ab4_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_8be637e2142fa8a137ef088a6cd96ab4_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_8be637e2142fa8a137ef088a6cd96ab4 = L.geoJson(null, {
+                onEachFeature: geo_json_8be637e2142fa8a137ef088a6cd96ab4_onEachFeature,
+            
+                style: geo_json_8be637e2142fa8a137ef088a6cd96ab4_styler,
+        });
+
+        function geo_json_8be637e2142fa8a137ef088a6cd96ab4_add (data) {
+            geo_json_8be637e2142fa8a137ef088a6cd96ab4
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_8be637e2142fa8a137ef088a6cd96ab4_add({"bbox": [125.590358, 7.072665, 125.590439, 7.072702], "features": [{"bbox": [125.590358, 7.072665, 125.590439, 7.072702], "geometry": {"coordinates": [[125.590439, 7.072665], [125.590392, 7.072702], [125.590358, 7.072684]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 10.9, "duration": 2.6, "steps": [{"distance": 10.9, "duration": 2.6, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 2]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [2, 2]}]}], "summary": {"distance": 10.9, "duration": 2.6}, "way_points": [0, 2]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5905376, 7.072787286], [125.5901746, 7.073017192]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844882}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_c28d859345721da0190714ac4d3a3254_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_c28d859345721da0190714ac4d3a3254_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c28d859345721da0190714ac4d3a3254 = L.geoJson(null, {
+                onEachFeature: geo_json_c28d859345721da0190714ac4d3a3254_onEachFeature,
+            
+                style: geo_json_c28d859345721da0190714ac4d3a3254_styler,
+        });
+
+        function geo_json_c28d859345721da0190714ac4d3a3254_add (data) {
+            geo_json_c28d859345721da0190714ac4d3a3254
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_c28d859345721da0190714ac4d3a3254_add({"bbox": [125.59035, 7.07268, 125.590358, 7.072684], "features": [{"bbox": [125.59035, 7.07268, 125.590358, 7.072684], "geometry": {"coordinates": [[125.590358, 7.072684], [125.59035, 7.07268]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 1.0, "duration": 0.2, "steps": [{"distance": 1.0, "duration": 0.2, "instruction": "Head southwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 1.0, "duration": 0.2}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5901746, 7.073017192], [125.5901258, 7.073032519]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844898}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_06167fce0eafebd5dad6a468e99bc029_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_06167fce0eafebd5dad6a468e99bc029_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_06167fce0eafebd5dad6a468e99bc029 = L.geoJson(null, {
+                onEachFeature: geo_json_06167fce0eafebd5dad6a468e99bc029_onEachFeature,
+            
+                style: geo_json_06167fce0eafebd5dad6a468e99bc029_styler,
+        });
+
+        function geo_json_06167fce0eafebd5dad6a468e99bc029_add (data) {
+            geo_json_06167fce0eafebd5dad6a468e99bc029
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_06167fce0eafebd5dad6a468e99bc029_add({"bbox": [125.590345, 7.072674, 125.59035, 7.07268], "features": [{"bbox": [125.590345, 7.072674, 125.59035, 7.07268], "geometry": {"coordinates": [[125.59035, 7.07268], [125.590345, 7.072674]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 1.3, "duration": 0.3, "steps": [{"distance": 1.3, "duration": 0.3, "instruction": "Head southwest", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 1.3, "duration": 0.3}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5901258, 7.073032519], [125.5903667, 7.072654993]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844900}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_f664c88610d572c1b88662df9a2ee23a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_f664c88610d572c1b88662df9a2ee23a_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_f664c88610d572c1b88662df9a2ee23a = L.geoJson(null, {
+                onEachFeature: geo_json_f664c88610d572c1b88662df9a2ee23a_onEachFeature,
+            
+                style: geo_json_f664c88610d572c1b88662df9a2ee23a_styler,
+        });
+
+        function geo_json_f664c88610d572c1b88662df9a2ee23a_add (data) {
+            geo_json_f664c88610d572c1b88662df9a2ee23a
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_f664c88610d572c1b88662df9a2ee23a_add({"bbox": [125.590307, 7.072338, 125.593442, 7.074873], "features": [{"bbox": [125.590307, 7.072338, 125.593442, 7.074873], "geometry": {"coordinates": [[125.590345, 7.072674], [125.59035, 7.07268], [125.590392, 7.072702], [125.59085, 7.072338], [125.591239, 7.072782], [125.591237, 7.072808], [125.591007, 7.07325], [125.590485, 7.074084], [125.590368, 7.074332], [125.590307, 7.074483], [125.590667, 7.074623], [125.59098, 7.074729], [125.591598, 7.074813], [125.59163, 7.0748], [125.591743, 7.074622], [125.591809, 7.07453], [125.591829, 7.07452], [125.592308, 7.074612], [125.59275, 7.074649], [125.59293, 7.074704], [125.593442, 7.074873]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 726.1, "duration": 174.3, "steps": [{"distance": 71.4, "duration": 17.1, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 3]}, {"distance": 281.4, "duration": 67.5, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [3, 9]}, {"distance": 373.4, "duration": 89.6, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [9, 20]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [20, 20]}]}], "summary": {"distance": 726.1, "duration": 174.3}, "way_points": [0, 20]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5903667, 7.072654993], [125.5934928, 7.074720864]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844918}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_330e8bba698fc0d7cbddcb89b779a175_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_330e8bba698fc0d7cbddcb89b779a175_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_330e8bba698fc0d7cbddcb89b779a175 = L.geoJson(null, {
+                onEachFeature: geo_json_330e8bba698fc0d7cbddcb89b779a175_onEachFeature,
+            
+                style: geo_json_330e8bba698fc0d7cbddcb89b779a175_styler,
+        });
+
+        function geo_json_330e8bba698fc0d7cbddcb89b779a175_add (data) {
+            geo_json_330e8bba698fc0d7cbddcb89b779a175
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_330e8bba698fc0d7cbddcb89b779a175_add({"bbox": [125.590636, 7.07452, 125.594126, 7.075806], "features": [{"bbox": [125.590636, 7.07452, 125.594126, 7.075806], "geometry": {"coordinates": [[125.593442, 7.074873], [125.59293, 7.074704], [125.59275, 7.074649], [125.592308, 7.074612], [125.591829, 7.07452], [125.591809, 7.07453], [125.591743, 7.074622], [125.59163, 7.0748], [125.591598, 7.074813], [125.59098, 7.074729], [125.590667, 7.074623], [125.590636, 7.074929], [125.590654, 7.075129], [125.590722, 7.0753], [125.590794, 7.075396], [125.591107, 7.075656], [125.591445, 7.075806], [125.591535, 7.075757], [125.591661, 7.075643], [125.591979, 7.075638], [125.592253, 7.075629], [125.592652, 7.075513], [125.59309, 7.075364], [125.593584, 7.075504], [125.593749, 7.0755], [125.593917, 7.075471], [125.594028, 7.075423], [125.594094, 7.075498], [125.594126, 7.07556]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 825.2, "duration": 198.1, "steps": [{"distance": 330.7, "duration": 79.4, "instruction": "Head west", "name": "-", "type": 11, "way_points": [0, 10]}, {"distance": 176.1, "duration": 42.3, "instruction": "Turn sharp right", "name": "-", "type": 3, "way_points": [10, 16]}, {"distance": 192.5, "duration": 46.2, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [16, 22]}, {"distance": 125.9, "duration": 30.2, "instruction": "Turn slight left", "name": "-", "type": 4, "way_points": [22, 28]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [28, 28]}]}], "summary": {"distance": 825.2, "duration": 198.1}, "way_points": [0, 28]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5934928, 7.074720864], [125.5941895, 7.075527046]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844925}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_2cbf524ffe7ee25114c25ad90c075813_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_2cbf524ffe7ee25114c25ad90c075813_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_2cbf524ffe7ee25114c25ad90c075813 = L.geoJson(null, {
+                onEachFeature: geo_json_2cbf524ffe7ee25114c25ad90c075813_onEachFeature,
+            
+                style: geo_json_2cbf524ffe7ee25114c25ad90c075813_styler,
+        });
+
+        function geo_json_2cbf524ffe7ee25114c25ad90c075813_add (data) {
+            geo_json_2cbf524ffe7ee25114c25ad90c075813
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_2cbf524ffe7ee25114c25ad90c075813_add({"bbox": [125.594126, 7.07556, 125.594136, 7.075579], "features": [{"bbox": [125.594126, 7.07556, 125.594136, 7.075579], "geometry": {"coordinates": [[125.594126, 7.07556], [125.59413, 7.075567], [125.594136, 7.075579]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 5.2, "duration": 1.0, "steps": [{"distance": 5.2, "duration": 1.0, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 2]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [2, 2]}]}], "summary": {"distance": 5.2, "duration": 1.0}, "way_points": [0, 2]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5941895, 7.075527046], [125.5940174, 7.075633301]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844941}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_990f32342bf23d4e0f8bbdbafeca568d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_990f32342bf23d4e0f8bbdbafeca568d_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_990f32342bf23d4e0f8bbdbafeca568d = L.geoJson(null, {
+                onEachFeature: geo_json_990f32342bf23d4e0f8bbdbafeca568d_onEachFeature,
+            
+                style: geo_json_990f32342bf23d4e0f8bbdbafeca568d_styler,
+        });
+
+        function geo_json_990f32342bf23d4e0f8bbdbafeca568d_add (data) {
+            geo_json_990f32342bf23d4e0f8bbdbafeca568d
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_990f32342bf23d4e0f8bbdbafeca568d_add({"bbox": [125.594136, 7.075579, 125.594159, 7.075629], "features": [{"bbox": [125.594136, 7.075579, 125.594159, 7.075629], "geometry": {"coordinates": [[125.594136, 7.075579], [125.594159, 7.075629]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 6.0, "duration": 1.1, "steps": [{"distance": 6.0, "duration": 1.1, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 6.0, "duration": 1.1}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5940174, 7.075633301], [125.5940446, 7.075680406]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844944}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_c196e50c00a70632d5dd8d0404955df1_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.6, "weight": 2};
+            }
+        }
+
+        function geo_json_c196e50c00a70632d5dd8d0404955df1_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c196e50c00a70632d5dd8d0404955df1 = L.geoJson(null, {
+                onEachFeature: geo_json_c196e50c00a70632d5dd8d0404955df1_onEachFeature,
+            
+                style: geo_json_c196e50c00a70632d5dd8d0404955df1_styler,
+        });
+
+        function geo_json_c196e50c00a70632d5dd8d0404955df1_add (data) {
+            geo_json_c196e50c00a70632d5dd8d0404955df1
+                .addData(data)
+                .addTo(map_a2fb84c3b8965723f014978490765f9f);
+        }
+            geo_json_c196e50c00a70632d5dd8d0404955df1_add({"bbox": [125.594159, 7.075629, 125.594279, 7.075889], "features": [{"bbox": [125.594159, 7.075629, 125.594279, 7.075889], "geometry": {"coordinates": [[125.594159, 7.075629], [125.594279, 7.075889]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 31.9, "duration": 5.7, "steps": [{"distance": 31.9, "duration": 5.7, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [1, 1]}]}], "summary": {"distance": 31.9, "duration": 5.7}, "way_points": [0, 1]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org, OpenStreetMap contributors, tmc - BASt", "engine": {"build_date": "2024-03-21T14:04:52Z", "graph_date": "2025-02-02T10:42:16Z", "version": "8.0.0"}, "query": {"coordinates": [[125.5940446, 7.075680406], [125.5943835, 7.075841394]], "format": "geojson", "profile": "driving-car"}, "service": "routing", "timestamp": 1741871844949}, "type": "FeatureCollection"});
+
+        
+    
+            var marker_d50eb757fce7219f4c4719aedb375d3b = L.marker(
+                [7.071994993, 125.5990412],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_93fd3d9fbfc2b7aca1da3e8693d35ffc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d50eb757fce7219f4c4719aedb375d3b.setIcon(icon_93fd3d9fbfc2b7aca1da3e8693d35ffc);
+        
+    
+            marker_d50eb757fce7219f4c4719aedb375d3b.bindTooltip(
+                `<div>
+                     
+            <b>Stop 1</b><br>
+            SPEPH050775834451<br>
+            Zone: A-01-BANKE.1<br>
+            Address: 793 Cattleya St., Barangay 5-A, Bankerohan, Davao City<br>
+            Coordinates: (125.5990412, 7.071994993)<br>
+            <br>
+            Distance from Hub: 2.97 km<br>
+            Total Distance: 2.97 km<br>
+            Arrival Time: 08:11<br>
+            <br>
+            Remaining Stops: 53
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a59691759182d72e05b93b965d1e9a7d = L.marker(
+                [7.071797443, 125.5960865],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_fd53c8b4c8143355fb3410894b25431c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a59691759182d72e05b93b965d1e9a7d.setIcon(icon_fd53c8b4c8143355fb3410894b25431c);
+        
+    
+            marker_a59691759182d72e05b93b965d1e9a7d.bindTooltip(
+                `<div>
+                     
+            <b>Stop 2</b><br>
+            PH253239869722N<br>
+            Zone: A-01-BANKE.1<br>
+            Address: (Atbang) University of Immaculate Conception-Main, 297 A. Pichon Street, Poblacion District, Davao City<br>
+            Coordinates: (125.5960865, 7.071797443)<br>
+            <br>
+            Distance from Hub: 3.38 km<br>
+            Total Distance: 6.36 km<br>
+            Arrival Time: 08:18<br>
+            <br>
+            Remaining Stops: 52
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8c92791cf631f0e5efc060d4f2985705 = L.marker(
+                [7.071667131, 125.5956102],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_ac69f89d80a1f8d30cf6200decdb18de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8c92791cf631f0e5efc060d4f2985705.setIcon(icon_ac69f89d80a1f8d30cf6200decdb18de);
+        
+    
+            marker_8c92791cf631f0e5efc060d4f2985705.bindTooltip(
+                `<div>
+                     
+            <b>Stop 3</b><br>
+            PH257807707414A<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Everly Hills Purok-15 Barangay 5-A Bankerohan Davao City<br>
+            Coordinates: (125.5956102, 7.071667131)<br>
+            <br>
+            Distance from Hub: 3.38 km<br>
+            Total Distance: 6.77 km<br>
+            Arrival Time: 08:24<br>
+            <br>
+            Remaining Stops: 51
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e1e236a7ed1410c146a2cf8365702d18 = L.marker(
+                [7.072121808, 125.5950355],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_a9bb2799fd910ce522176c3e2b665e78 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e1e236a7ed1410c146a2cf8365702d18.setIcon(icon_a9bb2799fd910ce522176c3e2b665e78);
+        
+    
+            marker_e1e236a7ed1410c146a2cf8365702d18.bindTooltip(
+                `<div>
+                     
+            <b>Stop 4</b><br>
+            PH255290466381J<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Unahan sa Bankerohan Alliance Church (CAMACOP) Cattleya Street, First Pasaka/ Pasubida, 5th Black Gate, Signage: Room For Rent<br>
+            Coordinates: (125.5950355, 7.072121808)<br>
+            <br>
+            Distance from Hub: 3.44 km<br>
+            Total Distance: 6.89 km<br>
+            Arrival Time: 08:31<br>
+            <br>
+            Remaining Stops: 50
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe7f79820cb36d716b8bd63d71357637 = L.marker(
+                [7.072134851, 125.5945937],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_f5a9b37d2d10f8fc86a39f466614f47c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fe7f79820cb36d716b8bd63d71357637.setIcon(icon_f5a9b37d2d10f8fc86a39f466614f47c);
+        
+    
+            marker_fe7f79820cb36d716b8bd63d71357637.bindTooltip(
+                `<div>
+                     
+            <b>Stop 5</b><br>
+            PH250827346755L<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Purok 4, Upper Exodus, Quarry Taas, Brgy 8-A (Pob.) (ikaupat nga hagdanan)<br>
+            Coordinates: (125.5945937, 7.072134851)<br>
+            <br>
+            Distance from Hub: 3.48 km<br>
+            Total Distance: 7.02 km<br>
+            Arrival Time: 08:37<br>
+            <br>
+            Remaining Stops: 49
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1b486eaaebfacffd5f89d195323d665b = L.marker(
+                [7.072070642, 125.595619],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_196a0cd3171316658adbc8974d4a4ae6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1b486eaaebfacffd5f89d195323d665b.setIcon(icon_196a0cd3171316658adbc8974d4a4ae6);
+        
+    
+            marker_1b486eaaebfacffd5f89d195323d665b.bindTooltip(
+                `<div>
+                     
+            <b>Stop 6</b><br>
+            PH253041026644H<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Brgy 8-a prk10 lower madapo hills Limboy Compound<br>
+            Coordinates: (125.595619, 7.072070642)<br>
+            <br>
+            Distance from Hub: 3.46 km<br>
+            Total Distance: 7.06 km<br>
+            Arrival Time: 08:43<br>
+            <br>
+            Remaining Stops: 48
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eabda706323b156da13302d6e3600874 = L.marker(
+                [7.072856787, 125.5951003],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_2f745e3febba40bfce13d06492894a83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_eabda706323b156da13302d6e3600874.setIcon(icon_2f745e3febba40bfce13d06492894a83);
+        
+    
+            marker_eabda706323b156da13302d6e3600874.bindTooltip(
+                `<div>
+                     
+            <b>Stop 7</b><br>
+            SPEPH059178520791<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Purok 7 kawayanan barangay 8-A<br>
+            Coordinates: (125.5951003, 7.072856787)<br>
+            <br>
+            Distance from Hub: 3.69 km<br>
+            Total Distance: 7.41 km<br>
+            Arrival Time: 08:49<br>
+            <br>
+            Remaining Stops: 47
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_15f992cfe3df407b2d890f9be0413cd9 = L.marker(
+                [7.072856787, 125.5951003],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_ce7d95f6db7ffca8e678c21d308c0af9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_15f992cfe3df407b2d890f9be0413cd9.setIcon(icon_ce7d95f6db7ffca8e678c21d308c0af9);
+        
+    
+            marker_15f992cfe3df407b2d890f9be0413cd9.bindTooltip(
+                `<div>
+                     
+            <b>Stop 8</b><br>
+            SPEPH059897687971<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Purok 2 mahogany alley exodus father selga st. davao city<br>
+            Coordinates: (125.5951003, 7.072856787)<br>
+            <br>
+            Distance from Hub: 3.69 km<br>
+            Total Distance: 7.63 km<br>
+            Arrival Time: 08:55<br>
+            <br>
+            Remaining Stops: 46
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf4787f735d6f49b7811daa542fdc3e5 = L.marker(
+                [7.072846787, 125.5951103],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_f47badb04434715465084dad43f9a633 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cf4787f735d6f49b7811daa542fdc3e5.setIcon(icon_f47badb04434715465084dad43f9a633);
+        
+    
+            marker_cf4787f735d6f49b7811daa542fdc3e5.bindTooltip(
+                `<div>
+                     
+            <b>Stop 9</b><br>
+            PH256130534388A<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Datu Bago Extension, Gumamela St. Bankerohan D.C<br>
+            Coordinates: (125.5951103, 7.072846787)<br>
+            <br>
+            Distance from Hub: 3.57 km<br>
+            Total Distance: 7.52 km<br>
+            Arrival Time: 09:01<br>
+            <br>
+            Remaining Stops: 45
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_52e0d7373ec6ea7f34e636d2197b4e97 = L.marker(
+                [7.073616387, 125.5945561],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_150111cb05f35f712c2b7a595dc2e0e7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_52e0d7373ec6ea7f34e636d2197b4e97.setIcon(icon_150111cb05f35f712c2b7a595dc2e0e7);
+        
+    
+            marker_52e0d7373ec6ea7f34e636d2197b4e97.bindTooltip(
+                `<div>
+                     
+            <b>Stop 10</b><br>
+            SPEPH050355365301<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Pag Asa Fish Vendors Association, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5945561, 7.073616387)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.66 km<br>
+            Arrival Time: 09:08<br>
+            <br>
+            Remaining Stops: 44
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1eb3cc25d7b118a59ec22e16be387536 = L.marker(
+                [7.073616387, 125.5945561],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_3c5d448c344643332c3b0f6a91e57791 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1eb3cc25d7b118a59ec22e16be387536.setIcon(icon_3c5d448c344643332c3b0f6a91e57791);
+        
+    
+            marker_1eb3cc25d7b118a59ec22e16be387536.bindTooltip(
+                `<div>
+                     
+            <b>Stop 11</b><br>
+            PH255525225937P<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Brokenshire College College Of Medicine, Barangay 8-A (Pob.)<br>
+            Coordinates: (125.5945561, 7.073616387)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.81 km<br>
+            Arrival Time: 09:14<br>
+            <br>
+            Remaining Stops: 43
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_beb96138ff2da0a26184342ec7959913 = L.marker(
+                [7.073493439, 125.5948117],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_b49fda372902a5472339e09be48744f4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_beb96138ff2da0a26184342ec7959913.setIcon(icon_b49fda372902a5472339e09be48744f4);
+        
+    
+            marker_beb96138ff2da0a26184342ec7959913.bindTooltip(
+                `<div>
+                     
+            <b>Stop 12</b><br>
+            PH250284315203B<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Everly Hills, Block 6 Lot 3, Barangay 5-A (Pob.) Quarry taas<br>
+            Coordinates: (125.5948117, 7.073493439)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.81 km<br>
+            Arrival Time: 09:20<br>
+            <br>
+            Remaining Stops: 42
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9da23f432913ffad22e6e6759ff51c15 = L.marker(
+                [7.074013631, 125.5943108],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_555d7560f7b7f061869e24f7c45961b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9da23f432913ffad22e6e6759ff51c15.setIcon(icon_555d7560f7b7f061869e24f7c45961b8);
+        
+    
+            marker_9da23f432913ffad22e6e6759ff51c15.bindTooltip(
+                `<div>
+                     
+            <b>Stop 13</b><br>
+            PH254544051448L<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Datu Bago Street, Purok11, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5943108, 7.074013631)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.81 km<br>
+            Arrival Time: 09:26<br>
+            <br>
+            Remaining Stops: 41
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4fed8f67d1b8c4a4a6d8c469e96a72ff = L.marker(
+                [7.073733506, 125.5945583],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_69a90e40915aca5f842dd8a558cf64af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4fed8f67d1b8c4a4a6d8c469e96a72ff.setIcon(icon_69a90e40915aca5f842dd8a558cf64af);
+        
+    
+            marker_4fed8f67d1b8c4a4a6d8c469e96a72ff.bindTooltip(
+                `<div>
+                     
+            <b>Stop 14</b><br>
+            PH259864828579Z<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Brgy. 5-A, Gumamela St. Bankerohan<br>
+            Coordinates: (125.5945583, 7.073733506)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.81 km<br>
+            Arrival Time: 09:32<br>
+            <br>
+            Remaining Stops: 40
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dc74a7ad144564d2be94cb9ad9806449 = L.marker(
+                [7.073818684, 125.5942979],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_f51b134d93583df15d193f21f98825b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_dc74a7ad144564d2be94cb9ad9806449.setIcon(icon_f51b134d93583df15d193f21f98825b3);
+        
+    
+            marker_dc74a7ad144564d2be94cb9ad9806449.bindTooltip(
+                `<div>
+                     
+            <b>Stop 15</b><br>
+            PH252305007048N<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Brgy 8-A Lower Madapo Hills, Bariquit Compound, Bankerohan Davao City<br>
+            Coordinates: (125.5942979, 7.073818684)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.81 km<br>
+            Arrival Time: 09:38<br>
+            <br>
+            Remaining Stops: 39
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_63870673eeffbe5029c44ba9a0974674 = L.marker(
+                [7.073994367, 125.5944542],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_c9837e532b440237c40463e0658a808f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_63870673eeffbe5029c44ba9a0974674.setIcon(icon_c9837e532b440237c40463e0658a808f);
+        
+    
+            marker_63870673eeffbe5029c44ba9a0974674.bindTooltip(
+                `<div>
+                     
+            <b>Stop 16</b><br>
+            PH254719776057H<br>
+            Zone: A-01-BANKE.1<br>
+            Address: OPD Main Entrance Broken Shire Hospital, Barangay 8-A (Pob.) ibilin lang sa entrance Guard .<br>
+            Coordinates: (125.5944542, 7.073994367)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.81 km<br>
+            Arrival Time: 09:44<br>
+            <br>
+            Remaining Stops: 38
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8791679e891ded44074b7ab61f862381 = L.marker(
+                [7.073994367, 125.5944542],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_9fd7bb0b056ce95e6eed6906a5ff3469 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8791679e891ded44074b7ab61f862381.setIcon(icon_9fd7bb0b056ce95e6eed6906a5ff3469);
+        
+    
+            marker_8791679e891ded44074b7ab61f862381.bindTooltip(
+                `<div>
+                     
+            <b>Stop 17</b><br>
+            PH2551998799985<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Lower Madapo Bankerohan, Purok 17-B, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5944542, 7.073994367)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.81 km<br>
+            Arrival Time: 09:50<br>
+            <br>
+            Remaining Stops: 37
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a84d434ca94d21e824ed3dec520a26ae = L.marker(
+                [7.073782509, 125.5944301],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_7adf92b1cffd069f33da05342fcc9f99 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a84d434ca94d21e824ed3dec520a26ae.setIcon(icon_7adf92b1cffd069f33da05342fcc9f99);
+        
+    
+            marker_a84d434ca94d21e824ed3dec520a26ae.bindTooltip(
+                `<div>
+                     
+            <b>Stop 18</b><br>
+            PH256177689851I<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Brokenshire Hospital, Fr. Selga Street, Barangay 8-A (Pob.) FRONT MAIN ENTRANCE, pwede iwan lang sa guard<br>
+            Coordinates: (125.5944301, 7.073782509)<br>
+            <br>
+            Distance from Hub: 3.72 km<br>
+            Total Distance: 7.81 km<br>
+            Arrival Time: 09:56<br>
+            <br>
+            Remaining Stops: 36
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5f8bf1ef3669375cc69bbc96d7641591 = L.marker(
+                [7.072350222, 125.5923951],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_8c951049c16e5c7db850006bd2886ab5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5f8bf1ef3669375cc69bbc96d7641591.setIcon(icon_8c951049c16e5c7db850006bd2886ab5);
+        
+    
+            marker_5f8bf1ef3669375cc69bbc96d7641591.bindTooltip(
+                `<div>
+                     
+            <b>Stop 19</b><br>
+            PH253778423111S<br>
+            Zone: A-01-BANKE.1<br>
+            Address: 3JC2+P8H, San Pedro St, Mary Mediatrix Inn<br>
+            Coordinates: (125.5923951, 7.072350222)<br>
+            <br>
+            Distance from Hub: 3.73 km<br>
+            Total Distance: 7.82 km<br>
+            Arrival Time: 10:03<br>
+            <br>
+            Remaining Stops: 35
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_39158110ba042698e1cb8908733d8d63 = L.marker(
+                [7.072417955, 125.5920994],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_95f83bec8b0f57a5aee9e487e79094b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_39158110ba042698e1cb8908733d8d63.setIcon(icon_95f83bec8b0f57a5aee9e487e79094b8);
+        
+    
+            marker_39158110ba042698e1cb8908733d8d63.bindTooltip(
+                `<div>
+                     
+            <b>Stop 20</b><br>
+            PH255298396543R<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Iyah Peanut Butter Dry Good Section, Stall#34, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5920994, 7.072417955)<br>
+            <br>
+            Distance from Hub: 3.77 km<br>
+            Total Distance: 8.29 km<br>
+            Arrival Time: 10:09<br>
+            <br>
+            Remaining Stops: 34
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9081045a2ec068249f4f1618ba9c9296 = L.marker(
+                [7.072734466, 125.5920074],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_643d48192e0d028fe042722a743fe07a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9081045a2ec068249f4f1618ba9c9296.setIcon(icon_643d48192e0d028fe042722a743fe07a);
+        
+    
+            marker_9081045a2ec068249f4f1618ba9c9296.bindTooltip(
+                `<div>
+                     
+            <b>Stop 21</b><br>
+            PH2562475361439<br>
+            Zone: A-01-BANKE.1<br>
+            Address: San Pedro Extension small green gate in front of vegas Gas Station<br>
+            Coordinates: (125.5920074, 7.072734466)<br>
+            <br>
+            Distance from Hub: 3.77 km<br>
+            Total Distance: 8.34 km<br>
+            Arrival Time: 10:15<br>
+            <br>
+            Remaining Stops: 33
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9c275247e8168e988228b8c13775cee = L.marker(
+                [7.072467723, 125.5920435],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_d112001e94a76e37c707f3d7f33e53d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a9c275247e8168e988228b8c13775cee.setIcon(icon_d112001e94a76e37c707f3d7f33e53d6);
+        
+    
+            marker_a9c275247e8168e988228b8c13775cee.bindTooltip(
+                `<div>
+                     
+            <b>Stop 22</b><br>
+            PH2523313129808<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Cenojas Boarding House, Blk 2 lot 6 & 7, Upper Madapo Hills, Don Isidro village, Barangay 5-A, Bankerohan, Davao City<br>
+            Coordinates: (125.5920435, 7.072467723)<br>
+            <br>
+            Distance from Hub: 3.77 km<br>
+            Total Distance: 8.34 km<br>
+            Arrival Time: 10:21<br>
+            <br>
+            Remaining Stops: 32
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dfe9233e2c7f94da6c89056ef9acc571 = L.marker(
+                [7.072318638, 125.5918982],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_e27ec498e77038f56364240447d209b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_dfe9233e2c7f94da6c89056ef9acc571.setIcon(icon_e27ec498e77038f56364240447d209b7);
+        
+    
+            marker_dfe9233e2c7f94da6c89056ef9acc571.bindTooltip(
+                `<div>
+                     
+            <b>Stop 23</b><br>
+            SPEPH054050737831<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Catleya Street, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5918982, 7.072318638)<br>
+            <br>
+            Distance from Hub: 3.79 km<br>
+            Total Distance: 8.36 km<br>
+            Arrival Time: 10:27<br>
+            <br>
+            Remaining Stops: 31
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c0bf5ecd57d17a5f1a63758ef2d30f76 = L.marker(
+                [7.072276049, 125.5915546],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_d2eb092f3fae15a00eaa68535d105bd0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c0bf5ecd57d17a5f1a63758ef2d30f76.setIcon(icon_d2eb092f3fae15a00eaa68535d105bd0);
+        
+    
+            marker_c0bf5ecd57d17a5f1a63758ef2d30f76.bindTooltip(
+                `<div>
+                     
+            <b>Stop 24</b><br>
+            SPEPH051704331141<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Smash And Drop Badminton Center, San Pedro Extension Street, Barangay 6-A (Pob.)<br>
+            Coordinates: (125.5915546, 7.072276049)<br>
+            <br>
+            Distance from Hub: 3.83 km<br>
+            Total Distance: 8.42 km<br>
+            Arrival Time: 10:33<br>
+            <br>
+            Remaining Stops: 30
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c48c756373f1be0101c152fab5553233 = L.marker(
+                [7.072391784, 125.5914604],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_077a8b9f9a995c4203e892eb2d0e447d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c48c756373f1be0101c152fab5553233.setIcon(icon_077a8b9f9a995c4203e892eb2d0e447d);
+        
+    
+            marker_c48c756373f1be0101c152fab5553233.bindTooltip(
+                `<div>
+                     
+            <b>Stop 25</b><br>
+            PH254498037086H<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Cenojas Boarding House, Blk 2 lot 6 & 7, Upper Madapo Hills, Don Isidro village, Barangay 5-A, Bankerohan, Davao City<br>
+            Coordinates: (125.5914604, 7.072391784)<br>
+            <br>
+            Distance from Hub: 3.84 km<br>
+            Total Distance: 8.47 km<br>
+            Arrival Time: 10:39<br>
+            <br>
+            Remaining Stops: 29
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0945fd5f4786dc82f1268ac241c87720 = L.marker(
+                [7.072337364, 125.5910949],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_378958aac195c4a31cc878ebd95f545e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0945fd5f4786dc82f1268ac241c87720.setIcon(icon_378958aac195c4a31cc878ebd95f545e);
+        
+    
+            marker_0945fd5f4786dc82f1268ac241c87720.bindTooltip(
+                `<div>
+                     
+            <b>Stop 26</b><br>
+            PH2538932401118<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Lower Madapo Bombahan Outpost, Purok 9-b, Barangay 8-A (Pob.)<br>
+            Coordinates: (125.5910949, 7.072337364)<br>
+            <br>
+            Distance from Hub: 3.88 km<br>
+            Total Distance: 8.51 km<br>
+            Arrival Time: 10:45<br>
+            <br>
+            Remaining Stops: 28
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c94ca5f8aa47c05c6e2ccce6d744d730 = L.marker(
+                [7.072248623, 125.5910415],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_3a475d9cf78fbe77524c189b32c0c37b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c94ca5f8aa47c05c6e2ccce6d744d730.setIcon(icon_3a475d9cf78fbe77524c189b32c0c37b);
+        
+    
+            marker_c94ca5f8aa47c05c6e2ccce6d744d730.bindTooltip(
+                `<div>
+                     
+            <b>Stop 27</b><br>
+            PH254823208823A<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Datu Bago Street, Prk 13, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5910415, 7.072248623)<br>
+            <br>
+            Distance from Hub: 3.89 km<br>
+            Total Distance: 8.57 km<br>
+            Arrival Time: 10:51<br>
+            <br>
+            Remaining Stops: 27
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_007ad9ff406cad829b724579f15f8c88 = L.marker(
+                [7.072291666, 125.5909582],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_8c331a2f44b729267462c2bd26104e77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_007ad9ff406cad829b724579f15f8c88.setIcon(icon_8c331a2f44b729267462c2bd26104e77);
+        
+    
+            marker_007ad9ff406cad829b724579f15f8c88.bindTooltip(
+                `<div>
+                     
+            <b>Stop 28</b><br>
+            PH2574657715174<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Madapo Hills, Father Selga Street, Barangay 8-A (Pob.) (Housing)<br>
+            Coordinates: (125.5909582, 7.072291666)<br>
+            <br>
+            Distance from Hub: 3.90 km<br>
+            Total Distance: 8.59 km<br>
+            Arrival Time: 10:57<br>
+            <br>
+            Remaining Stops: 26
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fb71054eacd27b88d6adcc8ed1e3b54c = L.marker(
+                [7.072552001, 125.5909126],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_92fa048042f493be6e4de2305e5a48a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fb71054eacd27b88d6adcc8ed1e3b54c.setIcon(icon_92fa048042f493be6e4de2305e5a48a5);
+        
+    
+            marker_fb71054eacd27b88d6adcc8ed1e3b54c.bindTooltip(
+                `<div>
+                     
+            <b>Stop 29</b><br>
+            PH252265303924R<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Don Isidro Lots 5 And 6 Cenojas Dorm, Block 2, Barangay 5-A (Pob.) (Pakiiwan lang po sa mesa sa loob. Thank you!)<br>
+            Coordinates: (125.5909126, 7.072552001)<br>
+            <br>
+            Distance from Hub: 3.93 km<br>
+            Total Distance: 8.63 km<br>
+            Arrival Time: 11:03<br>
+            <br>
+            Remaining Stops: 25
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a7c13c75ccc1b25793ab27a1d4b15a4d = L.marker(
+                [7.07251402, 125.5911533],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_97b7afdc3f0f516c5fae7d217c4ee22f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a7c13c75ccc1b25793ab27a1d4b15a4d.setIcon(icon_97b7afdc3f0f516c5fae7d217c4ee22f);
+        
+    
+            marker_a7c13c75ccc1b25793ab27a1d4b15a4d.bindTooltip(
+                `<div>
+                     
+            <b>Stop 30</b><br>
+            PH257866752357R<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Everly Hills, Orchid Street, Prk15, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5911533, 7.07251402)<br>
+            <br>
+            Distance from Hub: 3.95 km<br>
+            Total Distance: 8.68 km<br>
+            Arrival Time: 11:09<br>
+            <br>
+            Remaining Stops: 24
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a80245b6bc69b1c8e0b3f19f9d283de5 = L.marker(
+                [7.072654993, 125.5910211],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_c61052dd37fed29035fb0bcd448f0a96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a80245b6bc69b1c8e0b3f19f9d283de5.setIcon(icon_c61052dd37fed29035fb0bcd448f0a96);
+        
+    
+            marker_a80245b6bc69b1c8e0b3f19f9d283de5.bindTooltip(
+                `<div>
+                     
+            <b>Stop 31</b><br>
+            SPEPH059255253431<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Uic Bangkerohan, Father Selga Street, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5910211, 7.072654993)<br>
+            <br>
+            Distance from Hub: 3.95 km<br>
+            Total Distance: 8.70 km<br>
+            Arrival Time: 11:15<br>
+            <br>
+            Remaining Stops: 23
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_79e7018dcec37c42891715c24467f65d = L.marker(
+                [7.072801774, 125.5908651],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_ceb13ade6ced9abd06522dfa4f3cc237 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_79e7018dcec37c42891715c24467f65d.setIcon(icon_ceb13ade6ced9abd06522dfa4f3cc237);
+        
+    
+            marker_79e7018dcec37c42891715c24467f65d.bindTooltip(
+                `<div>
+                     
+            <b>Stop 32</b><br>
+            PH2523648966896<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Orchids St. Don Isidro Village Bankerohan (near Sto. Nino Chapel)<br>
+            Coordinates: (125.5908651, 7.072801774)<br>
+            <br>
+            Distance from Hub: 3.95 km<br>
+            Total Distance: 8.70 km<br>
+            Arrival Time: 11:21<br>
+            <br>
+            Remaining Stops: 22
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f69aa61c322aa214927744fbf8d94298 = L.marker(
+                [7.072642201, 125.5912588],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_22a050e22a0ed5d8d6de67ce79ec7f16 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f69aa61c322aa214927744fbf8d94298.setIcon(icon_22a050e22a0ed5d8d6de67ce79ec7f16);
+        
+    
+            marker_f69aa61c322aa214927744fbf8d94298.bindTooltip(
+                `<div>
+                     
+            <b>Stop 33</b><br>
+            PH258498925389I<br>
+            Zone: A-01-BANKE.1<br>
+            Address: 5A Bryco Bankerohan , Davao City 8000<br>
+            Coordinates: (125.5912588, 7.072642201)<br>
+            <br>
+            Distance from Hub: 3.97 km<br>
+            Total Distance: 8.72 km<br>
+            Arrival Time: 11:27<br>
+            <br>
+            Remaining Stops: 21
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c92246952c5c6e193e5734e4e28a321b = L.marker(
+                [7.072792395, 125.59114],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_fb9b177f08b32fbe18e5edf98e134e44 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c92246952c5c6e193e5734e4e28a321b.setIcon(icon_fb9b177f08b32fbe18e5edf98e134e44);
+        
+    
+            marker_c92246952c5c6e193e5734e4e28a321b.bindTooltip(
+                `<div>
+                     
+            <b>Stop 34</b><br>
+            PH2503990111733<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Prk.17 B Lower Madapo, (Near @ Nuestra Señora del Pilar Chapel)<br>
+            Coordinates: (125.59114, 7.072792395)<br>
+            <br>
+            Distance from Hub: 3.97 km<br>
+            Total Distance: 8.74 km<br>
+            Arrival Time: 11:33<br>
+            <br>
+            Remaining Stops: 20
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_edff8c88559eade21c019ac89f0a33e4 = L.marker(
+                [7.072731143, 125.5915571],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_eb4363e0c4c36244f20bca06f5c3ddf6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_edff8c88559eade21c019ac89f0a33e4.setIcon(icon_eb4363e0c4c36244f20bca06f5c3ddf6);
+        
+    
+            marker_edff8c88559eade21c019ac89f0a33e4.bindTooltip(
+                `<div>
+                     
+            <b>Stop 35</b><br>
+            SPEPH050344666011<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Bankerohan Public Market, Purok 11, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5915571, 7.072731143)<br>
+            <br>
+            Distance from Hub: 3.98 km<br>
+            Total Distance: 8.75 km<br>
+            Arrival Time: 11:39<br>
+            <br>
+            Remaining Stops: 19
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bba1e365d498f1b9b8f9976f3bcbb6c5 = L.marker(
+                [7.072803085, 125.591559],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_a2dc043409a490fa7c4a106ac17d6ea2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_bba1e365d498f1b9b8f9976f3bcbb6c5.setIcon(icon_a2dc043409a490fa7c4a106ac17d6ea2);
+        
+    
+            marker_bba1e365d498f1b9b8f9976f3bcbb6c5.bindTooltip(
+                `<div>
+                     
+            <b>Stop 36</b><br>
+            SPEPH053394767841<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Mallengke, Elpidio Quirino Ave<br>
+            Coordinates: (125.591559, 7.072803085)<br>
+            <br>
+            Distance from Hub: 3.98 km<br>
+            Total Distance: 8.76 km<br>
+            Arrival Time: 11:45<br>
+            <br>
+            Remaining Stops: 18
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3e34b7fda1dff0e2ba495d053a6b7b7 = L.marker(
+                [7.072758091, 125.591406],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_de6ba9191a65e9932dfdbe38babc3320 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e3e34b7fda1dff0e2ba495d053a6b7b7.setIcon(icon_de6ba9191a65e9932dfdbe38babc3320);
+        
+    
+            marker_e3e34b7fda1dff0e2ba495d053a6b7b7.bindTooltip(
+                `<div>
+                     
+            <b>Stop 37</b><br>
+            PH2527238382518<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Don Isidro Village Upper Madapo Hills Cenojas Boarding House, Block 2 Lot 6, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.591406, 7.072758091)<br>
+            <br>
+            Distance from Hub: 3.98 km<br>
+            Total Distance: 8.76 km<br>
+            Arrival Time: 11:51<br>
+            <br>
+            Remaining Stops: 17
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9cc6840075e9f9443369b304f2429b5a = L.marker(
+                [7.072784817, 125.5914361],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_18f3e662b44b057912ab962daeeefffb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9cc6840075e9f9443369b304f2429b5a.setIcon(icon_18f3e662b44b057912ab962daeeefffb);
+        
+    
+            marker_9cc6840075e9f9443369b304f2429b5a.bindTooltip(
+                `<div>
+                     
+            <b>Stop 38</b><br>
+            PH2559084515427<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Brokenshire Hospital Brgy Madapo Heights, Davao City (Oxygen Department)<br>
+            Coordinates: (125.5914361, 7.072784817)<br>
+            <br>
+            Distance from Hub: 3.98 km<br>
+            Total Distance: 8.76 km<br>
+            Arrival Time: 11:57<br>
+            <br>
+            Remaining Stops: 16
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_02392e61d141d18e7468dbeb03c9d444 = L.marker(
+                [7.072888263, 125.5915575],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_57733dfda056ac83ea4d041a9c8542b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_02392e61d141d18e7468dbeb03c9d444.setIcon(icon_57733dfda056ac83ea4d041a9c8542b7);
+        
+    
+            marker_02392e61d141d18e7468dbeb03c9d444.bindTooltip(
+                `<div>
+                     
+            <b>Stop 39</b><br>
+            SPEPH051672880981<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Uic Main Campus, Father Selga Street, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5915575, 7.072888263)<br>
+            <br>
+            Distance from Hub: 3.98 km<br>
+            Total Distance: 8.76 km<br>
+            Arrival Time: 12:03<br>
+            <br>
+            Remaining Stops: 15
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d95238d165a8ba2515a6fd2fed68dbdf = L.marker(
+                [7.07283564, 125.5911154],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_cd81ecf67aee5e9f9e2fb24030cec172 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d95238d165a8ba2515a6fd2fed68dbdf.setIcon(icon_cd81ecf67aee5e9f9e2fb24030cec172);
+        
+    
+            marker_d95238d165a8ba2515a6fd2fed68dbdf.bindTooltip(
+                `<div>
+                     
+            <b>Stop 40</b><br>
+            PH253326299511D<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Fresenius Kidney Center, Barangay 6-A (Pob.)<br>
+            Coordinates: (125.5911154, 7.07283564)<br>
+            <br>
+            Distance from Hub: 3.99 km<br>
+            Total Distance: 8.77 km<br>
+            Arrival Time: 12:09<br>
+            <br>
+            Remaining Stops: 14
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bb93cee571ed6b07c3d122c5f518e80f = L.marker(
+                [7.072967754, 125.5910486],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_f924880350a278fb6d604b183fc550d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_bb93cee571ed6b07c3d122c5f518e80f.setIcon(icon_f924880350a278fb6d604b183fc550d7);
+        
+    
+            marker_bb93cee571ed6b07c3d122c5f518e80f.bindTooltip(
+                `<div>
+                     
+            <b>Stop 41</b><br>
+            PH2521155949822<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Covered Court Gym Upper Madapo Hills, Purok 9A, Barangay 8-A (Pob.)<br>
+            Coordinates: (125.5910486, 7.072967754)<br>
+            <br>
+            Distance from Hub: 4.01 km<br>
+            Total Distance: 8.80 km<br>
+            Arrival Time: 12:15<br>
+            <br>
+            Remaining Stops: 13
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29946f7e9f7e5472f05696df5e1397a9 = L.marker(
+                [7.073421955, 125.5908918],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_b40ca6dcc53c1dd89dc331bd45bee340 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_29946f7e9f7e5472f05696df5e1397a9.setIcon(icon_b40ca6dcc53c1dd89dc331bd45bee340);
+        
+    
+            marker_29946f7e9f7e5472f05696df5e1397a9.bindTooltip(
+                `<div>
+                     
+            <b>Stop 42</b><br>
+            PH251633112558J<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Prk 17 5A lower madapo bankerohan davao city ikatulo nga kanto tawag langbpara magawas.<br>
+            Coordinates: (125.5908918, 7.073421955)<br>
+            <br>
+            Distance from Hub: 4.06 km<br>
+            Total Distance: 8.86 km<br>
+            Arrival Time: 12:21<br>
+            <br>
+            Remaining Stops: 12
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9fc4cd0b2ef00c2af3464fc69f9aa941 = L.marker(
+                [7.072620811, 125.5907519],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_fcbe2b9e307af9671fca3ef189f4f75d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9fc4cd0b2ef00c2af3464fc69f9aa941.setIcon(icon_fcbe2b9e307af9671fca3ef189f4f75d);
+        
+    
+            marker_9fc4cd0b2ef00c2af3464fc69f9aa941.bindTooltip(
+                `<div>
+                     
+            <b>Stop 43</b><br>
+            PH256559358774R<br>
+            Zone: A-01-BANKE.1<br>
+            Address: 810 Datu Bago Street, Bankerohan<br>
+            Coordinates: (125.5907519, 7.072620811)<br>
+            <br>
+            Distance from Hub: 3.94 km<br>
+            Total Distance: 8.80 km<br>
+            Arrival Time: 12:28<br>
+            <br>
+            Remaining Stops: 11
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_95910c6fe758966b45dd303ea78f6607 = L.marker(
+                [7.072750632, 125.590705],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_14d0f8a447bbf0f217a97b51e5c60344 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_95910c6fe758966b45dd303ea78f6607.setIcon(icon_14d0f8a447bbf0f217a97b51e5c60344);
+        
+    
+            marker_95910c6fe758966b45dd303ea78f6607.bindTooltip(
+                `<div>
+                     
+            <b>Stop 44</b><br>
+            PH256473810860Z<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Exodus village san vicente ferrer father selga street<br>
+            Coordinates: (125.590705, 7.072750632)<br>
+            <br>
+            Distance from Hub: 3.95 km<br>
+            Total Distance: 8.99 km<br>
+            Arrival Time: 12:34<br>
+            <br>
+            Remaining Stops: 10
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_12a6f7f5136fb4cc0e9e5ae3af68871a = L.marker(
+                [7.072553421, 125.5904499],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_efc07c17a20ed708e8655f7a4242f779 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_12a6f7f5136fb4cc0e9e5ae3af68871a.setIcon(icon_efc07c17a20ed708e8655f7a4242f779);
+        
+    
+            marker_12a6f7f5136fb4cc0e9e5ae3af68871a.bindTooltip(
+                `<div>
+                     
+            <b>Stop 45</b><br>
+            PH251667361460W<br>
+            Zone: A-01-BANKE.1<br>
+            Address: 800 Datu Bago Street, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5904499, 7.072553421)<br>
+            <br>
+            Distance from Hub: 3.96 km<br>
+            Total Distance: 9.01 km<br>
+            Arrival Time: 12:40<br>
+            <br>
+            Remaining Stops: 9
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_42a9a578f38b0b870bbb79886947f14a = L.marker(
+                [7.072787286, 125.5905376],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_77b04f75572056fe9793ff5999a2fbb4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_42a9a578f38b0b870bbb79886947f14a.setIcon(icon_77b04f75572056fe9793ff5999a2fbb4);
+        
+    
+            marker_42a9a578f38b0b870bbb79886947f14a.bindTooltip(
+                `<div>
+                     
+            <b>Stop 46</b><br>
+            PH251432497620X<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Prk.17 B Lower Madapo, (Near @ Nuestra Señora del Pilar Chapel)<br>
+            Coordinates: (125.5905376, 7.072787286)<br>
+            <br>
+            Distance from Hub: 3.97 km<br>
+            Total Distance: 9.03 km<br>
+            Arrival Time: 12:46<br>
+            <br>
+            Remaining Stops: 8
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7d5a338d159a736b12194fcc9b727b38 = L.marker(
+                [7.073017192, 125.5901746],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_3e2d342b6c3a16d95837e630da8861d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7d5a338d159a736b12194fcc9b727b38.setIcon(icon_3e2d342b6c3a16d95837e630da8861d3);
+        
+    
+            marker_7d5a338d159a736b12194fcc9b727b38.bindTooltip(
+                `<div>
+                     
+            <b>Stop 47</b><br>
+            PH2513660901324<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Lower Madapo, 1st kanto from convenience store right side. 3rd pathway C/o APRIL JOY GENON<br>
+            Coordinates: (125.5901746, 7.073017192)<br>
+            <br>
+            Distance from Hub: 3.98 km<br>
+            Total Distance: 9.05 km<br>
+            Arrival Time: 12:52<br>
+            <br>
+            Remaining Stops: 7
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_48cca8ae6c872472f8c4519536a01880 = L.marker(
+                [7.073032519, 125.5901258],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_d94a8f2e83a298da1d4cfc6a2a5fb607 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_48cca8ae6c872472f8c4519536a01880.setIcon(icon_d94a8f2e83a298da1d4cfc6a2a5fb607);
+        
+    
+            marker_48cca8ae6c872472f8c4519536a01880.bindTooltip(
+                `<div>
+                     
+            <b>Stop 48</b><br>
+            PH251295783750A<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Brokenshire Medical Center, Barangay 8-A (Pob.)<br>
+            Coordinates: (125.5901258, 7.073032519)<br>
+            <br>
+            Distance from Hub: 3.98 km<br>
+            Total Distance: 9.06 km<br>
+            Arrival Time: 12:58<br>
+            <br>
+            Remaining Stops: 6
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3012e75c496f6fe34a5ea195aa36660a = L.marker(
+                [7.072654993, 125.5903667],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_e0af68f92635b74baad252c8d26cead1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3012e75c496f6fe34a5ea195aa36660a.setIcon(icon_e0af68f92635b74baad252c8d26cead1);
+        
+    
+            marker_3012e75c496f6fe34a5ea195aa36660a.bindTooltip(
+                `<div>
+                     
+            <b>Stop 49</b><br>
+            PH2549176896284<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Brokenshire College College Of Medicine, Barangay 8-A (Pob.)<br>
+            Coordinates: (125.5903667, 7.072654993)<br>
+            <br>
+            Distance from Hub: 3.98 km<br>
+            Total Distance: 9.06 km<br>
+            Arrival Time: 13:04<br>
+            <br>
+            Remaining Stops: 5
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_36d389ae67950aef4e0ff52252a4fdb5 = L.marker(
+                [7.074720864, 125.5934928],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_f680299b7c7c6abf56d89568e3ab5aa1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_36d389ae67950aef4e0ff52252a4fdb5.setIcon(icon_f680299b7c7c6abf56d89568e3ab5aa1);
+        
+    
+            marker_36d389ae67950aef4e0ff52252a4fdb5.bindTooltip(
+                `<div>
+                     
+            <b>Stop 50</b><br>
+            PH254623317716S<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Smash N Drop, San Pedro Ext, Barangay 6-A (Pob.)<br>
+            Coordinates: (125.5934928, 7.074720864)<br>
+            <br>
+            Distance from Hub: 4.52 km<br>
+            Total Distance: 9.60 km<br>
+            Arrival Time: 13:11<br>
+            <br>
+            Remaining Stops: 4
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8e3522f77acb85dc0d2a19de7a88a274 = L.marker(
+                [7.075527046, 125.5941895],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_90ed366a02a4edc96592113ba327b2ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8e3522f77acb85dc0d2a19de7a88a274.setIcon(icon_90ed366a02a4edc96592113ba327b2ff);
+        
+    
+            marker_8e3522f77acb85dc0d2a19de7a88a274.bindTooltip(
+                `<div>
+                     
+            <b>Stop 51</b><br>
+            PH257741505091F<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Unionbank, San Pedro Extension Quirino Avenue, Barangay 6-A (Pob.)<br>
+            Coordinates: (125.5941895, 7.075527046)<br>
+            <br>
+            Distance from Hub: 3.70 km<br>
+            Total Distance: 9.50 km<br>
+            Arrival Time: 13:19<br>
+            <br>
+            Remaining Stops: 3
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cebe3fa714c85de67d0b8c3e59f288e9 = L.marker(
+                [7.075633301, 125.5940174],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_387a84a0afdb2977b191c32ceb79927e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cebe3fa714c85de67d0b8c3e59f288e9.setIcon(icon_387a84a0afdb2977b191c32ceb79927e);
+        
+    
+            marker_cebe3fa714c85de67d0b8c3e59f288e9.bindTooltip(
+                `<div>
+                     
+            <b>Stop 52</b><br>
+            PH257383189682N<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Bankerohan Public Market, Purok 11, Barangay 5-A (Pob.)<br>
+            Coordinates: (125.5940174, 7.075633301)<br>
+            <br>
+            Distance from Hub: 3.70 km<br>
+            Total Distance: 10.33 km<br>
+            Arrival Time: 13:25<br>
+            <br>
+            Remaining Stops: 2
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_121c6128527174587206c1093f61c65a = L.marker(
+                [7.075680406, 125.5940446],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_bbc8f2ddc0af1100a720f0c7b834bb90 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_121c6128527174587206c1093f61c65a.setIcon(icon_bbc8f2ddc0af1100a720f0c7b834bb90);
+        
+    
+            marker_121c6128527174587206c1093f61c65a.bindTooltip(
+                `<div>
+                     
+            <b>Stop 53</b><br>
+            PH251813755486J<br>
+            Zone: A-01-BANKE.1<br>
+            Address: Rasay Interior Brgy 5-A Purok14 Bankerohan Davao City<br>
+            Coordinates: (125.5940446, 7.075680406)<br>
+            <br>
+            Distance from Hub: 3.69 km<br>
+            Total Distance: 10.33 km<br>
+            Arrival Time: 13:31<br>
+            <br>
+            Remaining Stops: 1
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_934d35d94cedc41d18c04379024d3ca7 = L.marker(
+                [7.075841394, 125.5943835],
+                {}
+            ).addTo(map_a2fb84c3b8965723f014978490765f9f);
+        
+    
+            var icon_b92b9675086e8942a75db9c8a674e804 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_934d35d94cedc41d18c04379024d3ca7.setIcon(icon_b92b9675086e8942a75db9c8a674e804);
+        
+    
+            marker_934d35d94cedc41d18c04379024d3ca7.bindTooltip(
+                `<div>
+                     
+            <b>Stop 54</b><br>
+            PH255961501665O<br>
+            Zone: A-01-BANKE.1<br>
+            Address: #40 Father Selga Street, cor. San Pedro Extension<br>
+            Coordinates: (125.5943835, 7.075841394)<br>
+            <br>
+            Distance from Hub: 3.66 km<br>
+            Total Distance: 10.30 km<br>
+            Arrival Time: 13:37<br>
+            <br>
+            Remaining Stops: 0
+        
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

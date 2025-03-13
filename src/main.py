@@ -58,6 +58,10 @@ def process_dataset(filepath):
     filename = os.path.basename(filepath)
     logger.info(f"\nProcessing dataset: {filename}")
     
+    # Create output directory if it doesn't exist
+    output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'output')
+    os.makedirs(output_dir, exist_ok=True)
+    
     data_loader = DeliveryDataLoader(filepath)
     ors_client = ORSClient()
     optimizer = RouteOptimizer(data_loader, ors_client)
@@ -93,8 +97,8 @@ def process_dataset(filepath):
             total_zone_distance += stop['distance']
             stop['remaining_stops'] = len(stops) - i
     
-    # Generate maps using original filename
-    output_file = os.path.splitext(filename)[0] + '.html'
+    # Generate maps using original filename in output directory
+    output_file = os.path.join(output_dir, os.path.splitext(filename)[0] + '.html')
     visualizer = MapVisualizer(zones, ors_client)
     visualizer.generate_map(output_file)
     
