@@ -8,6 +8,7 @@ from utils.data_loader import DeliveryDataLoader
 from utils.ors_client import ORSClient
 from models.route_optimizer import RouteOptimizer
 from utils.map_visualizer import MapVisualizer
+from config import HUB_LOCATION  # Add this import
 
 # Add project root to path
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -85,8 +86,9 @@ def process_dataset(filepath):
         
         for i, stop in enumerate(stops, 1):
             stop['stop_number'] = i
-            prev_stops_distance = sum(s['distance'] for s in stops[:i-1])
-            stop['total_distance'] = stop['distance_from_hub'] + prev_stops_distance
+            # Calculate cumulative distance WITHOUT return distance
+            total_zone_distance += stop['distance']
+            stop['total_distance'] = total_zone_distance  # Keep cumulative without return
             
             travel_time = (stop['distance'] / 1000) * (60 / 30)
             service_time = 6
@@ -94,7 +96,20 @@ def process_dataset(filepath):
             current_time += timedelta(minutes=travel_time + service_time)
             stop['arrival_time'] = current_time.strftime('%H:%M')
             
-            total_zone_distance += stop['distance']
+            # For last stop, calculate return but don't add to total_distance
+            if i == len(stops):  # Last stop
+                return_route = ors_client.get_route_details(
+                    stop['coordinates'],
+                    HUB_LOCATION
+                )
+                return_distance = return_route['features'][0]['properties']['segments'][0]['distance']
+                stop['return_distance'] = return_distance
+                
+                # Update final time with return journey
+                return_time = (return_distance / 1000) * (60 / 30)
+                current_time += timedelta(minutes=return_time)
+                stop['return_time'] = current_time.strftime('%H:%M')
+            
             stop['remaining_stops'] = len(stops) - i
     
     # Generate maps using original filename in output directory
