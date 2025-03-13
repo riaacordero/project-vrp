@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Vehicle Route Optimizer')
-    default_data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'delivery_data.csv')
+    default_data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'all_delivery_data.csv')
     parser.add_argument('--data', default=default_data_path,
                       help='Path to delivery data CSV file')
     parser.add_argument('--debug', action='store_true',
