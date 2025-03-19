@@ -1,4 +1,4 @@
-date_of_delivery,barangay,unit_type,tracking_num,zone,reason,customer_address,longitude,latitude
+﻿date_of_delivery,barangay,unit_type,tracking_num,zone,reason,customer_address,longitude,latitude
 4-Feb,BANKEROHAN,2WH,PH251069445357B,A-02-BANKE.1,DELIVERED,"Blk. 11 Lot 1 Cattleya St. Don Isidro Village, Bankerohan",7.067959294,125.6008787
 4-Feb,BANKEROHAN,2WH,PH2525606273685,A-02-BANKE.1,DELIVERED,"Purok 15 Cattleya St., Don Isidro Village Brgy 5-A Bankerohan, Davao City, 8000 Davao del Sur",7.067949294,125.6008987
 4-Feb,BANKEROHAN,2WH,PH259606782700X,A-02-BANKE.1,DELIVERED,"Sanctuary Kawayanan, Father Selga Street, Purok 7, Barangay 8-A (Pob.)",7.073321928,125.6005106
@@ -11,7 +11,7 @@ date_of_delivery,barangay,unit_type,tracking_num,zone,reason,customer_address,lo
 4-Feb,BANKEROHAN,2WH,PH2553732107724,A-02-BANKE.1,DELIVERED,19 fr. Selga st. Bankerohan davao city,7.073138856,125.6001947
 4-Feb,BANKEROHAN,2WH,PH2534709338212,A-02-BANKE.1,DELIVERED,Purok 11 Datu Bago Street Bankerohan (Sa MICHON STORE lang palihog unahan sa dati na laurice bakeshop),7.070389229,125.5988487
 4-Feb,BANKEROHAN,2WH,PH259150659758U,A-02-BANKE.1,DELIVERED,Santan st. Purok 10 DIV bankerohan,7.071781877,125.5993563
-4-Feb,BANKEROHAN,2WH,SPEPH051107334381,A-02-BANKE.1,DELIVERED,"Pag-Asa Bankerohan, Brgy. 5-A, besides laundry shop. Blue sari-sari store. Waling-waling st., sto. ni�o.",7.068455391,125.6010517
+4-Feb,BANKEROHAN,2WH,SPEPH051107334381,A-02-BANKE.1,DELIVERED,"Pag-Asa Bankerohan, Brgy. 5-A, besides laundry shop. Blue sari-sari store. Waling-waling st., sto. niño.",7.068455391,125.6010517
 4-Feb,BANKEROHAN,2WH,PH2589640570900,A-02-BANKE.1,DELIVERED,11-c father selga st. Davao city,7.073236751,125.6003819
 4-Feb,BANKEROHAN,2WH,SPEPH059000300061,A-02-BANKE.1,DELIVERED,"Bankerohan Barangay Hall, Barangay 5-A (Pob.)",7.070221456,125.5989718
 4-Feb,BANKEROHAN,2WH,PH251990192211Z,A-02-BANKE.1,DELIVERED,"807 datu bago ext.bankerohan purok 9 covered court,san isidro chapel",7.070298433,125.5987558

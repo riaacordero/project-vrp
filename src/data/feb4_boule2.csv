@@ -1,4 +1,4 @@
-date_of_delivery,barangay,unit_type,tracking_num,zone,reason,customer_address,longitude,latitude
+﻿date_of_delivery,barangay,unit_type,tracking_num,zone,reason,customer_address,longitude,latitude
 4-Feb,PIAPI,2WH,PH2595764599957,G-01-BOULE.2,RECIPIENT REJECT,"Mabini Boulevard & Mabini Street, Barangay 27-C (Pob.)",7.065931821,125.6156713
 4-Feb,PIAPI,2WH,SPEPH056332837941,G-01-BOULE.2,RECIPIENT UNAVAILABLE FOR PARCEL,"Piapi Market, Brgy. 22-C, Barangay 22-C (Pob.)",7.068881832,125.6197087
 4-Feb,PIAPI,2WH,SPEPH051033495011,G-01-BOULE.2,RECIPIENT UNAVAILABLE FOR PARCEL,"Piapi Boulevard, Barangay 21-C (Pob.)",7.067620838,125.6194348
@@ -14,7 +14,7 @@ date_of_delivery,barangay,unit_type,tracking_num,zone,reason,customer_address,lo
 4-Feb,PIAPI,2WH,PH257186896934T,G-01-BOULE.2,DELIVERED,"Block 24 360 Piapi Boulevard, Barangay 22-C (Pob.)",7.070289,125.620894
 4-Feb,PIAPI,2WH,PH251646890859T,G-01-BOULE.2,DELIVERED,"Ikp Chapel, Barangay 22-C (Pob.)",7.06805,125.62038
 4-Feb,PIAPI,2WH,PH256087936393M,G-01-BOULE.2,DELIVERED,"Topher jurds barbershop beside Don Benitos, Piapi Boulevard, Barangay 24-C (Pob.)",7.068523693,125.6187607
-4-Feb,PIAPI,2WH,PH250393276736Y,G-01-BOULE.2,DELIVERED,"Sto Ni�o Chapel, Piapi Boulevard, Barangay 21-C (Pob.)",7.067754911,125.6193273
+4-Feb,PIAPI,2WH,PH250393276736Y,G-01-BOULE.2,DELIVERED,"Sto Niño Chapel, Piapi Boulevard, Barangay 21-C (Pob.)",7.067754911,125.6193273
 4-Feb,PIAPI,2WH,PH259903421981X,G-01-BOULE.2,DELIVERED,"Sta Cruz Chappel, Block 50 Mahad Street, Barangay 21-C (Pob.)",7.067701426,125.6208781
 4-Feb,PIAPI,2WH,PH253179399017X,G-01-BOULE.2,DELIVERED,Piapi Boulevard 1020 BLK.59,7.067523496,125.6208689
 4-Feb,PIAPI,2WH,PH259217689158W,G-01-BOULE.2,DELIVERED,"Piapi Boulevard I.K.P Chapel, super Blk7 riverbed, Barangay 22-C (gikan IKP Chapel Naay kalsada na dako pasulod sa bay2x diha",7.067447401,125.6209546
