@@ -39,16 +39,23 @@ def list_data_files():
     print("\nAvailable datasets:")
     for letter, filename in file_map.items():
         print(f"{letter}: {filename}")
+    print("\nEnter '0' to process all files")
     
     return file_map
 
 def get_user_selection(file_map):
     """Get user input for file selection"""
     while True:
-        selection = input("\nEnter letters for datasets to process (comma-separated, e.g. A,B,C): ").strip()
-        letters = [l.strip().upper() for l in selection.split(',')]
+        selection = input("\nEnter letters for datasets to process (comma-separated, e.g. A,B,C) or '0' for all: ").strip()
         
+        # Handle "process all" option
+        if selection == '0':
+            return list(file_map.keys())
+        
+        # Handle specific file selection
+        letters = [l.strip().upper() for l in selection.split(',')]
         invalid_letters = [l for l in letters if l not in file_map]
+        
         if invalid_letters:
             print(f"Invalid selection: {','.join(invalid_letters)}")
             continue
