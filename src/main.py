@@ -88,12 +88,11 @@ def process_dataset(filepath):
         
         for i, stop in enumerate(stops, 1):
             stop['stop_number'] = i
-            # Calculate cumulative distance WITHOUT return distance
             total_zone_distance += stop['distance']
-            stop['total_distance'] = total_zone_distance  # Keep cumulative without return
+            stop['total_distance'] = total_zone_distance
             
-            travel_time = (stop['distance'] / 1000) * (60 / 30)
-            service_time = 6
+            travel_time = (stop['distance'] / 1000) * (60 / 30)  # minutes
+            service_time = 4  # Changed from 6 to 4 minutes per stop
             
             current_time += timedelta(minutes=travel_time + service_time)
             stop['arrival_time'] = current_time.strftime('%H:%M')
