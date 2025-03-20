@@ -4,6 +4,7 @@ import argparse
 import logging
 import string
 from datetime import datetime, timedelta
+import pandas as pd
 from utils.data_loader import DeliveryDataLoader
 from utils.ors_client import ORSClient
 from models.route_optimizer import RouteOptimizer
@@ -59,9 +60,10 @@ def process_dataset(filepath):
     filename = os.path.basename(filepath)
     logger.info(f"\nProcessing dataset: {filename}")
     
-    # Create output directory if it doesn't exist
+    # Create output directories if they don't exist
     output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'output')
-    os.makedirs(output_dir, exist_ok=True)
+    maps_dir = os.path.join(output_dir, 'maps')
+    os.makedirs(maps_dir, exist_ok=True)
     
     data_loader = DeliveryDataLoader(filepath)
     ors_client = ORSClient()
@@ -112,12 +114,57 @@ def process_dataset(filepath):
             
             stop['remaining_stops'] = len(stops) - i
     
-    # Generate maps using original filename in output directory
-    output_file = os.path.join(output_dir, os.path.splitext(filename)[0] + '.html')
+    # Generate maps using original filename in maps directory
+    output_file = os.path.join(maps_dir, os.path.splitext(filename)[0] + '.html')
     visualizer = MapVisualizer(zones, ors_client)
     visualizer.generate_map(output_file)
     
-    return len(zones)
+    return zones
+
+def create_route_summary(zones: dict, filename: str) -> pd.DataFrame:
+    """Create route summary dataframe including hub start/end points"""
+    rows = []
+    
+    # Add starting point (hub)
+    rows.append({
+        'Stop Number': 'Starting Point',
+        'Zone': '-',
+        'Address': 'SMC Complex Hub',
+        'Longitude': HUB_LOCATION[0],
+        'Latitude': HUB_LOCATION[1],
+        'Arrival Time': '08:00',
+        'Distance from Hub': 0,
+        'Total km Traveled': 0
+    })
+    
+    # Add all stops in order
+    for zone, stops in zones.items():
+        for stop in stops:
+            rows.append({
+                'Stop Number': f"Stop {stop['stop_number']}",
+                'Zone': stop['zone'],
+                'Address': stop['address'],
+                'Longitude': stop['coordinates'][0],
+                'Latitude': stop['coordinates'][1],
+                'Arrival Time': stop['arrival_time'],
+                'Distance from Hub': stop['distance_from_hub']/1000,
+                'Total km Traveled': stop['total_distance']/1000
+            })
+    
+    # Add ending point (return to hub)
+    last_stop = next(iter(zones.values()))[-1]  # Get last stop
+    rows.append({
+        'Stop Number': 'Ending Point',
+        'Zone': '-',
+        'Address': 'SMC Complex Hub',
+        'Longitude': HUB_LOCATION[0],
+        'Latitude': HUB_LOCATION[1],
+        'Arrival Time': last_stop['return_time'],
+        'Distance from Hub': 0,
+        'Total km Traveled': (last_stop['total_distance'] + last_stop['return_distance'])/1000
+    })
+    
+    return pd.DataFrame(rows)
 
 def main():
     args = parse_args()
@@ -129,15 +176,43 @@ def main():
         if not file_map:
             logger.error("No CSV files found in data directory")
             sys.exit(1)
-            
+        
         selected_letters = get_user_selection(file_map)
         
-        for letter in selected_letters:
-            filename = file_map[letter]
-            filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', filename)
-            zones_count = process_dataset(filepath)
-            logger.info(f"Completed processing {filename}: {zones_count} zones")
+        # Create Excel writer with timestamp in lists directory
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        lists_dir = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            'output',
+            'lists'
+        )
+        os.makedirs(lists_dir, exist_ok=True)
         
+        excel_path = os.path.join(lists_dir, f'route_summary_{timestamp}.xlsx')
+        
+        with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
+            for letter in selected_letters:
+                filename = file_map[letter]
+                filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', filename)
+                
+                # Process dataset and get zones
+                zones = process_dataset(filepath)
+                
+                # Create summary sheet
+                sheet_name = os.path.splitext(filename)[0][:31]  # Excel limits sheet names to 31 chars
+                summary_df = create_route_summary(zones, filename)
+                summary_df.to_excel(writer, sheet_name=sheet_name, index=False)
+                
+                # Auto-adjust column widths
+                worksheet = writer.sheets[sheet_name]
+                for idx, col in enumerate(summary_df.columns):
+                    max_length = max(
+                        summary_df[col].astype(str).apply(len).max(),
+                        len(col)
+                    )
+                    worksheet.column_dimensions[chr(65 + idx)].width = max_length + 2
+        
+        logger.info(f"\nGenerated route summary: {excel_path}")
         logger.info("\nAll datasets processed successfully!")
         
     except KeyboardInterrupt:
