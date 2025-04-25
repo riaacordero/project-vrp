@@ -66,74 +66,109 @@ def get_user_selection(file_map):
 def process_dataset(filepath):
     """Process a single dataset"""
     filename = os.path.basename(filepath)
-    logger.info(f"\nProcessing dataset: {filename}")
     
-    # Create output directories if they don't exist
+    # Create test log directory and configure logging
     output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'output')
-    maps_dir = os.path.join(output_dir, 'maps')
-    os.makedirs(maps_dir, exist_ok=True)
+    test_log_dir = os.path.join(output_dir, 'test_log')
+    os.makedirs(test_log_dir, exist_ok=True)
     
-    data_loader = DeliveryDataLoader(filepath)
-    ors_client = ORSClient()
-    optimizer = RouteOptimizer(data_loader, ors_client)
-    route_sequence = optimizer.optimize_route()
+    # Set up file handler with custom formatter
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    log_file = os.path.join(test_log_dir, f'validation_log_{os.path.splitext(filename)[0]}_{timestamp}.txt')
     
-    # Add validation comparison
-    validator = RouteValidator(route_sequence, HUB_LOCATION, ors_client)
-    validation_results = validator.compare_methods()
+    # Create file handler with formatting
+    file_handler = logging.FileHandler(log_file)
+    formatter = logging.Formatter('%(message)s')  # Just the message without timestamp
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.INFO)
     
-    # Group by zone
-    zones = {}
-    for stop in route_sequence:
-        zone = stop['zone']
-        if zone not in zones:
-            zones[zone] = []
-        zones[zone].append(stop)
+    # Add handler to logger
+    logger = logging.getLogger(__name__)
+    logger.addHandler(file_handler)
     
-    # Process each zone
-    start_time = datetime.now().replace(hour=8, minute=0, second=0, microsecond=0)
-    
-    # Process zones and calculate times
-    for zone, stops in zones.items():
-        total_zone_distance = 0
-        current_time = start_time
+    try:
+        data_loader = DeliveryDataLoader(filepath)
+        ors_client = ORSClient()
+        optimizer = RouteOptimizer(data_loader, ors_client)
+        route_sequence = optimizer.optimize_route()
         
-        for i, stop in enumerate(stops, 1):
-            stop['stop_number'] = i
-            total_zone_distance += stop['distance']
-            stop['total_distance'] = total_zone_distance
+        # Log dataset information
+        logger.info(f"Dataset: {filename}")
+        logger.info("=" * 50)
+        logger.info(f"Total Stops: {len(route_sequence)}")
+        logger.info(f"Start Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        logger.info("-" * 50)
+        
+        # Add validation with logging
+        validator = RouteValidator(route_sequence, HUB_LOCATION, ors_client, logger)
+        validation_results = validator.compare_methods()
+        
+        if not validation_results:  # Check for empty list
+            logger.warning("Validation produced no results")
+            validation_results = []  # Ensure we have an empty list
+        
+        # Group by zone
+        zones = {}
+        for stop in route_sequence:
+            zone = stop['zone']
+            if zone not in zones:
+                zones[zone] = []
+            zones[zone].append(stop)
+        
+        # Process each zone
+        start_time = datetime.now().replace(hour=8, minute=0, second=0, microsecond=0)
+        
+        # Process zones and calculate times
+        for zone, stops in zones.items():
+            total_zone_distance = 0
+            current_time = start_time
             
-            travel_time = (stop['distance'] / 1000) * (60 / 30)  # minutes
-            service_time = 4  # Changed from 6 to 4 minutes per stop
-            
-            current_time += timedelta(minutes=travel_time + service_time)
-            stop['arrival_time'] = current_time.strftime('%H:%M')
-            
-            # For last stop, calculate return but don't add to total_distance
-            if i == len(stops):  # Last stop
-                return_route = ors_client.get_route_details(
-                    stop['coordinates'],
-                    HUB_LOCATION
-                )
-                return_distance = return_route['features'][0]['properties']['segments'][0]['distance']
-                stop['return_distance'] = return_distance
+            for i, stop in enumerate(stops, 1):
+                stop['stop_number'] = i
+                total_zone_distance += stop['distance']
+                stop['total_distance'] = total_zone_distance
                 
-                # Update final time with return journey
-                return_time = (return_distance / 1000) * (60 / 30)
-                current_time += timedelta(minutes=return_time)
-                stop['return_time'] = current_time.strftime('%H:%M')
-            
-            stop['remaining_stops'] = len(stops) - i
-    
-    # Generate maps using original filename in maps directory
-    output_file = os.path.join(maps_dir, os.path.splitext(filename)[0] + '.html')
-    visualizer = MapVisualizer(zones, ors_client)
-    visualizer.generate_map(output_file)
-    
-    return zones
+                travel_time = (stop['distance'] / 1000) * (60 / 30)  # minutes
+                service_time = 4  # Changed from 6 to 4 minutes per stop
+                
+                current_time += timedelta(minutes=travel_time + service_time)
+                stop['arrival_time'] = current_time.strftime('%H:%M')
+                
+                # For last stop, calculate return but don't add to total_distance
+                if i == len(stops):  # Last stop
+                    return_route = ors_client.get_route_details(
+                        stop['coordinates'],
+                        HUB_LOCATION
+                    )
+                    return_distance = return_route['features'][0]['properties']['segments'][0]['distance']
+                    stop['return_distance'] = return_distance
+                    
+                    # Update final time with return journey
+                    return_time = (return_distance / 1000) * (60 / 30)
+                    current_time += timedelta(minutes=return_time)
+                    stop['return_time'] = current_time.strftime('%H:%M')
+                
+                stop['remaining_stops'] = len(stops) - i
+        
+        # Generate maps using original filename in maps directory
+        maps_dir = os.path.join(output_dir, 'maps')
+        os.makedirs(maps_dir, exist_ok=True)
+        output_file = os.path.join(maps_dir, os.path.splitext(filename)[0] + '.html')
+        visualizer = MapVisualizer(zones, ors_client)
+        visualizer.generate_map(output_file)
+        
+        return zones, validation_results
+        
+    except Exception as e:
+        logger.error(f"Error processing dataset: {e}")
+        return None, []  # Return empty list for validation_results
+        
+    finally:
+        logger.removeHandler(file_handler)
+        file_handler.close()
 
-def create_route_summary(zones: dict, filename: str) -> pd.DataFrame:
-    """Create route summary dataframe including hub start/end points"""
+def create_route_summary(zones: dict, filename: str, validation_results: list) -> pd.DataFrame:
+    """Create route summary dataframe including hub start/end points and validation results"""
     rows = []
     
     # Add starting point (hub)
@@ -175,6 +210,47 @@ def create_route_summary(zones: dict, filename: str) -> pd.DataFrame:
         'Total km Traveled': (last_stop['total_distance'] + last_stop['return_distance'])/1000
     })
     
+    # Add spacing rows
+    rows.append({key: '' for key in rows[0].keys()})
+    rows.append({key: '' for key in rows[0].keys()})
+    
+    # Add validation results header
+    rows.append({
+        'Stop Number': '=== ROUTE OPTIMIZATION TEST RESULTS ===',
+        'Zone': '',
+        'Address': '',
+        'Longitude': '',
+        'Latitude': '',
+        'Arrival Time': '',
+        'Distance from Hub': '',
+        'Total km Traveled': ''
+    })
+    
+    # Add column headers for test results
+    rows.append({
+        'Stop Number': 'Method',
+        'Zone': 'Distance (km)',
+        'Address': 'Time (min)',
+        'Longitude': 'Stops',
+        'Latitude': 'Avg Time/Stop',
+        'Arrival Time': 'Redundancy',
+        'Distance from Hub': '% from Optimal',
+        'Total km Traveled': ''
+    })
+    
+    # Add test results
+    for result in validation_results:
+        rows.append({
+            'Stop Number': result[0],  # Method
+            'Zone': result[1],         # Distance
+            'Address': result[2],      # Time
+            'Longitude': result[3],    # Stops
+            'Latitude': result[4],     # Avg Time/Stop
+            'Arrival Time': result[5], # Redundancy
+            'Distance from Hub': result[6],  # % from Optimal
+            'Total km Traveled': ''
+        })
+    
     return pd.DataFrame(rows)
 
 def main():
@@ -189,41 +265,31 @@ def main():
             sys.exit(1)
         
         selected_letters = get_user_selection(file_map)
+        if not selected_letters:
+            logger.error("No datasets selected")
+            sys.exit(1)
         
-        # Create Excel writer with timestamp in lists directory
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        lists_dir = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            'output',
-            'lists'
-        )
-        os.makedirs(lists_dir, exist_ok=True)
-        
-        excel_path = os.path.join(lists_dir, f'route_summary_{timestamp}.xlsx')
-        
-        with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
-            for letter in selected_letters:
-                filename = file_map[letter]
-                filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', filename)
-                
-                # Process dataset and get zones
-                zones = process_dataset(filepath)
-                
-                # Create summary sheet
-                sheet_name = os.path.splitext(filename)[0][:31]  # Excel limits sheet names to 31 chars
-                summary_df = create_route_summary(zones, filename)
-                summary_df.to_excel(writer, sheet_name=sheet_name, index=False)
-                
-                # Auto-adjust column widths
-                worksheet = writer.sheets[sheet_name]
-                for idx, col in enumerate(summary_df.columns):
-                    max_length = max(
-                        summary_df[col].astype(str).apply(len).max(),
-                        len(col)
-                    )
-                    worksheet.column_dimensions[chr(65 + idx)].width = max_length + 2
-        
-        logger.info(f"\nGenerated route summary: {excel_path}")
+        # Process each selected dataset
+        for letter in selected_letters:
+            filename = file_map[letter]
+            filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', filename)
+            
+            logger.info(f"\nProcessing {filename}...")
+            zones, validation_results = process_dataset(filepath)
+            
+            if not zones or not validation_results:
+                logger.error(f"Error processing {filename}")
+                continue
+            
+            # Generate map
+            output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'output')
+            maps_dir = os.path.join(output_dir, 'maps')
+            os.makedirs(maps_dir, exist_ok=True)
+            
+            output_file = os.path.join(maps_dir, os.path.splitext(filename)[0] + '.html')
+            visualizer = MapVisualizer(zones, ORSClient())
+            visualizer.generate_map(output_file)
+            
         logger.info("\nAll datasets processed successfully!")
         
     except KeyboardInterrupt:

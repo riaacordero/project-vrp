@@ -10,10 +10,11 @@ from tabulate import tabulate
 logger = logging.getLogger(__name__)
 
 class RouteValidator:
-    def __init__(self, stops, hub_location, ors_client):
+    def __init__(self, stops, hub_location, ors_client, logger):
         self.stops = stops
         self.hub_location = hub_location
         self.ors_client = ors_client
+        self.logger = logger
         self.AVERAGE_SPEED = 30  # km/h
         self.SERVICE_TIME = 4    # minutes
 
@@ -146,77 +147,110 @@ class RouteValidator:
 
     def compare_methods(self):
         """Compare different routing methods with all metrics in single table"""
-        results = []
-        metrics_by_method = {}
-        
-        # Calculate metrics for each method
-        # 1. Nearest Neighbor (current solution)
-        nn_distance, nn_time = self.calculate_metrics(self.stops)
-        metrics_by_method["Nearest Neighbor"] = {
-            "distance": nn_distance/1000,
-            "time": nn_time,
-            **self.calculate_extended_metrics(self.stops, nn_distance, nn_time)
-        }
-        
-        # 2. Random Order
-        random_route = self.get_random_route()
-        rand_distance, rand_time = self.calculate_metrics(random_route)
-        metrics_by_method["Random Order"] = {
-            "distance": rand_distance/1000,
-            "time": rand_time,
-            **self.calculate_extended_metrics(random_route, rand_distance, rand_time)
-        }
-        
-        # 3. Euclidean Distance
-        euclidean_route = self.get_euclidean_route()
-        euc_distance, euc_time = self.calculate_metrics(euclidean_route)
-        metrics_by_method["Euclidean Distance"] = {
-            "distance": euc_distance/1000,
-            "time": euc_time,
-            **self.calculate_extended_metrics(euclidean_route, euc_distance, euc_time)
-        }
-        
-        # 4. OR-Tools (considered optimal)
-        ortools_route = self.solve_ortools()
-        if ortools_route:
-            ort_distance, ort_time = self.calculate_metrics(ortools_route)
-            metrics_by_method["OR-Tools"] = {
-                "distance": ort_distance/1000,
-                "time": ort_time,
-                **self.calculate_extended_metrics(ortools_route, ort_distance, ort_time)
+        try:
+            results = []
+            metrics_by_method = {}
+            
+            # 1. Nearest Neighbor analysis
+            self.logger.info("\n=== Nearest Neighbor Algorithm Analysis ===")
+            nn_route = self.get_nearest_neighbor_route_detailed()
+            nn_distance, nn_time = self.calculate_metrics(nn_route)
+            metrics_by_method["Nearest Neighbor"] = {
+                "distance": nn_distance/1000,
+                "time": nn_time,
+                **self.calculate_extended_metrics(nn_route, nn_distance, nn_time)
             }
             
-            # Calculate % difference from optimal
-            optimal_distance = ort_distance/1000
+            # Create results array with proper structure
             for method, metrics in metrics_by_method.items():
-                if method != "OR-Tools":
-                    diff_from_optimal = ((metrics["distance"] - optimal_distance) / optimal_distance) * 100
-                    metrics["diff_from_optimal"] = diff_from_optimal
-        
-        # Create combined results table
-        for method, metrics in metrics_by_method.items():
-            row = [
-                method,
-                f"{metrics['distance']:.2f}",
-                f"{metrics['time']:.1f}",
-                metrics['num_stops'],
-                f"{metrics['avg_time_per_stop']:.1f}",
-                metrics['redundant_paths'],
-                f"{metrics.get('diff_from_optimal', 'N/A')}%" if metrics.get('diff_from_optimal') is not None else "N/A"
+                row = [
+                    method,
+                    f"{metrics['distance']:.2f}",
+                    f"{metrics['time']:.1f}",
+                    metrics['num_stops'],
+                    f"{metrics['avg_time_per_stop']:.1f}",
+                    metrics['redundant_paths'],
+                    metrics.get('diff_from_optimal', 'N/A')
+                ]
+                results.append(row)
+            
+            # Print results table
+            headers = [
+                "Method",
+                "Distance (km)",
+                "Time (min)",
+                "Stops",
+                "Avg Time/Stop",
+                "Redundancy",
+                "% from Optimal"
             ]
-            results.append(row)
+            self.logger.info("\nRoute Optimization Analysis:")
+            self.logger.info(tabulate(results, headers=headers, tablefmt="grid"))
+            
+            return results
+            
+        except Exception as e:
+            self.logger.error(f"Error in compare_methods: {e}")
+            return []  # Return empty list instead of None
+
+    def get_nearest_neighbor_route_detailed(self):
+        """Generate route using Nearest Neighbor algorithm with detailed logging"""
+        unvisited_stops = self.stops.copy()
+        route = []
+        current_location = self.hub_location
         
-        # Print combined table
-        headers = [
-            "Method",
-            "Distance (km)",
-            "Time (min)",
-            "Stops",
-            "Avg Time/Stop",
-            "Redundancy",
-            "% from Optimal"
-        ]
-        print("\nRoute Optimization Analysis:")
-        print(tabulate(results, headers=headers, tablefmt="grid"))
+        self.logger.info("\nNEAREST NEIGHBOR ALGORITHM - DECISION PROCESS")
+        self.logger.info("============================================")
+        self.logger.info(f"Starting Point: SMC Complex Hub ({self.hub_location[0]:.4f}, {self.hub_location[1]:.4f})")
         
-        return results
+        step = 1
+        total_stops = len(unvisited_stops)
+        total_distance = 0
+        
+        while unvisited_stops:
+            self.logger.info(f"\nITERATION {step}/{total_stops}")
+            self.logger.info("--------------------")
+            self.logger.info(f"Current Position: ({current_location[0]:.4f}, {current_location[1]:.4f})")
+            
+            # Calculate and sort distances to all remaining stops
+            distances = []
+            self.logger.info("\nCANDIDATE STOPS ANALYSIS:")
+            
+            # Sort stops by distance for a clearer view of options
+            for stop in unvisited_stops:
+                route_details = self.ors_client.get_route_details(
+                    current_location, 
+                    stop['coordinates']
+                )
+                distance = route_details['features'][0]['properties']['segments'][0]['distance']
+                distances.append({
+                    'stop': stop,
+                    'distance': distance
+                })
+                
+            # Sort distances to show all options in order
+            sorted_distances = sorted(distances, key=lambda x: x['distance'])
+            
+            # Show all options with their rankings
+            for rank, option in enumerate(sorted_distances, 1):
+                stop = option['stop']
+                distance = option['distance']
+                self.logger.info(f"\nRank {rank}:")
+                self.logger.info(f"  Original Stop #{stop['stop_number']} - Zone {stop['zone']}")
+                self.logger.info(f"  Distance from current: {distance/1000:.2f} km")
+                self.logger.info(f"  Address: {stop['address']}")
+                
+            # Select nearest stop
+            nearest = sorted_distances[0]
+            total_distance += nearest['distance']
+            
+            self.logger.info("\nDECISION")
+            self.logger.info("---------")
+            self.logger.info(f"Selected: Original Stop #{nearest['stop']['stop_number']} (Visit Order: {step})")
+            self.logger.info(f"Reason: Closest stop at {nearest['distance']/1000:.2f} km")
+            self.logger.info(f"Progressive Route Distance: {total_distance/1000:.2f} km")
+            
+            route.append(nearest['stop'])
+            current_location = nearest['stop']['coordinates']
+            unvisited_stops.remove(nearest['stop'])
+            step += 1
