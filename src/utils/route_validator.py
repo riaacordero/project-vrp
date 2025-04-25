@@ -122,33 +122,101 @@ class RouteValidator:
         
         return total_distance, total_time
 
+    def calculate_extended_metrics(self, route, total_distance, total_time):
+        """Calculate additional validation metrics for a route"""
+        num_stops = len(route)
+        avg_time_per_stop = total_time / num_stops if num_stops > 0 else 0
+        
+        # Calculate route redundancy by checking revisited areas
+        visited_areas = set()
+        redundant_paths = 0
+        
+        # Define area by rounding coordinates to 4 decimal places
+        for stop in route:
+            area = (round(stop['coordinates'][0], 4), round(stop['coordinates'][1], 4))
+            if area in visited_areas:
+                redundant_paths += 1
+            visited_areas.add(area)
+            
+        return {
+            "num_stops": num_stops,
+            "avg_time_per_stop": avg_time_per_stop,
+            "redundant_paths": redundant_paths,
+        }
+
     def compare_methods(self):
-        """Compare different routing methods"""
+        """Compare different routing methods with all metrics in single table"""
         results = []
+        metrics_by_method = {}
         
-        # Current NN solution
+        # Calculate metrics for each method
+        # 1. Nearest Neighbor (current solution)
         nn_distance, nn_time = self.calculate_metrics(self.stops)
-        results.append(["Nearest Neighbor", nn_distance/1000, nn_time])
+        metrics_by_method["Nearest Neighbor"] = {
+            "distance": nn_distance/1000,
+            "time": nn_time,
+            **self.calculate_extended_metrics(self.stops, nn_distance, nn_time)
+        }
         
-        # Random solution
+        # 2. Random Order
         random_route = self.get_random_route()
         rand_distance, rand_time = self.calculate_metrics(random_route)
-        results.append(["Random Order", rand_distance/1000, rand_time])
+        metrics_by_method["Random Order"] = {
+            "distance": rand_distance/1000,
+            "time": rand_time,
+            **self.calculate_extended_metrics(random_route, rand_distance, rand_time)
+        }
         
-        # Euclidean solution
+        # 3. Euclidean Distance
         euclidean_route = self.get_euclidean_route()
         euc_distance, euc_time = self.calculate_metrics(euclidean_route)
-        results.append(["Euclidean Distance", euc_distance/1000, euc_time])
+        metrics_by_method["Euclidean Distance"] = {
+            "distance": euc_distance/1000,
+            "time": euc_time,
+            **self.calculate_extended_metrics(euclidean_route, euc_distance, euc_time)
+        }
         
-        # OR-Tools solution
+        # 4. OR-Tools (considered optimal)
         ortools_route = self.solve_ortools()
         if ortools_route:
             ort_distance, ort_time = self.calculate_metrics(ortools_route)
-            results.append(["OR-Tools", ort_distance/1000, ort_time])
+            metrics_by_method["OR-Tools"] = {
+                "distance": ort_distance/1000,
+                "time": ort_time,
+                **self.calculate_extended_metrics(ortools_route, ort_distance, ort_time)
+            }
+            
+            # Calculate % difference from optimal
+            optimal_distance = ort_distance/1000
+            for method, metrics in metrics_by_method.items():
+                if method != "OR-Tools":
+                    diff_from_optimal = ((metrics["distance"] - optimal_distance) / optimal_distance) * 100
+                    metrics["diff_from_optimal"] = diff_from_optimal
         
-        # Print comparison table
-        headers = ["Method", "Total Distance (km)", "Total Time (min)"]
-        print("\nRoute Optimization Method Comparison:")
-        print(tabulate(results, headers=headers, floatfmt=".2f", tablefmt="grid"))
+        # Create combined results table
+        for method, metrics in metrics_by_method.items():
+            row = [
+                method,
+                f"{metrics['distance']:.2f}",
+                f"{metrics['time']:.1f}",
+                metrics['num_stops'],
+                f"{metrics['avg_time_per_stop']:.1f}",
+                metrics['redundant_paths'],
+                f"{metrics.get('diff_from_optimal', 'N/A')}%" if metrics.get('diff_from_optimal') is not None else "N/A"
+            ]
+            results.append(row)
+        
+        # Print combined table
+        headers = [
+            "Method",
+            "Distance (km)",
+            "Time (min)",
+            "Stops",
+            "Avg Time/Stop",
+            "Redundancy",
+            "% from Optimal"
+        ]
+        print("\nRoute Optimization Analysis:")
+        print(tabulate(results, headers=headers, tablefmt="grid"))
         
         return results
