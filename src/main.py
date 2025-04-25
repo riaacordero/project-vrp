@@ -9,6 +9,7 @@ from utils.data_loader import DeliveryDataLoader
 from utils.ors_client import ORSClient
 from models.route_optimizer import RouteOptimizer
 from utils.map_visualizer import MapVisualizer
+from utils.route_validator import RouteValidator
 from config import HUB_LOCATION  # Add this import
 
 # Add project root to path
@@ -76,6 +77,10 @@ def process_dataset(filepath):
     ors_client = ORSClient()
     optimizer = RouteOptimizer(data_loader, ors_client)
     route_sequence = optimizer.optimize_route()
+    
+    # Add validation comparison
+    validator = RouteValidator(route_sequence, HUB_LOCATION, ors_client)
+    validation_results = validator.compare_methods()
     
     # Group by zone
     zones = {}
